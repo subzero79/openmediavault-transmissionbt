@@ -3,7 +3,7 @@
 /**
  * Copyright (C) 2009-2012 Volker Theile <volker.theile@openmediavault.org>
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
- * Copyright (C)      2013 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2014 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,14 +19,18 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require_once ("openmediavault/module.inc");
-require_once ("openmediavault/config.inc");
-require_once ("openmediavault/error.inc");
-require_once ("openmediavault/util.inc");
-require_once ("openmediavault/initscript.inc");
+require_once "openmediavault/module.inc";
+require_once "openmediavault/config.inc";
+require_once "openmediavault/error.inc";
+require_once "openmediavault/util.inc";
+require_once "openmediavault/initscript.inc";
 
 class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements OMVINotifyListener, OMVIModuleServiceStatus
 {
+    private function getXPath()
+    {
+        return "//services/transmissionbt";
+    }
 
     /**
      * Get the module name.
@@ -37,95 +41,72 @@ class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements OMVINo
     }
 
     /**
-    * Generate the configuration.
-    *
-    * @throws E_EXEC_FAILED
-    */
+     * Generate the configuration.
+     */
     public function applyConfig()
     {
         // Currently transmission overwrites the settings.json configuration
         // file on exit. This means transmission must be terminated before
         // writing the new settings.json file.
-        $initd = new OMVSysVInitScript("transmission-daemon", false);
-        $initd->stop();
+        $this->stopService();
 
-        $cmd = "omv-mkconf transmissionbt 2>&1";
+        $cmd = sprintf("omv-mkconf %s 2>&1", $this->getName());
 
         if (0 !== $this->exec($cmd, $output))
             throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
                 $cmd, implode("\n", $output));
     }
-
     /**
-    * Stop the managed service.
-    *
-    * @throws E_CONFIG_GET_OBJECT_FAILED
-    */
-    public function stopService()
-    {
-        global $xmlConfig;
-
-        // Get the configuration object
-        $xpath = "//services/transmissionbt";
-        $object = $xmlConfig->get($xpath);
-
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
-                $xpath);
-
-        if (boolval($object['enable']) === false) {
-            $initd = new OMVSysVInitScript("transmission-daemon", boolval($object['enable']));
-            $initd->stop();
-        }
-    }
-
-    /**
-    * Start the managed service.
-    *
-    * @throws E_CONFIG_GET_OBJECT_FAILED
-    */
+     * Start the managed service
+     */
     public function startService()
     {
         global $xmlConfig;
 
         // Get the configuration object
-        $xpath = "//services/transmissionbt";
-        $object = $xmlConfig->get($xpath);
+        $object = $xmlConfig->get($this->getXPath());
 
         if (is_null($object))
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
-                $xpath);
+                $this->getXPath());
 
-        if (boolval($object['enable']) === true) {
-            $initd = new OMVSysVInitScript("transmission-daemon", true);
-            $initd->exec();
-        }
+        if (!boolval($object['enable']))
+            return;
+        
+        $initd = new OMVSysVInitScript("transmission-daemon", true);
+        $initd->exec();
     }
 
     /**
-    * Get the status of the managed service.
-    *
-    * @throws E_CONFIG_GET_OBJECT_FAILED
-    */
+     * Stop the managed service.
+     */
+    public function stopService()
+    {
+        $initd = new OMVSysVInitScript("transmission-daemon");
+        $initd->exec();
+    }
+
+    /**
+     * Get the status of the managed service.
+     */
     public function getStatus()
     {
         global $xmlConfig;
 
         // Get the configuration object
-        $xpath = "//services/transmissionbt";
-        $object = $xmlConfig->get($xpath);
+        $object = $xmlConfig->get($this->getXPath());
 
         if (is_null($object))
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
-                $xpath);
+                $this->getXPath());
 
         // Check if process is running. Init script does not support 'status'.
         $cmd = "ps --no-heading -C transmission-daemon";
         $this->exec($cmd, $output);
 
         return array(
-            "name" => $this->getName(),
-            "title" => gettext("BitTorrent"),
+            "name"    => $this->getName(),
+            "title"   => gettext("BitTorrent"),
             "enabled" => boolval($object['enable']),
             "running" => !empty($output[0])
         );

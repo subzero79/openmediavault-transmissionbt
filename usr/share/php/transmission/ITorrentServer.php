@@ -1,5 +1,7 @@
+<?php
+
 /**
- * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2014 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,13 +17,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// require("js/omv/WorkspaceManager.js")
-// require("js/omv/module/admin/service/transmissionbt/manage/TorrentList.js")
-
-OMV.WorkspaceManager.registerPanel({
-    id        : "manage",
-    path      : "/service/transmissionbt",
-    text      : _("Jobs"),
-    position  : 10,
-    className : "OMV.module.admin.service.transmissionbt.manage.TorrentList"
-});
+interface ITorrentServer
+{
+    public static function getDefaultServerAddress();
+    public function connect($url, $username, $password);
+    public function getTorrents();
+    public function add($location, $paused = false);
+    public function delete($torrent, $deleteLocalData);
+    public function pause($torrent);
+    public function resume($torrent);
+    public function queueMove($torrent, $action);
+}

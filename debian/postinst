@@ -23,14 +23,18 @@ case "$1" in
 		if ! omv_config_exists "/config/services/transmissionbt"; then
 			echo "Updating configuration"
 			object="<enable>0</enable>"
-			object="${object}<peerport>51413</peerport>"
-			object="${object}<portforwardingenabled>0</portforwardingenabled>"
-			object="${object}<sharedfolderref></sharedfolderref>"
 			object="${object}<pexenabled>1</pexenabled>"
 			object="${object}<dhtenabled>1</dhtenabled>"
+			object="${object}<lpd-enabled>0</lpd-enabled>"
+			object="${object}<utp-enabled>1</utp-enabled>"
 			object="${object}<encryption>1</encryption>"
-			object="${object}<rpcenabled>1</rpcenabled>"
+			object="${object}<message-level>2</message-level>"
+			object="${object}<lazy-bitfield-enabled>1</lazy-bitfield-enabled>"
+			object="${object}<scrape-paused-torrents-enabled>1</scrape-paused-torrents-enabled>"
+			object="${object}<umask>18</umask>"
+            object="${object}<cache-size-mb>4</cache-size-mb>"
 			object="${object}<rpcport>9091</rpcport>"
+            object="${object}<rpcurl>/transmission/</rpcurl>"
 			object="${object}<rpcauthenticationrequired>1</rpcauthenticationrequired>"
 			object="${object}<rpcusername>admin</rpcusername>"
 			object="${object}<rpcpassword>openmediavault</rpcpassword>"
@@ -38,6 +42,8 @@ case "$1" in
 			object="${object}<blocklistsyncenabled>0</blocklistsyncenabled>"
 			object="${object}<blocklistsyncfrequency>daily</blocklistsyncfrequency>"
 			object="${object}<blocklisturl>http://update.transmissionbt.com/level1.gz</blocklisturl>"
+            object="${object}<script-torrent-done-enabled>0</script-torrent-done-enabled>"
+            object="${object}<script-torrent-done-filename></script-torrent-done-filename>"			
 			omv_config_add_element "/config/services" "transmissionbt" "${object}" true
 		fi
 
@@ -104,26 +110,6 @@ case "$1" in
 			omv_config_add_element "/config/services/transmissionbt/modules" "peer" "${object}" true
 		fi
 
-		if ! omv_config_exists "/config/services/transmissionbt/lazy-bitfield-enabled"; then
-			omv_config_add_element "/config/services/transmissionbt" "lazy-bitfield-enabled" "1"
-		fi
-
-		if ! omv_config_exists "/config/services/transmissionbt/lpd-enabled"; then
-			omv_config_add_element "/config/services/transmissionbt" "lpd-enabled" "0"
-		fi
-
-		if ! omv_config_exists "/config/services/transmissionbt/scrape-paused-torrents-enabled"; then
-			omv_config_add_element "/config/services/transmissionbt" "scrape-paused-torrents-enabled" "1"
-		fi
-
-		if ! omv_config_exists "/config/services/transmissionbt/utp-enabled"; then
-			omv_config_add_element "/config/services/transmissionbt" "utp-enabled" "1"
-		fi
-
-		if ! omv_config_exists "/config/services/transmissionbt/message-level"; then
-			omv_config_add_element "/config/services/transmissionbt" "message-level" "2"
-		fi
-
 		if ! omv_config_exists "/config/services/transmissionbt/modules/scheduling"; then
 			echo "Updating configuration"
 			echo "# Add modules/scheduling section"
@@ -138,61 +124,37 @@ case "$1" in
 			omv_config_add_element "/config/services/transmissionbt/modules" "scheduling" "${object}" true
 		fi
 
-		if ! omv_config_exists "/config/services/transmissionbt/umask"; then
-			omv_config_add_element "/config/services/transmissionbt" "umask" "18"
-		fi
-
-		if omv_config_exists "/config/services/transmissionbt/rpcenabled"; then
-			omv_config_delete "/config/services/transmissionbt/rpcenabled"
-		fi
-
-		if ! omv_config_exists "/config/services/transmissionbt/rpcurl"; then
-			omv_config_add_element "/config/services/transmissionbt" "rpcurl" "/transmission/"
-		fi
-
-		if ! omv_config_exists "/config/services/transmissionbt/cache-size-mb"; then
-			omv_config_add_element "/config/services/transmissionbt" "cache-size-mb" "4"
-		fi
-
-		if ! omv_config_exists "/config/services/transmissionbt/script-torrent-done-enabled"; then
-			omv_config_add_element "/config/services/transmissionbt" "script-torrent-done-enabled" "0"
-		fi
-
-		if ! omv_config_exists "/config/services/transmissionbt/script-torrent-done-filename"; then
-			omv_config_add_element "/config/services/transmissionbt" "script-torrent-done-filename" ""
-		fi
-
 		if ! omv_config_exists "/config/services/transmissionbt/modules/filesandlocations/paths"; then
-    	echo "Updating configuration"
-    	echo "# Add filesandlocations/paths section"
-    	omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations" "paths" "" true
+    	   echo "Updating configuration"
+    	   echo "# Add filesandlocations/paths section"
+    	   omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations" "paths" "" true
 
-    	object=""
-    	echo "# Add filesandlocations/paths/download section"
-    	object="${object}<sharedfolderref/>"
-    	object="${object}<dir/>"
-    	omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations/paths" "download" "${object}" true
+    	   object=""
+    	   echo "# Add filesandlocations/paths/download section"
+    	   object="${object}<sharedfolderref/>"
+    	   object="${object}<dir/>"
+    	   omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations/paths" "download" "${object}" true
 
-    	object=""
-    	echo "# Add filesandlocations/paths/incomplete section"
-    	object="${object}<sharedfolderref/>"
-    	object="${object}<dir/>"
-    	object="${object}<enabled>0</enabled>"
-    	omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations/paths" "incomplete" "${object}" true
+    	   object=""
+    	   echo "# Add filesandlocations/paths/incomplete section"
+    	   object="${object}<sharedfolderref/>"
+    	   object="${object}<dir/>"
+    	   object="${object}<enabled>0</enabled>"
+    	   omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations/paths" "incomplete" "${object}" true
 
-    	object=""
-    	echo "# Add filesandlocations/paths/watch section"
-    	object="${object}<sharedfolderref/>"
-    	object="${object}<dir/>"
-    	object="${object}<enabled>0</enabled>"
-    	omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations/paths" "watch" "${object}" true
-    fi
+    	   object=""
+    	   echo "# Add filesandlocations/paths/watch section"
+    	   object="${object}<sharedfolderref/>"
+    	   object="${object}<dir/>"
+    	   object="${object}<enabled>0</enabled>"
+    	   omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations/paths" "watch" "${object}" true
+        fi
 
-    # Restart rsyslog
-    service rsyslog restart
-
-    echo "Add debian-transmission user to group: users"
-    usermod -G users debian-transmission
+        # Restart rsyslog
+        service rsyslog restart
+    
+        echo "Add debian-transmission user to group: users"
+        usermod -G users debian-transmission
 
 		echo "Write Config"
 		omv-mkconf transmissionbt 2>&1
