@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
- * Copyright (C)      2013 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 // require("js/omv/WorkspaceManager.js")
 // require("js/omv/workspace/window/Form.js")
 
-Ext.define("OMV.module.admin.service.transmissionbt.manage.dialog.Delete", {
+Ext.define("OMV.module.admin.service.transmissionbt.manage.window.DeleteTorrent", {
     extend : "OMV.workspace.window.Form",
 
     hideResetButton : true,
