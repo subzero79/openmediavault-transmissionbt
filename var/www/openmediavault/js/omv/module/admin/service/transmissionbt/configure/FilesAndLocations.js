@@ -35,7 +35,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.configure.FilesAndLocations"
         ptype          : "linkedfields",
         correlations   : [{
             name: [
-                "incomplete-sharedfolderref",
+                "incomplete.sharedfolderref",
                 "incomplete-dir"
             ],
             conditions : [{
@@ -48,7 +48,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.configure.FilesAndLocations"
             ]
         },{
             name       : [
-                "watch-sharedfolderref",
+                "watch.sharedfolderref",
                 "watch-dir"
             ],
             conditions : [{
@@ -77,7 +77,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.configure.FilesAndLocations"
                 },
                 items    : [{
                     xtype      : "sharedfoldercombo",
-                    name       : "download-sharedfolderref",
+                    name       : "download.sharedfolderref",
                     fieldLabel : _("Shared folder"),
                     plugins    : [{
                         ptype : "fieldinfo",
@@ -107,7 +107,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.configure.FilesAndLocations"
                     boxLabel   : _("Enable incomplete directory.")
                 },{
                     xtype      : "sharedfoldercombo",
-                    name       : "incomplete-sharedfolderref",
+                    name       : "incomplete.sharedfolderref",
                     fieldLabel : _("Shared folder"),
                     allowBlank : true,
                     plugins    : [{
@@ -139,7 +139,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.configure.FilesAndLocations"
                 },
                 {
                     xtype      :"sharedfoldercombo",
-                    name       :"watch-sharedfolderref",
+                    name       :"watch.sharedfolderref",
                     fieldLabel :_("Shared folder"),
                     allowBlank : true,
                     plugins    : [{

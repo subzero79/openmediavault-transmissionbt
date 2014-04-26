@@ -33,32 +33,32 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
     {
         return "//services/transmissionbt";
     }
-    
+
     public function getFilesAndLocationsXPath()
     {
         return sprintf("%s/modules/filesandlocations", $this->getXPath());
     }
-    
+
     public function getBandwidthXPath()
     {
         return sprintf("%s/modules/bandwidth", $this->getXPath());
     }
-    
+
     public function getQueuingXPath()
     {
         return sprintf("%s/modules/queuing", $this->getXPath());
     }
-    
+
     public function getPeerXPath()
     {
         return sprintf("%s/modules/peer", $this->getXPath());
     }
-    
+
     public function getSchedulingXPath()
     {
         return sprintf("%s/modules/scheduling", $this->getXPath());
     }
-    
+
     /**
      * Get the RPC service name
      */
@@ -84,7 +84,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         $this->registerMethod("setPeer");
         $this->registerMethod("getScheduling");
         $this->registerMethod("setScheduling");
-        
+
         // Torrent management functions
         $this->registerMethod("serverIsRunning");
         $this->registerMethod("getTorrentList");
@@ -263,16 +263,16 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Modify result data
         // Locations
-        $object["download-sharedfolderref"] = $object["paths"]["download"]["sharedfolderref"];
-        $object["download-dir"]             = $object["paths"]["download"]["dir"];
+        $object["download.sharedfolderref"] = $object["download.sharedfolderref"];
+        $object["download-dir"]             = $object["download-dir"];
 
-        $object["incomplete-dir-enabled"]     = boolval($object["paths"]["incomplete"]["enabled"]);
-        $object["incomplete-sharedfolderref"] = $object["paths"]["incomplete"]["sharedfolderref"];
-        $object["incomplete-dir"]             = $object["paths"]["incomplete"]["dir"];
+        $object["incomplete-dir-enabled"]     = boolval($object["incomplete-dir-enabled"]);
+        $object["incomplete.sharedfolderref"] = $object["incomplete.sharedfolderref"];
+        $object["incomplete-dir"]             = $object["incomplete-dir"];
 
         $object["watch-dir-enabled"]     = boolval($object["paths"]["watch"]["enabled"]);
-        $object["watch-sharedfolderref"] = $object["paths"]["watch"]["sharedfolderref"];
-        $object["watch-dir"]             = $object["paths"]["watch"]["dir"];
+        $object["watch.sharedfolderref"] = $object["watch.sharedfolderref"];
+        $object["watch-dir"]             = $object["watch-dir"];
 
         // Files
         $object["preallocation"]                = intval($object["preallocation"]);
@@ -301,13 +301,13 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         $this->validateMethodParams($params, '{
             "type"       : "object",
             "properties" : {
-                "download-sharedfolderref"     : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
+                "download.sharedfolderref"     : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
                 "download-dir"                 : { "type" : "string" },
                 "incomplete-dir-enabled"       : { "type" : "boolean" },
-                "incomplete-sharedfolderref"   : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
+                "incomplete.sharedfolderref"   : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
                 "incomplete-dir"               : { "type" : "string" },
                 "watch-dir-enabled"            : { "type" : "boolean" },
-                "watch-sharedfolderref"        : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
+                "watch.sharedfolderref"        : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
                 "watch-dir"                    : { "type" : "string" },
                 "preallocation"                : { "type" : "integer", "enum" : [ 0, 1, 2 ] },
                 "rename-partial-files"         : { "type" : "boolean" },
@@ -319,22 +319,14 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         // Prepare configuration data
         $object = array(
             // Locations
-            "paths" => array(
-                "download" => array(
-                    "sharedfolderref" => $params["download-sharedfolderref"],
-                    "dir"             => $params["download-dir"],
-                ),
-                "incomplete" => array(
-                    "enabled"         => array_boolval($params, "incomplete-dir-enabled"),
-                    "sharedfolderref" => $params["incomplete-sharedfolderref"],
-                    "dir"             => $params["incomplete-dir"],
-                ),
-                "watch" => array(
-                    "enabled"         => array_boolval($params, "watch-dir-enabled"),
-                    "sharedfolderref" => $params["watch-sharedfolderref"],
-                    "dir"             => $params["watch-dir"],
-                ),
-            ),
+            "download.sharedfolderref"   => $params["download.sharedfolderref"],
+            "download-dir"               => $params["download-dir"],
+            "incomplete-dir-enabled"     => array_boolval($params, "incomplete-dir-enabled"),
+            "incomplete.sharedfolderref" => $params["incomplete.sharedfolderref"],
+            "incomplete-dir"             => $params["incomplete-dir"],
+            "watch-dir-enabled"          => array_boolval($params, "watch-dir-enabled"),
+            "watch.sharedfolderref"      => $params["watch.sharedfolderref"],
+            "watch-dir"                  => $params["watch-dir"],
 
             // Files
             "preallocation"                => $params["preallocation"],
@@ -426,7 +418,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
             "speed-limit-up"           => $params["speed-limit-up"],
             "speed-limit-up-enabled"   => array_boolval($params, "speed-limit-up-enabled"),
             "upload-slots-per-torrent" => $params["upload-slots-per-torrent"],
-            
+
             // Turtle Mode
             "alt-speed-enabled" => array_boolval($params, "alt-speed-enabled"),
             "alt-speed-up"      => $params["alt-speed-up"],
@@ -738,7 +730,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         }');
 
         $params["alt-speed-time-day"] = 0;
-        
+
         if (array_boolval($params, "days-sunday") === true) {
             $params["alt-speed-time-day"] += 1;
         }
@@ -794,7 +786,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
     {
         $module = new OMVModuleTransmissionBT();
         $status = $module->getStatus();
-        
+
         return $status["running"];
     }
 
@@ -910,7 +902,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         }');
 
         $server = $this->torrentServerFactory();
-        
+
         $torrent = $params["id"];
         $deleteLocalData = array_boolval($params, "delete_local_data");
 
@@ -985,7 +977,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
                 break;
         }
     }
-    
+
     /**
      * Returns a ITorrentServer class instance
      *
@@ -1002,7 +994,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         $url = "http://localhost:" . $object["rpcport"] . $object["rpcurl"] . "rpc";
         $username;
         $password;
-        
+
         if (array_boolval($object, "rpcauthenticationrequired") === true) {
             $username = $object["rpcusername"];
             $password = $object["rpcpassword"];

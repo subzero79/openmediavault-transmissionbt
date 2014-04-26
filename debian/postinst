@@ -56,11 +56,14 @@ case "$1" in
         if ! omv_config_exists "//services/transmissionbt/modules/filesandlocations"; then
             echo "Updating configuration"
             echo "# Add modules/filesandlocations section"
-            object="<download-dir></download-dir>"
-            object="${object}<incomplete-dir>incomplete</incomplete-dir>"
+            object="<download.sharedfolderref></download.sharedfolderref>"
+            object="${object}<download-dir></download-dir>"
             object="${object}<incomplete-dir-enabled>0</incomplete-dir-enabled>"
-            object="${object}<watch-dir>watch</watch-dir>"
+            object="${object}<incomplete.sharedfolderref></incomplete.sharedfolderref>"
+            object="${object}<incomplete-dir>incomplete</incomplete-dir>"
             object="${object}<watch-dir-enabled>0</watch-dir-enabled>"
+            object="${object}<watch.sharedfolderref></watch.sharedfolderref>"
+            object="${object}<watch-dir>watch</watch-dir>"
             object="${object}<preallocation>1</preallocation>"
             object="${object}<rename-partial-files>1</rename-partial-files>"
             object="${object}<start-added-torrents>1</start-added-torrents>"
@@ -122,32 +125,6 @@ case "$1" in
             object="${object}<ratio-limit>2.0</ratio-limit>"
             object="${object}<ratio-limit-enabled>0</ratio-limit-enabled>"
             omv_config_add_element "/config/services/transmissionbt/modules" "scheduling" "${object}" true
-        fi
-
-        if ! omv_config_exists "/config/services/transmissionbt/modules/filesandlocations/paths"; then
-           echo "Updating configuration"
-           echo "# Add filesandlocations/paths section"
-           omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations" "paths" "" true
-
-           object=""
-           echo "# Add filesandlocations/paths/download section"
-           object="${object}<sharedfolderref/>"
-           object="${object}<dir/>"
-           omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations/paths" "download" "${object}" true
-
-           object=""
-           echo "# Add filesandlocations/paths/incomplete section"
-           object="${object}<sharedfolderref/>"
-           object="${object}<dir/>"
-           object="${object}<enabled>0</enabled>"
-           omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations/paths" "incomplete" "${object}" true
-
-           object=""
-           echo "# Add filesandlocations/paths/watch section"
-           object="${object}<sharedfolderref/>"
-           object="${object}<dir/>"
-           object="${object}<enabled>0</enabled>"
-           omv_config_add_element "/config/services/transmissionbt/modules/filesandlocations/paths" "watch" "${object}" true
         fi
 
         # Restart rsyslog
