@@ -1,8 +1,9 @@
-openmediavault-transmissionbt (1.0.0.1) UNRELEASED; urgency=low
+openmediavault-transmissionbt (1.0.0.1) unstable; urgency=low
 
   * Conform to OMV 0.6.0.6 trigger standards
+  * Make use of name.sharedfolderref in configuration 
 
- -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 16 Apr 2014 02:03:00 +0200
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 26 Apr 2014 16:50:16 +0200
 
 openmediavault-transmissionbt (1.0.0) unstable; urgency=medium
 
