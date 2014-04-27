@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013
+# Cyryl Sochacki <cyrylsochacki@gmail.com>, 2013-2014
+# qba111 <j.ratajczak@eqba.pl>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-14 11:49-0600\n"
-"PO-Revision-Date: 2013-11-20 11:34+0000\n"
+"PO-Revision-Date: 2014-01-30 10:08+0000\n"
 "Last-Translator: Cyryl Sochacki <cyrylsochacki@gmail.com>\n"
 "Language-Team: Polish (Poland) (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/pl_PL/)\n"
 "MIME-Version: 1.0\n"
@@ -34,13 +35,13 @@ msgid "Auto sync"
 msgstr "Automatyczne synchronizowanie"
 
 msgid "Bandwidth"
-msgstr ""
+msgstr "Pasmo"
 
 msgid "Begin"
 msgstr "Początek"
 
 msgid "Bindings"
-msgstr ""
+msgstr "Przypisania"
 
 msgid "BitTorrent"
 msgstr "BitTorrent"
@@ -52,13 +53,13 @@ msgid "Cache Size"
 msgstr "Rozmiar pamięci podręcznej"
 
 msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
-msgstr ""
+msgstr "Rozmiar pamięci cache (w Mb) w celu zmniejszenia liczby operacji zapisu/odczytu z dysku"
 
 msgid "Checking files"
 msgstr "Sprawdź pliki"
 
 msgid "DL-rate"
-msgstr ""
+msgstr "Pr. wys"
 
 msgid "Daily"
 msgstr "Dzienne"
@@ -102,13 +103,13 @@ msgstr "Katalogi"
 msgid ""
 "Directory to keep downloads. If incomplete is enabled, only complete "
 "downloads will be stored here."
-msgstr ""
+msgstr "Katalog przechowywania pobieranych plików. Jeżeli \"niekompletne\" jest włączone w tym katalogu przechowywane będą tylko zakończone pobierania."
 
 msgid "Directory to keep files in until torrent is complete."
-msgstr ""
+msgstr "Katalog do przechowywania plików do zakończenia pobierania torrenta."
 
 msgid "Distributed hash table (DHT)."
-msgstr ""
+msgstr "Rozproszona tablica mieszająca (DHT)."
 
 msgid "Done"
 msgstr "Udane"
@@ -231,7 +232,7 @@ msgid "Incomplete"
 msgstr "Niekompletny"
 
 msgid "Infinite"
-msgstr ""
+msgstr "Nieograniczony"
 
 msgid "Info"
 msgstr "Info"
@@ -243,7 +244,7 @@ msgid "Jobs"
 msgstr "Zadania"
 
 msgid "Lazy Bitfield"
-msgstr ""
+msgstr "Lazy Bitfield"
 
 msgid "Limit Download"
 msgstr "Limit pobierania"
@@ -272,19 +273,19 @@ msgid ""
 msgstr "Upewnij się że grupa 'debian-transmission' ma uprawnienia do czytania/zapisu udostępnionego katalogu."
 
 msgid "May help get around some ISP filtering."
-msgstr ""
+msgstr "Może pomóc ominąć niektóre filtry ISP."
 
 msgid "Message Level"
 msgstr "Poziom wiaomości"
 
 msgid "Micro Transport Protocol (&micro;TP)."
-msgstr ""
+msgstr "Micro Transport Protocol (&micro;TP)."
 
 msgid "Missing Status: "
 msgstr "Brak statusu:"
 
 msgid "Mode for preallocating files."
-msgstr ""
+msgstr "Metoda wstępnej alokacji plików."
 
 msgid "Monday"
 msgstr "Poniedziałek"
@@ -341,10 +342,10 @@ msgid "Port forwarding"
 msgstr "Przekierowanie portu"
 
 msgid "Port to listen for incoming peer connections."
-msgstr ""
+msgstr "Port nasłuchu dla połączeń przychodzących od peer'ów."
 
 msgid "Port to open and listen for RPC/Web requests on."
-msgstr ""
+msgstr "Port nasłuchu dla połączeń RPC/Web."
 
 msgid "Postfix"
 msgstr "Postfix"
@@ -353,7 +354,7 @@ msgid "Postfix partially downloaded files with .part."
 msgstr ""
 
 msgid "Preallocation"
-msgstr ""
+msgstr "Alokacja"
 
 msgid "Preferred"
 msgstr "Preferowane"
@@ -362,22 +363,22 @@ msgid "Queue"
 msgstr "Kolejka"
 
 msgid "Queue Move Bottom"
-msgstr ""
+msgstr "Kolejka - na koniec"
 
 msgid "Queue Move Down"
-msgstr ""
+msgstr "Kolejka - w dół"
 
 msgid "Queue Move Top"
-msgstr ""
+msgstr "Kolejka - na początek"
 
 msgid "Queue Move Up"
-msgstr ""
+msgstr "Kolejka - w górę"
 
 msgid "Queue Stalled"
-msgstr ""
+msgstr "Kolejka zablokowanych"
 
 msgid "Queue moving selcted item(s)"
-msgstr ""
+msgstr "Przenoszenie zaznaczonych pozycji"
 
 msgid "Queued to check files"
 msgstr "Kolejkuj do sprawdzenia plików"
@@ -389,7 +390,7 @@ msgid "Queued to seed"
 msgstr "Kolejkuj do wysyłania"
 
 msgid "Queuing"
-msgstr ""
+msgstr "Kolejkowanie"
 
 msgid "RPC/WebUI Settings"
 msgstr "Ustawienia RPC/WebUI"
@@ -416,7 +417,7 @@ msgid "Reload"
 msgstr "Przeładuj"
 
 msgid "Require clients to authenticate themselves."
-msgstr ""
+msgstr "Wymagaj uwierzytelnienia klientów."
 
 msgid "Resume"
 msgstr "Ponów"
@@ -458,10 +459,10 @@ msgid "Server"
 msgstr "Serwer"
 
 msgid "Set verbosity of transmission messages."
-msgstr ""
+msgstr "Ustaw poziom szczegółowości wiadomości."
 
 msgid "Sets transmission's file mode creation mask."
-msgstr ""
+msgstr "Podaj maskę dla plików tworzonych przez transmission."
 
 msgid "Settings"
 msgstr "Ustawienia"
@@ -473,13 +474,13 @@ msgid "Size"
 msgstr "Rozmiar"
 
 msgid "Socket TOS"
-msgstr ""
+msgstr "Ustawienia ToS"
 
 msgid "Speed"
 msgstr "Prędkość"
 
 msgid "Stalled Minutes"
-msgstr ""
+msgstr "Minut do blokady"
 
 msgid "Start Torrents"
 msgstr "Uruchom torrenty"
@@ -506,7 +507,7 @@ msgid "The URL of the blocklist."
 msgstr "Adres z listy blokowanych"
 
 msgid "The peer connection encryption mode."
-msgstr ""
+msgstr "Tryb szyfrowania peer'ów"
 
 msgid "Thursday"
 msgstr "Czwartek"
@@ -521,22 +522,22 @@ msgid ""
 "Torrents that have not shared data for queue-stalled-minutes are treated as "
 "'stalled' and are not counted against the queue-download-size and seed-"
 "queue-size limits."
-msgstr ""
+msgstr "Torrenty które nie wymieniały danych przez czas określony w tym polu są oznaczane jako 'zablokowane' i nie są zaliczane do kolejki pobierania i kolejki seed"
 
 msgid ""
 "Transmission will only download download-queue-size non-stalled torrents at "
 "once."
-msgstr ""
+msgstr "Transmission będzie pobierał jednocześnie tylko tyle plików (nie zablokowanych) ile ustalono w polu rozmiar."
 
 msgid ""
 "Transmission will only seed seed-queue-size non-stalled torrents at once."
-msgstr ""
+msgstr "Transmission będzie wysyłał jednocześnie tylko daną liczbę nie zablokowanych plików."
 
 msgid "Transmission will only seed until ratio limit is reached."
-msgstr ""
+msgstr "Transmission będzie seed'ował pliki tylko do osiągnięcia tego limitu."
 
 msgid "Trash original"
-msgstr ""
+msgstr "Kasuj oryginał"
 
 msgid "Tuesday"
 msgstr "Wtorek"
@@ -551,7 +552,7 @@ msgid "Turtle Mode upload speed. Value is kb/s."
 msgstr "Alternatywne ograniczenie szybkości wysyłania. Wartość w kb/s."
 
 msgid "UL-rate"
-msgstr ""
+msgstr "Pr. pob"
 
 msgid "URL"
 msgstr "URL"
@@ -608,13 +609,13 @@ msgid "default"
 msgstr "domyślny"
 
 msgid "lowcost"
-msgstr ""
+msgstr "niski koszt"
 
 msgid "lowdelay"
-msgstr ""
+msgstr "małe opóźnienie"
 
 msgid "reliability"
-msgstr ""
+msgstr "niezawodność"
 
 msgid "throughput"
-msgstr ""
+msgstr "przepustowość"

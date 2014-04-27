@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# alexdaums <daumas.alexandre@gmail.com>, 2014
 # SpaceBrain <spacebrain.damage@gmail.com>, 2013
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-14 11:49-0600\n"
-"PO-Revision-Date: 2013-11-20 11:34+0000\n"
-"Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
+"PO-Revision-Date: 2014-01-27 21:47+0000\n"
+"Last-Translator: alexdaums <daumas.alexandre@gmail.com>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,22 +20,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Add Torrent by URL"
-msgstr ""
+msgstr "Ajouter un Torrent via URL"
 
 msgid "Add URL"
-msgstr ""
+msgstr "Ajouter URL"
 
 msgid "Adding Torrent ..."
-msgstr ""
+msgstr "Ajouter un Torrent ..."
 
 msgid "Authentication"
-msgstr ""
+msgstr "Authentification"
 
 msgid "Auto sync"
 msgstr ""
 
 msgid "Bandwidth"
-msgstr ""
+msgstr "Bande Passante"
 
 msgid "Begin"
 msgstr ""
@@ -43,13 +44,13 @@ msgid "Bindings"
 msgstr ""
 
 msgid "BitTorrent"
-msgstr ""
+msgstr "BitTorrent"
 
 msgid "Blocklists"
 msgstr ""
 
 msgid "Cache Size"
-msgstr ""
+msgstr "Taille du Cache"
 
 msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
 msgstr ""
@@ -61,25 +62,25 @@ msgid "DL-rate"
 msgstr ""
 
 msgid "Daily"
-msgstr ""
+msgstr "Journalier"
 
 msgid "Date & Time"
 msgstr ""
 
 msgid "Date added"
-msgstr ""
+msgstr "Date d'ajout"
 
 msgid "Date done"
-msgstr ""
+msgstr "Date de fin"
 
 msgid "Days"
-msgstr ""
+msgstr "Jours"
 
 msgid "Debug"
 msgstr ""
 
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 msgid "Delete Local Data"
 msgstr ""
@@ -97,7 +98,7 @@ msgid "Deleting torrent ..."
 msgstr ""
 
 msgid "Directory"
-msgstr ""
+msgstr "Dossier"
 
 msgid ""
 "Directory to keep downloads. If incomplete is enabled, only complete "
@@ -111,7 +112,7 @@ msgid "Distributed hash table (DHT)."
 msgstr ""
 
 msgid "Done"
-msgstr ""
+msgstr "Terminé"
 
 msgid "Download"
 msgstr ""
@@ -123,10 +124,10 @@ msgid "Downloading"
 msgstr ""
 
 msgid "ETA"
-msgstr ""
+msgstr "ETA"
 
 msgid "Enable"
-msgstr ""
+msgstr "Activé"
 
 msgid "Enable &micro;TP."
 msgstr ""
@@ -162,25 +163,25 @@ msgid "Enable upload limit."
 msgstr ""
 
 msgid "Encryption"
-msgstr ""
+msgstr "Cryptage"
 
 msgid "End"
-msgstr ""
+msgstr "Fin"
 
 msgid "Enter path to script."
 msgstr ""
 
 msgid "Error"
-msgstr ""
+msgstr "Erreur"
 
 msgid "Event"
 msgstr ""
 
 msgid "Fast"
-msgstr ""
+msgstr "Rapide"
 
 msgid "Files"
-msgstr ""
+msgstr "Fichiers"
 
 msgid "Files and locations"
 msgstr ""
@@ -189,19 +190,19 @@ msgid "Forced"
 msgstr ""
 
 msgid "Friday"
-msgstr ""
+msgstr "Vendredi"
 
 msgid "Full"
-msgstr ""
+msgstr "Plein"
 
 msgid "General"
-msgstr ""
+msgstr "Général"
 
 msgid "General settings"
-msgstr ""
+msgstr "Réglages Généraux"
 
 msgid "Global"
-msgstr ""
+msgstr "Global"
 
 msgid "Hourly"
 msgstr ""
@@ -228,16 +229,16 @@ msgid "Idle Minutes"
 msgstr ""
 
 msgid "Incomplete"
-msgstr ""
+msgstr "Incomplet"
 
 msgid "Infinite"
 msgstr ""
 
 msgid "Info"
-msgstr ""
+msgstr "info"
 
 msgid "Invalid Uri."
-msgstr ""
+msgstr "Uri. Invalide"
 
 msgid "Jobs"
 msgstr ""
@@ -605,7 +606,7 @@ msgid "When enabled, this will toggle the Turtle Mode."
 msgstr ""
 
 msgid "default"
-msgstr ""
+msgstr "Défaut"
 
 msgid "lowcost"
 msgstr ""

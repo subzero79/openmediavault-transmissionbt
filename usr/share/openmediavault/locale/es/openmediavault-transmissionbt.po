@@ -3,43 +3,44 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Raul Fernandez Garcia <raulfg3@gmail.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-14 11:49-0600\n"
-"PO-Revision-Date: 2013-11-20 11:34+0000\n"
-"Last-Translator: ryecoaaron <aaron27@ryecoinc.com>\n"
-"Language-Team: English (United States) (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/en_US/)\n"
+"PO-Revision-Date: 2014-01-28 08:35+0000\n"
+"Last-Translator: Raul Fernandez Garcia <raulfg3@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: en_US\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add Torrent by URL"
-msgstr "Add Torrent by URL"
+msgstr "Añadir Torrent URL"
 
 msgid "Add URL"
-msgstr "Add URL"
+msgstr "Añadir URL"
 
 msgid "Adding Torrent ..."
-msgstr "Adding Torrent ..."
+msgstr "Añadiendo torrent ..."
 
 msgid "Authentication"
-msgstr "Authentication"
+msgstr "Autentificación"
 
 msgid "Auto sync"
-msgstr "Auto sync"
+msgstr "Sync Automático"
 
 msgid "Bandwidth"
-msgstr "Bandwidth"
+msgstr "Ancho de Banda"
 
 msgid "Begin"
-msgstr "Begin"
+msgstr "Inicio"
 
 msgid "Bindings"
-msgstr "Bindings"
+msgstr "Vinculaciones"
 
 msgid "BitTorrent"
 msgstr "BitTorrent"
@@ -48,162 +49,162 @@ msgid "Blocklists"
 msgstr "Blocklists"
 
 msgid "Cache Size"
-msgstr "Cache Size"
+msgstr "Tamaño de la Cache"
 
 msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
-msgstr "Cache size (in Mb) to reduce the number of disk reads and writes."
+msgstr "Tamaño de la cache (en Mb) para reducir el número de lecturas / escrituras en disco."
 
 msgid "Checking files"
-msgstr "Checking files"
+msgstr "Revisando archivos"
 
 msgid "DL-rate"
-msgstr "DL-rate"
+msgstr "Tasa de descarga"
 
 msgid "Daily"
-msgstr "Daily"
+msgstr "Diario"
 
 msgid "Date & Time"
-msgstr "Date & Time"
+msgstr "Fecha y Hora"
 
 msgid "Date added"
-msgstr "Date added"
+msgstr "Fecha en la que se añadio"
 
 msgid "Date done"
-msgstr "Date done"
+msgstr "Fecha y hora realizado"
 
 msgid "Days"
-msgstr "Days"
+msgstr "Dias"
 
 msgid "Debug"
-msgstr "Debug"
+msgstr "Depurar"
 
 msgid "Delete"
-msgstr "Delete"
+msgstr "Borrar"
 
 msgid "Delete Local Data"
-msgstr "Delete Local Data"
+msgstr "Borrar datos locales"
 
 msgid "Delete torrent"
-msgstr "Delete torrent"
+msgstr "Borrar torrent"
 
 msgid "Delete torrents added from the watch directory."
-msgstr "Delete torrents added from the watch directory."
+msgstr "Borrar torrent añadidos en la carpeta watch."
 
 msgid "Deleting selected item(s)"
-msgstr "Deleting selected item(s)"
+msgstr "Borrando los elementos seleccionado(s)"
 
 msgid "Deleting torrent ..."
-msgstr "Deleting torrent ..."
+msgstr "Borrando torrent ..."
 
 msgid "Directory"
-msgstr "Directory"
+msgstr "Directorio"
 
 msgid ""
 "Directory to keep downloads. If incomplete is enabled, only complete "
 "downloads will be stored here."
-msgstr "Directory to keep downloads. If incomplete is enabled, only complete downloads will be stored here."
+msgstr "Carpeta donde se almacenan las descargas. Si se habilita Incompleto, Solamente los torrents completamente descargados se almacenarán."
 
 msgid "Directory to keep files in until torrent is complete."
-msgstr "Directory to keep files in until torrent is complete."
+msgstr "Carpeta donde mantener los archivos hasta que la descarga sea completa."
 
 msgid "Distributed hash table (DHT)."
 msgstr "Distributed hash table (DHT)."
 
 msgid "Done"
-msgstr "Done"
+msgstr "Hecho"
 
 msgid "Download"
-msgstr "Download"
+msgstr "Descarga"
 
 msgid "Download Queue"
-msgstr "Download Queue"
+msgstr "Cola de descarga"
 
 msgid "Downloading"
-msgstr "Downloading"
+msgstr "Descargando"
 
 msgid "ETA"
 msgstr "ETA"
 
 msgid "Enable"
-msgstr "Enable"
+msgstr "Habilitar"
 
 msgid "Enable &micro;TP."
-msgstr "Enable &micro;TP."
+msgstr "Activar &micro;TP."
 
 msgid "Enable DHT."
-msgstr "Enable DHT."
+msgstr "Habilitar DHT"
 
 msgid "Enable LPD."
-msgstr "Enable LPD."
+msgstr "Habilitar LPD."
 
 msgid "Enable PEX."
-msgstr "Enable PEX."
+msgstr "Habilitar PEX."
 
 msgid "Enable Turtle Mode."
-msgstr "Enable Turtle Mode."
+msgstr "Habilitar modo tortuga"
 
 msgid "Enable Watch directory."
-msgstr "Enable Watch directory."
+msgstr "Habilitar directorio watch."
 
 msgid "Enable download limit."
-msgstr "Enable download limit."
+msgstr "Habilitar limite de descargas"
 
 msgid "Enable incomplete directory."
-msgstr "Enable incomplete directory."
+msgstr "Habilitar carpeta para incompletos"
 
 msgid "Enable paused torrent scraping."
-msgstr "Enable paused torrent scraping."
+msgstr "Activar espabilar Torrents pausados."
 
 msgid "Enable port forwarding via NAT-PMP or UPnP."
-msgstr "Enable port forwarding via NAT-PMP or UPnP."
+msgstr "Habilitar mapeado de puertos via NAT-PMP o UPnP."
 
 msgid "Enable upload limit."
-msgstr "Enable upload limit."
+msgstr "Habilitar limite de subida."
 
 msgid "Encryption"
-msgstr "Encryption"
+msgstr "Encriptación"
 
 msgid "End"
-msgstr "End"
+msgstr "Fin"
 
 msgid "Enter path to script."
-msgstr "Enter path to script."
+msgstr "Introduzca ruta al script."
 
 msgid "Error"
 msgstr "Error"
 
 msgid "Event"
-msgstr "Event"
+msgstr "Evento"
 
 msgid "Fast"
-msgstr "Fast"
+msgstr "Rapido"
 
 msgid "Files"
-msgstr "Files"
+msgstr "Archivos"
 
 msgid "Files and locations"
-msgstr "Files and locations"
+msgstr "Archivos y rutas"
 
 msgid "Forced"
-msgstr "Forced"
+msgstr "Forzado"
 
 msgid "Friday"
-msgstr "Friday"
+msgstr "Viernes"
 
 msgid "Full"
-msgstr "Full"
+msgstr "Completo"
 
 msgid "General"
 msgstr "General"
 
 msgid "General settings"
-msgstr "General settings"
+msgstr "Opciones"
 
 msgid "Global"
 msgstr "Global"
 
 msgid "Hourly"
-msgstr "Hourly"
+msgstr "Cada hora"
 
 msgid "ID"
 msgstr "ID"
@@ -212,93 +213,93 @@ msgid "IPv4"
 msgstr "IPv4"
 
 msgid "IPv4 address to listen on. Use 0.0.0.0 for all host IPs."
-msgstr "IPv4 address to listen on. Use 0.0.0.0 for all host IPs."
+msgstr "Dirección de escucha IPv4. usar 0.0.0.0 para todas las IP posibles."
 
 msgid "IPv6"
 msgstr "IPv6"
 
 msgid "IPv6 address to listen on. Use :: for all host IPs."
-msgstr "IPv6 address to listen on. Use :: for all host IPs."
+msgstr "Dirección de escucha IPv6. usar :: para todas las IP posibles."
 
 msgid "Idle"
-msgstr "Idle"
+msgstr "Ocioso"
 
 msgid "Idle Minutes"
-msgstr "Idle Minutes"
+msgstr "Minutos ocioso"
 
 msgid "Incomplete"
-msgstr "Incomplete"
+msgstr "Incompleto"
 
 msgid "Infinite"
-msgstr "Infinite"
+msgstr "Infinito"
 
 msgid "Info"
 msgstr "Info"
 
 msgid "Invalid Uri."
-msgstr "Invalid Uri."
+msgstr "Uri inválida."
 
 msgid "Jobs"
-msgstr "Jobs"
+msgstr "Trabajos"
 
 msgid "Lazy Bitfield"
 msgstr "Lazy Bitfield"
 
 msgid "Limit Download"
-msgstr "Limit Download"
+msgstr "Limite de descaga"
 
 msgid "Limit Upload"
-msgstr "Limit Upload"
+msgstr "Limite de subida"
 
 msgid "Limit download speed. Value is kb/s."
-msgstr "Limit download speed. Value is kb/s."
+msgstr "Limitar la velocidad de descarga. El valor es en kb/s."
 
 msgid "Limit upload speed. Value is kb/s."
-msgstr "Limit upload speed. Value is kb/s."
+msgstr "Limitar la velocidad de subida. El valor es en kb/s"
 
 msgid "Limits"
-msgstr "Limits"
+msgstr "Limites"
 
 msgid "Local Peer Discovery (LPD)."
 msgstr "Local Peer Discovery (LPD)."
 
 msgid "Locations"
-msgstr "Locations"
+msgstr "Ubicaciones"
 
 msgid ""
 "Make sure the group 'debian-transmission' has read/write access to the "
 "shared folder."
-msgstr "Make sure the group 'debian-transmission' has read/write access to the shared folder."
+msgstr "Asegurese de que el grupo 'debian-transmission' tiene permisos de lectura/escritura en la carpeta compartida."
 
 msgid "May help get around some ISP filtering."
-msgstr "May help get around some ISP filtering."
+msgstr "Puede ayudar a engañar a algún filtro de ISP"
 
 msgid "Message Level"
-msgstr "Message Level"
+msgstr "Nivel de mensajes"
 
 msgid "Micro Transport Protocol (&micro;TP)."
 msgstr "Micro Transport Protocol (&micro;TP)."
 
 msgid "Missing Status: "
-msgstr "Missing Status: "
+msgstr "Estado:"
 
 msgid "Mode for preallocating files."
-msgstr "Mode for preallocating files."
+msgstr "Modelo de pre-ubicación de archivos."
 
 msgid "Monday"
-msgstr "Monday"
+msgstr "Lunes"
 
 msgid "Monthly"
-msgstr "Monthly"
+msgstr "mensualmente"
 
 msgid "Name"
-msgstr "Name"
+msgstr "Nombre"
 
 msgid "None"
-msgstr "None"
+msgstr "Ninguno"
 
 msgid "Not available"
-msgstr "Not available"
+msgstr "No disponible"
 
 msgid "OK"
 msgstr "OK"
@@ -307,250 +308,250 @@ msgid "Off"
 msgstr "Off"
 
 msgid "Password"
-msgstr "Password"
+msgstr "Contraseña"
 
 msgid "Pause"
-msgstr "Pause"
+msgstr "Pausa"
 
 msgid "Pausing selected item(s)"
-msgstr "Pausing selected item(s)"
+msgstr "Pausando los elementos seleccionado(s)"
 
 msgid "Peer"
 msgstr "Peer"
 
 msgid "Peer Ports"
-msgstr "Peer Ports"
+msgstr "Puertos Peer"
 
 msgid "Peer exchange (PEX)"
 msgstr "Peer exchange (PEX)"
 
 msgid "Peer port"
-msgstr "Peer port"
+msgstr "Puerto Peer"
 
 msgid "Peers"
 msgstr "Peers"
 
 msgid "Per torrent"
-msgstr "Per torrent"
+msgstr "Por Torrent"
 
 msgid "Port"
-msgstr "Port"
+msgstr "Puerto"
 
 msgid "Port forwarding"
-msgstr "Port forwarding"
+msgstr "Reenvio de puertos"
 
 msgid "Port to listen for incoming peer connections."
-msgstr "Port to listen for incoming peer connections."
+msgstr "Puerto de escucha para conexiones entrantes."
 
 msgid "Port to open and listen for RPC/Web requests on."
-msgstr "Port to open and listen for RPC/Web requests on."
+msgstr "Puerto abierto de escucha de peticiones RPC/Web."
 
 msgid "Postfix"
-msgstr "Postfix"
+msgstr "Postfijo"
 
 msgid "Postfix partially downloaded files with .part."
-msgstr "Postfix partially downloaded files with .part."
+msgstr "Añadir .part a los archivos parcialmente descargados."
 
 msgid "Preallocation"
-msgstr "Preallocation"
+msgstr "Pre-ubicación"
 
 msgid "Preferred"
-msgstr "Preferred"
+msgstr "Preferido"
 
 msgid "Queue"
-msgstr "Queue"
+msgstr "Cola"
 
 msgid "Queue Move Bottom"
-msgstr "Queue Move Bottom"
+msgstr "Mover al ultimo puesto de la cola"
 
 msgid "Queue Move Down"
-msgstr "Queue Move Down"
+msgstr "Mover hacia abajo en la cola"
 
 msgid "Queue Move Top"
-msgstr "Queue Move Top"
+msgstr "Mover al primer puesto de la cola"
 
 msgid "Queue Move Up"
-msgstr "Queue Move Up"
+msgstr "Mover hacia arriba en la cola"
 
 msgid "Queue Stalled"
-msgstr "Queue Stalled"
+msgstr "Cola estancada"
 
 msgid "Queue moving selcted item(s)"
-msgstr "Queue moving selcted item(s)"
+msgstr "Moviendo en la cola los torrent seleccionado(s)"
 
 msgid "Queued to check files"
-msgstr "Queued to check files"
+msgstr "Cola de archivos a revisar"
 
 msgid "Queued to download"
-msgstr "Queued to download"
+msgstr "Cola de descargas"
 
 msgid "Queued to seed"
-msgstr "Queued to seed"
+msgstr "Cola de semillas"
 
 msgid "Queuing"
-msgstr "Queuing"
+msgstr "Encolado"
 
 msgid "RPC/WebUI Settings"
-msgstr "RPC/WebUI Settings"
+msgstr "Opciones RPC/WebUI"
 
 msgid "Random Port"
-msgstr "Random Port"
+msgstr "Puerto aleatorio"
 
 msgid "Random Port on start."
-msgstr "Random Port on start."
+msgstr "Puerto aleatorio al arrancar."
 
 msgid "Random high"
-msgstr "Random high"
+msgstr "Aleatorio Alto"
 
 msgid "Random low"
-msgstr "Random low"
+msgstr "Aleatorio Bajo"
 
 msgid "Ratio"
-msgstr "Ratio"
+msgstr "Relacción"
 
 msgid "Ratio Limit"
-msgstr "Ratio Limit"
+msgstr "Relacción Limite"
 
 msgid "Reload"
-msgstr "Reload"
+msgstr "Recarga"
 
 msgid "Require clients to authenticate themselves."
-msgstr "Require clients to authenticate themselves."
+msgstr "Se requiere que los clientes se autentifiquen ellos mismos."
 
 msgid "Resume"
-msgstr "Resume"
+msgstr "Reanudar"
 
 msgid "Resuming selected item(s)"
-msgstr "Resuming selected item(s)"
+msgstr "Reanudando seleccionado(s)"
 
 msgid "Run a script at torrent completion."
-msgstr "Run a script at torrent completion."
+msgstr "Ejecutar un scrip cuando se complete la descarga."
 
 msgid "Saturday"
-msgstr "Saturday"
+msgstr "Sábado"
 
 msgid "Scheduling"
-msgstr "Scheduling"
+msgstr "Programación"
 
 msgid "Scrape paused torrents."
-msgstr "Scrape paused torrents."
+msgstr "Espabilar Torrents pausados"
 
 msgid "Script"
 msgstr "Script"
 
 msgid "Script to Proccess After Torrent Finishes"
-msgstr "Script to Proccess After Torrent Finishes"
+msgstr "Script a ejecutar cuando un torrent acaba de descargarse"
 
 msgid "Seed"
-msgstr "Seed"
+msgstr "Semilla"
 
 msgid "Seed Queue"
-msgstr "Seed Queue"
+msgstr "Cola de semilas"
 
 msgid "Seeding"
-msgstr "Seeding"
+msgstr "Semillando"
 
 msgid "Seeding Limit"
-msgstr "Seeding Limit"
+msgstr "Limite de semillado"
 
 msgid "Server"
-msgstr "Server"
+msgstr "Servidor"
 
 msgid "Set verbosity of transmission messages."
-msgstr "Set verbosity of transmission messages."
+msgstr "Establecer el nivel de respuesta de los mensajes."
 
 msgid "Sets transmission's file mode creation mask."
-msgstr "Sets transmission's file mode creation mask."
+msgstr "Establecer la mascara de creacción de archivos."
 
 msgid "Settings"
-msgstr "Settings"
+msgstr "Opciones"
 
 msgid "Shared folder"
-msgstr "Shared folder"
+msgstr "Carpeta compartida"
 
 msgid "Size"
-msgstr "Size"
+msgstr "Tamaño"
 
 msgid "Socket TOS"
 msgstr "Socket TOS"
 
 msgid "Speed"
-msgstr "Speed"
+msgstr "Velocidad"
 
 msgid "Stalled Minutes"
-msgstr "Stalled Minutes"
+msgstr "Minutos estancados"
 
 msgid "Start Torrents"
-msgstr "Start Torrents"
+msgstr "Comenzar Torrents"
 
 msgid "Start download"
-msgstr "Start download"
+msgstr "Comenzar descarga"
 
 msgid "Start torrents as soon as they are added."
-msgstr "Start torrents as soon as they are added."
+msgstr "Comenzar descarga tan pronto sean añadidos los Torrents."
 
 msgid "Status"
-msgstr "Status"
+msgstr "Estado"
 
 msgid "Stop seeding after being idle for N minutes."
-msgstr "Stop seeding after being idle for N minutes."
+msgstr "Dejar de semillar cuando se esté inactivo por más de N minutos"
 
 msgid "Sunday"
-msgstr "Sunday"
+msgstr "Domingo"
 
 msgid "Sync frequency"
-msgstr "Sync frequency"
+msgstr "Frecuencia de Sync"
 
 msgid "The URL of the blocklist."
-msgstr "The URL of the blocklist."
+msgstr "URL de la Lista Negra"
 
 msgid "The peer connection encryption mode."
-msgstr "The peer connection encryption mode."
+msgstr "Modo de encriptado de la conexión."
 
 msgid "Thursday"
-msgstr "Thursday"
+msgstr "Jueves"
 
 msgid "Time"
-msgstr "Time"
+msgstr "Hora"
 
 msgid "Torrent is stopped"
-msgstr "Torrent is stopped"
+msgstr "El Torrent está detenido"
 
 msgid ""
 "Torrents that have not shared data for queue-stalled-minutes are treated as "
 "'stalled' and are not counted against the queue-download-size and seed-"
 "queue-size limits."
-msgstr "Torrents that have not shared data for queue-stalled-minutes are treated as 'stalled' and are not counted against the queue-download-size and seed-queue-size limits."
+msgstr "Los torrent que no hayan compartido datos por un tiempo, serán definidos como 'estancados' y no serán tenidos en cuenta en la cola de descarga o en los limites de la cola de semillado."
 
 msgid ""
 "Transmission will only download download-queue-size non-stalled torrents at "
 "once."
-msgstr "Transmission will only download download-queue-size non-stalled torrents at once."
+msgstr "Transmission solo descargará torrents a la vez si no están estancados."
 
 msgid ""
 "Transmission will only seed seed-queue-size non-stalled torrents at once."
-msgstr "Transmission will only seed seed-queue-size non-stalled torrents at once."
+msgstr "Transmission solo semillará a la vez aquellos torrents que no esten estancados."
 
 msgid "Transmission will only seed until ratio limit is reached."
-msgstr "Transmission will only seed until ratio limit is reached."
+msgstr "Transmission solo semillará hasta alcanzar el limite establecido."
 
 msgid "Trash original"
-msgstr "Trash original"
+msgstr "Borrar original"
 
 msgid "Tuesday"
-msgstr "Tuesday"
+msgstr "Martes"
 
 msgid "Turtle Mode"
-msgstr "Turtle Mode"
+msgstr "Modo Tortuga"
 
 msgid "Turtle Mode download speed. Value is kb/s."
-msgstr "Turtle Mode download speed. Value is kb/s."
+msgstr "Velocidad de descarga en modo tortuga. el valor es en kb/s"
 
 msgid "Turtle Mode upload speed. Value is kb/s."
-msgstr "Turtle Mode upload speed. Value is kb/s."
+msgstr "Velocidad de subida en modo tortuga. el valor es en kb/s"
 
 msgid "UL-rate"
-msgstr "UL-rate"
+msgstr "Subida"
 
 msgid "URL"
 msgstr "URL"
@@ -559,61 +560,61 @@ msgid "Umask"
 msgstr "Umask"
 
 msgid "Unknown"
-msgstr "Unknown"
+msgstr "Desconocido"
 
 msgid "Update blocklists automatically."
-msgstr "Update blocklists automatically."
+msgstr "Actualizar la Lista Negra automáticamente."
 
 msgid "Upload"
-msgstr "Upload"
+msgstr "Subida"
 
 msgid "Upload slots"
-msgstr "Upload slots"
+msgstr "Slot de Subida"
 
 msgid "Upload torrent"
-msgstr "Upload torrent"
+msgstr "Subir Torrent"
 
 msgid "Uri"
 msgstr "Uri"
 
 msgid "Url to access RPC (http://localhost/&lt;URI&gt;/(rpc|web)."
-msgstr "Url to access RPC (http://localhost/&lt;URI&gt;/(rpc|web)."
+msgstr "Url para acceso RPC (http://localhost/&lt;URI&gt;/(rpc|web)."
 
 msgid "Use blocklists."
-msgstr "Use blocklists."
+msgstr "Usar Lista Negra"
 
 msgid "Used for client authentication."
-msgstr "Used for client authentication."
+msgstr "Usado para la autentificación de clientes."
 
 msgid "Username"
-msgstr "Username"
+msgstr "Nombre de usuario"
 
 msgid "Watch"
-msgstr "Watch"
+msgstr "Vigilar"
 
 msgid "Watch a directory for torrent files and add them to transmission"
-msgstr "Watch a directory for torrent files and add them to transmission"
+msgstr "Carpeta a vigilar, si se añade un torrent, será añadido a Transmission"
 
 msgid "Wednesday"
-msgstr "Wednesday"
+msgstr "Miercoles"
 
 msgid "Weekly"
-msgstr "Weekly"
+msgstr "Semanalmente"
 
 msgid "When enabled, this will toggle the Turtle Mode."
-msgstr "When enabled, this will toggle the Turtle Mode."
+msgstr "Cuando se active, se cambiará a modo tortuga."
 
 msgid "default"
-msgstr "default"
+msgstr "defecto"
 
 msgid "lowcost"
-msgstr "lowcost"
+msgstr "Bajo coste"
 
 msgid "lowdelay"
-msgstr "lowdelay"
+msgstr "Bajo retraso"
 
 msgid "reliability"
-msgstr "reliability"
+msgstr "Fiabilidad"
 
 msgid "throughput"
-msgstr "throughput"
+msgstr "Rendimiento"
