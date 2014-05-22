@@ -20,6 +20,7 @@
 
 Ext.define("OMV.module.admin.diagnostic.log.plugin.TransmissionBT", {
     extend : "OMV.module.admin.diagnostic.log.plugin.Plugin",
+    alias  : "omv.plugin.diagnostic.log.transmissionbt",
 
     id       : "transmissionbt",
     text     : _("BitTorrent"),
@@ -56,10 +57,4 @@ Ext.define("OMV.module.admin.diagnostic.log.plugin.TransmissionBT", {
         name : "event",
         type : "string"
     }]
-});
-
-OMV.PluginManager.register({
-    ptype     : "diagnostic",
-    id        : "log",
-    className : "OMV.module.admin.diagnostic.log.plugin.TransmissionBT"
 });
