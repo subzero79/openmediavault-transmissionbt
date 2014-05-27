@@ -112,9 +112,12 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Get configuration object
         $object = $xmlConfig->get($this->getXPath());
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
-                $this->getXPath());
+        if (is_null($object)) {
+            throw new OMVException(
+                OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
+                $this->getXPath()
+            );
+        }
 
         // Modify result object
         $object["enable"]                         = boolval($object["enable"]);
@@ -156,52 +159,55 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "enable"                         : { "type" : "boolean"},
-                "encryption"                     : { "type" : "integer", "enum": [ 0, 1, 2 ] },
-                "message-level"                  : { "type" : "integer", "enum" :[ 0, 1, 2, 3 ] },
-                "lazy-bitfield-enabled"          : { "type" : "boolean" },
-                "scrape-paused-torrents-enabled" : { "type" : "boolean" },
-                "umask"                          : { "type" : "integer" },
-                "cache-size-mb"                  : { "type" : "integer" },
-                "rpcport"                        : { "type" : "integer", "minimum" : 1024, "maximum" : 65535 },
-                "rpcurl"                         : { "type" : "string", "format" : "regex", "pattern" : "/^[a-z0-9]+$/i" },
-                "rpcauthenticationrequired"      : { "type" : "boolean" },
-                "rpcusername"                    : { "type" : "string" },
-                "rpcpassword"                    : { "type" : "string" },
-                "blocklistsyncfrequency"         : { "type" : "string", "enum" : [ "hourly", "daily", "weekly", "monthly" ] },
-                "blocklisturl"                   : { "type" : "string" },
-                "script-torrent-done-filename"   : { "type" : "string" },
-                "pexenabled"                     : { "type" : "boolean" },
-                "dhtenabled"                     : { "type" : "boolean" },
-                "lpd-enabled"                    : { "type" : "boolean" },
-                "utp-enabled"                    : { "type" : "boolean" },
-                "blocklistenabled"               : { "type" : "boolean" },
-                "blocklistsyncenabled"           : { "type" : "boolean" },
-                "script-torrent-done-enabled"    : { "type" : "boolean" }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "enable"                         : { "type" : "boolean"},
+                    "encryption"                     : { "type" : "integer", "enum": [ 0, 1, 2 ] },
+                    "message-level"                  : { "type" : "integer", "enum" :[ 0, 1, 2, 3 ] },
+                    "lazy-bitfield-enabled"          : { "type" : "boolean" },
+                    "scrape-paused-torrents-enabled" : { "type" : "boolean" },
+                    "umask"                          : { "type" : "integer" },
+                    "cache-size-mb"                  : { "type" : "integer" },
+                    "rpcport"                        : { "type" : "integer", "minimum" : 1024, "maximum" : 65535 },
+                    "rpcurl"                         : { "type" : "string", "format" : "regex", "pattern" : "/^[a-z0-9]+$/i" },
+                    "rpcauthenticationrequired"      : { "type" : "boolean" },
+                    "rpcusername"                    : { "type" : "string" },
+                    "rpcpassword"                    : { "type" : "string" },
+                    "blocklistsyncfrequency"         : { "type" : "string", "enum" : [ "hourly", "daily", "weekly", "monthly" ] },
+                    "blocklisturl"                   : { "type" : "string" },
+                    "script-torrent-done-filename"   : { "type" : "string" },
+                    "pexenabled"                     : { "type" : "boolean" },
+                    "dhtenabled"                     : { "type" : "boolean" },
+                    "lpd-enabled"                    : { "type" : "boolean" },
+                    "utp-enabled"                    : { "type" : "boolean" },
+                    "blocklistenabled"               : { "type" : "boolean" },
+                    "blocklistsyncenabled"           : { "type" : "boolean" },
+                    "script-torrent-done-enabled"    : { "type" : "boolean" }
+                }
+            }'
+        );
 
         // Get existing configuration object
         $oldObject = $xmlConfig->get($this->getXPath());
 
-        if (is_null($oldObject))
+        if (is_null($oldObject)) {
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $this->getXPath());
+        }
 
         // If no directory for downloads is set
         // and the user is trying to enable the
         // service, abort the save.
         $downloadFolderRef = $oldObject["modules"]
                                        ["filesandlocations"]
-                                       ["paths"]
-                                       ["download"]
-                                       ["sharedfolderref"];
+                                       ["download.sharedfolderref"];
         $msg = "No directory for downloads set, please set one before enabling the service";
 
-        if ($params["enable"] === true && empty($downloadFolderRef))
+        if ($params["enable"] === true && empty($downloadFolderRef)) {
             throw new OMVException(OMVErrorMsg::E_CONFIG_SAVE_FAILED, $msg);
+        }
 
         // Prepare configuration data
         $object = array(
@@ -231,8 +237,9 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         );
 
         // Set configuration object
-        if ($xmlConfig->replace($this->getXPath(), $object) === false)
+        if ($xmlConfig->replace($this->getXPath(), $object) === false) {
             throw new OMVException(OMVErrorMsg::E_CONFIG_SET_OBJECT_FAILED);
+        }
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
@@ -258,8 +265,12 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         // Get configuration object
         $object = $xmlConfig->get($this->getFilesAndLocationsXPath());
 
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $this->getFilesAndLocationsXPath());
+        if (is_null($object)) {
+            throw new OMVException(
+                OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
+                $this->getFilesAndLocationsXPath()
+            );
+        }
 
         // Modify result data
         // Locations
@@ -298,23 +309,26 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "download.sharedfolderref"     : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
-                "download-dir"                 : { "type" : "string" },
-                "incomplete-dir-enabled"       : { "type" : "boolean" },
-                "incomplete.sharedfolderref"   : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
-                "incomplete-dir"               : { "type" : "string" },
-                "watch-dir-enabled"            : { "type" : "boolean" },
-                "watch.sharedfolderref"        : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
-                "watch-dir"                    : { "type" : "string" },
-                "preallocation"                : { "type" : "integer", "enum" : [ 0, 1, 2 ] },
-                "rename-partial-files"         : { "type" : "boolean" },
-                "start-added-torrents"         : { "type" : "boolean" },
-                "trash-original-torrent-files" : { "type" : "boolean" }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "download.sharedfolderref"     : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
+                    "download-dir"                 : { "type" : "string" },
+                    "incomplete-dir-enabled"       : { "type" : "boolean" },
+                    "incomplete.sharedfolderref"   : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
+                    "incomplete-dir"               : { "type" : "string" },
+                    "watch-dir-enabled"            : { "type" : "boolean" },
+                    "watch.sharedfolderref"        : {' . $GLOBALS["OMV_JSONSCHEMA_UUID_NONE"] . '},
+                    "watch-dir"                    : { "type" : "string" },
+                    "preallocation"                : { "type" : "integer", "enum" : [ 0, 1, 2 ] },
+                    "rename-partial-files"         : { "type" : "boolean" },
+                    "start-added-torrents"         : { "type" : "boolean" },
+                    "trash-original-torrent-files" : { "type" : "boolean" }
+                }
+            }'
+        );
 
         // Prepare configuration data
         $object = array(
@@ -336,8 +350,9 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         );
 
         // Set configuration object
-        if ($xmlConfig->replace($this->getFilesAndLocationsXPath(), $object) === false)
+        if ($xmlConfig->replace($this->getFilesAndLocationsXPath(), $object) === false) {
             throw new OMVException(OMVErrorMsg::E_CONFIG_SET_OBJECT_FAILED);
+        }
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
@@ -362,8 +377,12 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Get configuration object
         $object = $xmlConfig->get($this->getBandwidthXPath());
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $this->getBandwidthXPath());
+        if (is_null($object)) {
+            throw new OMVException(
+                OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
+                $this->getBandwidthXPath()
+            );
+        }
 
         // Modify result data
         // Speed
@@ -396,19 +415,22 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "speed-limit-down"         :{ "type" : "integer", "minimum" : 0 },
-                "speed-limit-down-enabled" :{ "type" : "boolean" },
-                "speed-limit-up"           :{ "type" : "integer", "minimum" : 0 },
-                "speed-limit-up-enabled"   :{ "type" : "boolean" },
-                "upload-slots-per-torrent" :{ "type" : "integer" },
-                "alt-speed-enabled"        :{ "type" : "boolean" },
-                "alt-speed-up"             :{ "type" : "integer", "minimum" : 0 },
-                "alt-speed-down"           :{ "type" : "integer", "minimum" : 0 }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "speed-limit-down"         :{ "type" : "integer", "minimum" : 0 },
+                    "speed-limit-down-enabled" :{ "type" : "boolean" },
+                    "speed-limit-up"           :{ "type" : "integer", "minimum" : 0 },
+                    "speed-limit-up-enabled"   :{ "type" : "boolean" },
+                    "upload-slots-per-torrent" :{ "type" : "integer" },
+                    "alt-speed-enabled"        :{ "type" : "boolean" },
+                    "alt-speed-up"             :{ "type" : "integer", "minimum" : 0 },
+                    "alt-speed-down"           :{ "type" : "integer", "minimum" : 0 }
+                }
+            }'
+        );
 
         // Prepare configuration data
         $object = array(
@@ -426,8 +448,9 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         );
 
         // Set configuration object
-        if ($xmlConfig->replace($this->getBandwidthXPath(), $object) === false)
+        if ($xmlConfig->replace($this->getBandwidthXPath(), $object) === false) {
             throw new OMVException(OMVErrorMsg::E_CONFIG_SET_OBJECT_FAILED);
+        }
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
@@ -453,8 +476,9 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         // Get configuration object
         $object = $xmlConfig->get($this->getQueuingXPath());
 
-        if (is_null($object))
+        if (is_null($object)) {
             throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $this->getQueuingXPath());
+        }
 
         // Modify result data
         // General
@@ -487,17 +511,20 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "queue-stalled-enabled"  :{ "type" : "boolean" },
-                "queue-stalled-minutes"  :{ "type" : "integer", "minimum" : 0 },
-                "download-queue-enabled" :{ "type" : "boolean" },
-                "download-queue-size"    :{ "type" : "integer", "minimum" : 0 },
-                "seed-queue-enabled"     :{ "type" : "boolean" },
-                "seed-queue-size"        :{ "type" : "integer", "minimum" : 0 }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "queue-stalled-enabled"  :{ "type" : "boolean" },
+                    "queue-stalled-minutes"  :{ "type" : "integer", "minimum" : 0 },
+                    "download-queue-enabled" :{ "type" : "boolean" },
+                    "download-queue-size"    :{ "type" : "integer", "minimum" : 0 },
+                    "seed-queue-enabled"     :{ "type" : "boolean" },
+                    "seed-queue-size"        :{ "type" : "integer", "minimum" : 0 }
+                }
+            }'
+        );
 
         // Prepare configuration data
         $object = array(
@@ -515,8 +542,9 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         );
 
         // Set configuration object
-        if ($xmlConfig->replace($this->getQueuingXPath(), $object) === false)
+        if ($xmlConfig->replace($this->getQueuingXPath(), $object) === false) {
             throw new OMVException(OMVErrorMsg::E_CONFIG_SET_OBJECT_FAILED);
+        }
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
@@ -542,8 +570,12 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         // Get configuration object
         $object = $xmlConfig->get($this->getPeerXPath());
 
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $this->getPeerXPath());
+        if (is_null($object)) {
+            throw new OMVException(
+                OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
+                $this->getPeerXPath()
+            );
+        }
 
         // Modify result data
         // Limits
@@ -575,21 +607,24 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "bind-address-ipv4"         : { "type" : "string", "format" : "regex", "pattern" : "/^[0-9]{1,3}\\\.[0-9]{1,3}\\\.[0-9]{1,3}\\\.[0-9]{1,3}/" },
-                "bind-address-ipv6"         : { "type" : "string" },
-                "peer-limit-global"         : { "type" : "integer", "minimum" : 0 },
-                "peer-limit-per-torrent"    : { "type" : "integer", "minimum" : 0 },
-                "peer-socket-tos"           : { "type" : "string", "enum" : [ "default", "lowcost", "throughput", "lowdelay", "reliability" ] },
-                "peer-port"                 : { "type" : "integer", "minimum" : 1024 , "maximum" : 65535 },
-                "peer-port-random-low"      : { "type" : "integer", "minimum" : 1024 , "maximum" : 65535 },
-                "peer-port-random-high"     : { "type" : "integer", "minimum" : 1024 , "maximum" : 65535 },
-                "peer-port-random-on-start" : { "type" : "boolean" },
-                "port-forwarding-enabled"   : { "type" : "boolean" }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "bind-address-ipv4"         : { "type" : "string", "format" : "regex", "pattern" : "/^[0-9]{1,3}\\\.[0-9]{1,3}\\\.[0-9]{1,3}\\\.[0-9]{1,3}/" },
+                    "bind-address-ipv6"         : { "type" : "string" },
+                    "peer-limit-global"         : { "type" : "integer", "minimum" : 0 },
+                    "peer-limit-per-torrent"    : { "type" : "integer", "minimum" : 0 },
+                    "peer-socket-tos"           : { "type" : "string", "enum" : [ "default", "lowcost", "throughput", "lowdelay", "reliability" ] },
+                    "peer-port"                 : { "type" : "integer", "minimum" : 1024 , "maximum" : 65535 },
+                    "peer-port-random-low"      : { "type" : "integer", "minimum" : 1024 , "maximum" : 65535 },
+                    "peer-port-random-high"     : { "type" : "integer", "minimum" : 1024 , "maximum" : 65535 },
+                    "peer-port-random-on-start" : { "type" : "boolean" },
+                    "port-forwarding-enabled"   : { "type" : "boolean" }
+                }
+            }'
+        );
 
         // Prepare configuration data
         $object = array(
@@ -611,8 +646,9 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         );
 
         // Set configuration object
-        if ($xmlConfig->replace($this->getPeerXPath(), $object) === false)
+        if ($xmlConfig->replace($this->getPeerXPath(), $object) === false) {
             throw new OMVException(OMVErrorMsg::E_CONFIG_SET_OBJECT_FAILED);
+        }
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
@@ -638,8 +674,11 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         // Get configuration object
         $object = $xmlConfig->get($this->getSchedulingXPath());
 
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $this->getSchedulingXPath());
+        if (is_null($object)) {
+            throw new OMVException(
+                OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
+                $this->getSchedulingXPath());
+        }
 
         // Modify result data
         // Scheduling
@@ -707,27 +746,30 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "alt-speed-time-enabled"     : { "type" : "boolean" },
-                "begin-hour"                 : { "type" : "integer", "minimum" : 0, "maximum" : 23 },
-                "begin-minute"               : { "type" : "integer", "minimum" : 0, "maximum" : 59 },
-                "end-hour"                   : { "type" : "integer", "minimum" : 0, "maximum" : 23 },
-                "end-minute"                 : { "type" : "integer", "minimum" : 0, "maximum" : 59 },
-                "days-sunday"                : { "type" : "boolean" },
-                "days-monday"                : { "type" : "boolean" },
-                "days-tuesday"               : { "type" : "boolean" },
-                "days-wednesday"             : { "type" : "boolean" },
-                "days-thursday"              : { "type" : "boolean" },
-                "days-friday"                : { "type" : "boolean" },
-                "days-saturday"              : { "type" : "boolean" },
-                "idle-seeding-limit"         : { "type" : "integer", "minimum" : 0 },
-                "idle-seeding-limit-enabled" : { "type" : "boolean" },
-                "ratio-limit"                : { "type" : "number", "minimum" : 0 },
-                "ratio-limit-enabled"        : { "type" : "boolean" }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "alt-speed-time-enabled"     : { "type" : "boolean" },
+                    "begin-hour"                 : { "type" : "integer", "minimum" : 0, "maximum" : 23 },
+                    "begin-minute"               : { "type" : "integer", "minimum" : 0, "maximum" : 59 },
+                    "end-hour"                   : { "type" : "integer", "minimum" : 0, "maximum" : 23 },
+                    "end-minute"                 : { "type" : "integer", "minimum" : 0, "maximum" : 59 },
+                    "days-sunday"                : { "type" : "boolean" },
+                    "days-monday"                : { "type" : "boolean" },
+                    "days-tuesday"               : { "type" : "boolean" },
+                    "days-wednesday"             : { "type" : "boolean" },
+                    "days-thursday"              : { "type" : "boolean" },
+                    "days-friday"                : { "type" : "boolean" },
+                    "days-saturday"              : { "type" : "boolean" },
+                    "idle-seeding-limit"         : { "type" : "integer", "minimum" : 0 },
+                    "idle-seeding-limit-enabled" : { "type" : "boolean" },
+                    "ratio-limit"                : { "type" : "number", "minimum" : 0 },
+                    "ratio-limit-enabled"        : { "type" : "boolean" }
+                }
+            }'
+        );
 
         $params["alt-speed-time-day"] = 0;
 
@@ -770,8 +812,9 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         );
 
         // Set configuration object
-        if ($xmlConfig->replace($this->getSchedulingXPath(), $object) === false)
+        if ($xmlConfig->replace($this->getSchedulingXPath(), $object) === false) {
             throw new OMVException(OMVErrorMsg::E_CONFIG_SET_OBJECT_FAILED);
+        }
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
@@ -798,20 +841,23 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-        "type"           : "object",
-            "properties" : {
-                "start"     : { "type" : "integer" },
-                "limit"     : {' . $GLOBALS["OMV_JSONSCHEMA_COUNTFIELD"] . '},
-                "sortfield" : {' . $GLOBALS["OMV_JSONSCHEMA_SORTFIELD"] . '},
-                "sortdir"   : {' . $GLOBALS["OMV_JSONSCHEMA_SORTDIR"] . '}
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "start"     : { "type" : "integer" },
+                    "limit"     : {' . $GLOBALS["OMV_JSONSCHEMA_COUNTFIELD"] . '},
+                    "sortfield" : {' . $GLOBALS["OMV_JSONSCHEMA_SORTFIELD"] . '},
+                    "sortdir"   : {' . $GLOBALS["OMV_JSONSCHEMA_SORTDIR"] . '}
+                }
+            }'
+        );
 
         $server = $this->torrentServerFactory();
         $torrents = array();
 
-        foreach($server->getTorrents() as $torrent) {
+        foreach ($server->getTorrents() as $torrent) {
             $torrents[] = array(
                 "id"                      => $torrent->getId(),
                 "name"                    => $torrent->getName(),
@@ -848,13 +894,16 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"      : "object",
-            "properties" : {
-                "url"            : { "type" : "string" },
-                "start_download" : { "type" : "boolean" }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"      : "object",
+                "properties" : {
+                    "url"            : { "type" : "string" },
+                    "start_download" : { "type" : "boolean" }
+                }
+            }'
+        );
 
         $server = $this->torrentServerFactory();
 
@@ -872,13 +921,16 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "filename" : { "type" : "string" },
-                "filepath" : { "type" : "string" }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "filename" : { "type" : "string" },
+                    "filepath" : { "type" : "string" }
+                }
+            }'
+        );
 
         $server = $this->torrentServerFactory();
 
@@ -893,13 +945,16 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "id"                : { "type" : "integer", "minimum" : 0 },
-                "delete_local_data" : { "type" : "boolean" }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "id"                : { "type" : "integer", "minimum" : 0 },
+                    "delete_local_data" : { "type" : "boolean" }
+                }
+            }'
+        );
 
         $server = $this->torrentServerFactory();
 
@@ -917,12 +972,15 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "id" : { "type" : "integer", "minimum" : 0 }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "id" : { "type" : "integer", "minimum" : 0 }
+                }
+            }'
+        );
 
         $server = $this->torrentServerFactory();
         $server->pause($params["id"]);
@@ -936,12 +994,15 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "id" : { "type" : "integer", "minimum" : 0 }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "id" : { "type" : "integer", "minimum" : 0 }
+                }
+            }'
+        );
 
         $server = $this->torrentServerFactory();
         $server->resume($params["id"]);
@@ -955,13 +1016,16 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         ));
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, '{
-            "type"       : "object",
-            "properties" : {
-                "id"     : { "type" : "integer", "minimum" : 0 },
-                "action" : { "type" : "string", "enum" : [ "top", "up", "down", "bottom" ] }
-            }
-        }');
+        $this->validateMethodParams(
+            $params,
+            '{
+                "type"       : "object",
+                "properties" : {
+                    "id"     : { "type" : "integer", "minimum" : 0 },
+                    "action" : { "type" : "string", "enum" : [ "top", "up", "down", "bottom" ] }
+                }
+            }'
+        );
 
         $server = $this->torrentServerFactory();
 
@@ -988,8 +1052,12 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         global $xmlConfig;
 
         $object = $xmlConfig->get($this->getXPath());
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED, $this->getXPath());
+        if (is_null($object)) {
+            throw new OMVException(
+                OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
+                $this->getXPath()
+            );
+        }
 
         $url = "http://localhost:" . $object["rpcport"] . $object["rpcurl"] . "rpc";
         $username;
@@ -1005,7 +1073,6 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         return $server;
     }
-
 }
 
 // Register the RPC service.

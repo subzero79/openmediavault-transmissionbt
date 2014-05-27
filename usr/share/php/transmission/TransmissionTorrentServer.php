@@ -72,8 +72,9 @@ class TransmissionTorrentServer implements ITorrentServer
         $result = $this->_rpc->add($location, "", array("paused" => $paused));
 
         if (isset($result["result"])) {
-            if ($result["result"] == "success")
+            if ($result["result"] == "success") {
                 return true;
+            }
 
             throw new Exception($result["result"]);
         }
@@ -95,10 +96,9 @@ class TransmissionTorrentServer implements ITorrentServer
     {
         $this->_rpc->start($torrent);
     }
-    
+
     public function queueMove($torrent, $action)
     {
         $this->_rpc->queueMove($torrent, $action);
     }
-
 }

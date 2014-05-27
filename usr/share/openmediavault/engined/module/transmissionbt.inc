@@ -25,7 +25,9 @@ require_once "openmediavault/error.inc";
 require_once "openmediavault/util.inc";
 require_once "openmediavault/initscript.inc";
 
-class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements OMVINotifyListener, OMVIModuleServiceStatus
+class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements
+    OMVINotifyListener,
+    OMVIModuleServiceStatus
 {
     private function getXPath()
     {
@@ -52,9 +54,13 @@ class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements OMVINo
 
         $cmd = sprintf("omv-mkconf %s 2>&1", $this->getName());
 
-        if (0 !== $this->exec($cmd, $output))
-            throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
-                $cmd, implode("\n", $output));
+        if (0 !== $this->exec($cmd, $output)) {
+            throw new OMVException(
+                OMVErrorMsg::E_EXEC_FAILED,
+                $cmd,
+                implode("\n", $output)
+            );
+        }
     }
     /**
      * Start the managed service
@@ -66,13 +72,17 @@ class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements OMVINo
         // Get the configuration object
         $object = $xmlConfig->get($this->getXPath());
 
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
-                $this->getXPath());
+        if (is_null($object)) {
+            throw new OMVException(
+                OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
+                $this->getXPath()
+            );
+        }
 
-        if (!boolval($object['enable']))
+        if (!boolval($object['enable'])) {
             return;
-        
+        }
+
         $initd = new OMVSysVInitScript("transmission-daemon", true);
         $initd->exec();
     }
@@ -96,9 +106,12 @@ class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements OMVINo
         // Get the configuration object
         $object = $xmlConfig->get($this->getXPath());
 
-        if (is_null($object))
-            throw new OMVException(OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
-                $this->getXPath());
+        if (is_null($object)) {
+            throw new OMVException(
+                OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
+                $this->getXPath()
+            );
+        }
 
         // Check if process is running. Init script does not support 'status'.
         $cmd = "ps --no-heading -C transmission-daemon";
@@ -115,20 +128,28 @@ class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements OMVINo
     /**
      * Bind listeners.
      */
-    function bindListeners(OMVNotifyDispatcher $dispatcher)
+    public function bindListeners(OMVNotifyDispatcher $dispatcher)
     {
-        $dispatcher->addListener(
-            OMV_NOTIFY_MODIFY,
-            "org.openmediavault.services.transmissionbt",
-            array($this, "setDirty"));
-
         $moduleMgr = &OMVModuleMgr::getInstance();
+
         $dispatcher->addListener(
             OMV_NOTIFY_MODIFY,
             "org.openmediavault.services.transmissionbt",
-            array($moduleMgr->getModule("zeroconf"), "setDirty"));
-    }
+            array(
+                $this,
+                "setDirty"
+            )
+        );
 
+        $dispatcher->addListener(
+            OMV_NOTIFY_MODIFY,
+            "org.openmediavault.services.transmissionbt",
+            array(
+                $moduleMgr->getModule("zeroconf"),
+                "setDirty"
+            )
+        );
+    }
 }
 
 // Register module
@@ -136,7 +157,8 @@ $moduleMgr = &OMVModuleMgr::getInstance();
 $moduleMgr->registerModule(new OMVModuleTransmissionBT());
 
 // Register new logfile type.
-OMVLogFile::registerType("transmissionbt",
+OMVLogFile::registerType(
+    "transmissionbt",
     array(
         "filename" => "transmissionbt",
         "filepath" => "/var/log/transmissionbt.log",
@@ -148,8 +170,10 @@ OMVLogFile::registerType("transmissionbt",
             ),
             "date" => array(
                 "index" => 1,
-                "func"  => create_function('$v',
-                    'return strftime("%c", strpdate($v,"M j G:i:s"));')
+                "func"  => create_function(
+                    '$v',
+                    'return strftime("%c", strpdate($v,"M j G:i:s"));'
+                )
             ),
             "event" => 3
         )
