@@ -17,7 +17,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require_once "transmission/apis/TransmissionRPC.php"; 
+require_once "transmission/apis/TransmissionRPC.php";
 
 class OMVTransmissionRpc extends TransmissionRPC
 {
@@ -41,9 +41,10 @@ class OMVTransmissionRpc extends TransmissionRPC
                 break;
         }
 
-        if (!is_array($ids))
+        if (!is_array($ids)) {
             $ids = array($ids);
-        
+        }
+
         // Convert $ids to an array if only a single id was passed
         $request = array("ids" => $ids);
         $this->request("queue-move-$action", $request);
