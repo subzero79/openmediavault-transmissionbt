@@ -19,16 +19,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require_once "openmediavault/object.inc";
 require_once "openmediavault/error.inc";
-require_once "openmediavault/util.inc";
-require_once "openmediavault/rpc.inc";
 require_once "openmediavault/notify.inc";
+require_once "openmediavault/object.inc";
+require_once "openmediavault/rpc.inc";
+require_once "openmediavault/util.inc";
 require_once "transmission/ITorrentServer.php";
 require_once "transmission/TransmissionTorrentServer.php";
 
 class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 {
+    /* Helpers */
+
+    private function getEventMessagePath()
+    {
+        return "org.openmediavault.services.transmissionbt";
+    }
+
     private function getXPath()
     {
         return "//services/transmissionbt";
@@ -172,11 +179,23 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
                     "umask"                          : { "type" : "integer" },
                     "cache-size-mb"                  : { "type" : "integer" },
                     "rpcport"                        : { "type" : "integer", "minimum" : 1024, "maximum" : 65535 },
-                    "rpcurl"                         : { "type" : "string", "format" : "regex", "pattern" : "/^[a-z0-9]+$/i" },
+                    "rpcurl"                         : {
+                        "type" : "string",
+                        "format" : "regex",
+                        "pattern" : "/^[a-z0-9]+$/i"
+                    },
                     "rpcauthenticationrequired"      : { "type" : "boolean" },
                     "rpcusername"                    : { "type" : "string" },
                     "rpcpassword"                    : { "type" : "string" },
-                    "blocklistsyncfrequency"         : { "type" : "string", "enum" : [ "hourly", "daily", "weekly", "monthly" ] },
+                    "blocklistsyncfrequency"         : {
+                        "type" : "string",
+                        "enum" : [
+                            "hourly",
+                            "daily",
+                            "weekly",
+                            "monthly"
+                        ]
+                    },
                     "blocklisturl"                   : { "type" : "string" },
                     "script-torrent-done-filename"   : { "type" : "string" },
                     "pexenabled"                     : { "type" : "boolean" },
@@ -243,7 +262,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_MODIFY, "org.openmediavault.services.transmissionbt", $object);
+        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this-getEventMessagePath(), $object);
 
         return $object;
     }
@@ -356,7 +375,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_MODIFY, "org.openmediavault.services.transmissionbt", $object);
+        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this-getEventMessagePath(), $object);
 
         return $object;
     }
@@ -454,7 +473,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_MODIFY, "org.openmediavault.services.transmissionbt", $object);
+        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this-getEventMessagePath(), $object);
 
         return $object;
     }
@@ -548,7 +567,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_MODIFY, "org.openmediavault.services.transmissionbt", $object);
+        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this-getEventMessagePath(), $object);
 
         return $object;
     }
@@ -612,11 +631,24 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
             '{
                 "type"       : "object",
                 "properties" : {
-                    "bind-address-ipv4"         : { "type" : "string", "format" : "regex", "pattern" : "/^[0-9]{1,3}\\\.[0-9]{1,3}\\\.[0-9]{1,3}\\\.[0-9]{1,3}/" },
-                    "bind-address-ipv6"         : { "type" : "string" },
-                    "peer-limit-global"         : { "type" : "integer", "minimum" : 0 },
-                    "peer-limit-per-torrent"    : { "type" : "integer", "minimum" : 0 },
-                    "peer-socket-tos"           : { "type" : "string", "enum" : [ "default", "lowcost", "throughput", "lowdelay", "reliability" ] },
+                    "bind-address-ipv4" : {
+                        "type" : "string",
+                        "format" : "regex",
+                        "pattern" : "/^[0-9]{1,3}\\\.[0-9]{1,3}\\\.[0-9]{1,3}\\\.[0-9]{1,3}/"
+                    },
+                    "bind-address-ipv6"      : { "type" : "string" },
+                    "peer-limit-global"      : { "type" : "integer", "minimum" : 0 },
+                    "peer-limit-per-torrent" : { "type" : "integer", "minimum" : 0 },
+                    "peer-socket-tos"        : {
+                        "type" : "string",
+                        "enum" : [
+                            "default",
+                            "lowcost",
+                            "throughput",
+                            "lowdelay",
+                            "reliability"
+                        ]
+                    },
                     "peer-port"                 : { "type" : "integer", "minimum" : 1024 , "maximum" : 65535 },
                     "peer-port-random-low"      : { "type" : "integer", "minimum" : 1024 , "maximum" : 65535 },
                     "peer-port-random-high"     : { "type" : "integer", "minimum" : 1024 , "maximum" : 65535 },
@@ -652,7 +684,11 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_MODIFY, "org.openmediavault.services.transmissionbt", $object);
+        $dispatcher->notify(
+            OMV_NOTIFY_MODIFY,
+            $this-getEventMessagePath(),
+            $object
+        );
 
         return $object;
     }
@@ -677,7 +713,8 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         if (is_null($object)) {
             throw new OMVException(
                 OMVErrorMsg::E_CONFIG_GET_OBJECT_FAILED,
-                $this->getSchedulingXPath());
+                $this->getSchedulingXPath()
+            );
         }
 
         // Modify result data
@@ -818,7 +855,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_MODIFY, "org.openmediavault.services.transmissionbt", $object);
+        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this-getEventMessagePath(), $object);
 
         return $object;
     }

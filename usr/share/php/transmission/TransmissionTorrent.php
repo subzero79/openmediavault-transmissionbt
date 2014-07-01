@@ -21,85 +21,85 @@ require_once "transmission/ITorrent.php";
 
 class TransmissionTorrent implements ITorrent
 {
-    private $_torrent;
+    private $torrent;
 
     public function __construct($data)
     {
-        $this->_torrent = $data;
+        $this->torrent = $data;
     }
 
     public function getId()
     {
-        return $this->_torrent["id"];
+        return $this->torrent["id"];
     }
 
     public function getName()
     {
-        return $this->_torrent["name"];
+        return $this->torrent["name"];
     }
 
     public function getStatus()
     {
-        return $this->_torrent["status"];
+        return $this->torrent["status"];
     }
 
     public function getTotalSize()
     {
-        return $this->_torrent["totalSize"];
+        return $this->torrent["totalSize"];
     }
 
     public function getHaveValid()
     {
-        return $this->_torrent["haveValid"];
+        return $this->torrent["haveValid"];
     }
 
     public function getPercentDownloaded()
     {
-        return $this->_torrent["percentDone"];
+        return $this->torrent["percentDone"];
     }
 
     public function getEta()
     {
-        return $this->_torrent["eta"];
+        return $this->torrent["eta"];
     }
 
     public function getConnectedPeers()
     {
-        return $this->_torrent["peersConnected"];
+        return $this->torrent["peersConnected"];
     }
 
     public function getConnectedPeersSending()
     {
-        return $this->_torrent["peersSendingToUs"];
+        return $this->torrent["peersSendingToUs"];
     }
 
     public function getDownloadSpeed()
     {
-        return $this->_torrent["rateDownload"];
+        return $this->torrent["rateDownload"];
     }
 
     public function getUploadSpeed()
     {
-        return $this->_torrent["rateUpload"];
+        return $this->torrent["rateUpload"];
     }
 
     public function getDateAdded()
     {
-        return $this->_torrent["addedDate"];
+        return $this->torrent["addedDate"];
     }
 
     public function getDateDone()
     {
-        return $this->_torrent["doneDate"];
+        return $this->torrent["doneDate"];
     }
 
     public function getRatio()
     {
-        return $this->_torrent["uploadRatio"];
+        return $this->torrent["uploadRatio"];
     }
 
     public function getQueuePosition()
     {
-        return $this->_torrent["queuePosition"];
+        return $this->torrent["queuePosition"];
     }
 }

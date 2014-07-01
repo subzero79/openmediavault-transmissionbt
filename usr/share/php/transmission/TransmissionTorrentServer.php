@@ -23,7 +23,7 @@ require_once "transmission/TransmissionTorrent.php";
 
 class TransmissionTorrentServer implements ITorrentServer
 {
-    private $_rpc;
+    private $rpc;
 
     public static function getDefaultServerAddress()
     {
@@ -32,12 +32,12 @@ class TransmissionTorrentServer implements ITorrentServer
 
     public function connect($url, $username, $password)
     {
-        $this->_rpc = new OMVTransmissionRpc($url, $username, $password, true);
+        $this->rpc = new OMVTransmissionRpc($url, $username, $password, true);
     }
 
     public function getTorrents()
     {
-        $result = $this->_rpc->get(
+        $result = $this->rpc->get(
             array(),
             array(
                 "id",
@@ -69,7 +69,7 @@ class TransmissionTorrentServer implements ITorrentServer
 
     public function add($location, $paused = false)
     {
-        $result = $this->_rpc->add($location, "", array("paused" => $paused));
+        $result = $this->rpc->add($location, "", array("paused" => $paused));
 
         if (isset($result["result"])) {
             if ($result["result"] == "success") {
@@ -84,21 +84,21 @@ class TransmissionTorrentServer implements ITorrentServer
 
     public function delete($torrent, $deleteLocalData)
     {
-        $this->_rpc->remove($torrent, $deleteLocalData);
+        $this->rpc->remove($torrent, $deleteLocalData);
     }
 
     public function pause($torrent)
     {
-        $this->_rpc->stop($torrent);
+        $this->rpc->stop($torrent);
     }
 
     public function resume($torrent)
     {
-        $this->_rpc->start($torrent);
+        $this->rpc->start($torrent);
     }
 
     public function queueMove($torrent, $action)
     {
-        $this->_rpc->queueMove($torrent, $action);
+        $this->rpc->queueMove($torrent, $action);
     }
 }

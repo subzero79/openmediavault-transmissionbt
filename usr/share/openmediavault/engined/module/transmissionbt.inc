@@ -19,16 +19,23 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-require_once "openmediavault/module.inc";
 require_once "openmediavault/config.inc";
 require_once "openmediavault/error.inc";
-require_once "openmediavault/util.inc";
 require_once "openmediavault/initscript.inc";
+require_once "openmediavault/module.inc";
+require_once "openmediavault/util.inc";
 
 class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements
     OMVINotifyListener,
     OMVIModuleServiceStatus
 {
+    /* Helpers */
+
+    private function getEventMessagePath()
+    {
+        return "org.openmediavault.services.transmissionbt";
+    }
+
     private function getXPath()
     {
         return "//services/transmissionbt";
@@ -134,7 +141,7 @@ class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements
 
         $dispatcher->addListener(
             OMV_NOTIFY_MODIFY,
-            "org.openmediavault.services.transmissionbt",
+            $this->getEventMessagePath(),
             array(
                 $this,
                 "setDirty"
@@ -143,7 +150,7 @@ class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements
 
         $dispatcher->addListener(
             OMV_NOTIFY_MODIFY,
-            "org.openmediavault.services.transmissionbt",
+            $this->getEventMessagePath(),
             array(
                 $moduleMgr->getModule("zeroconf"),
                 "setDirty"
@@ -166,13 +173,16 @@ OMVLogFile::registerType(
         "columns"  => array(
             "ts" => array(
                 "index" => 1,
-                "func" => create_function('$v', 'return strpdate($v,"M j G:i:s");')
+                "func" => create_function(
+                    "\$v",
+                    "return strpdate(\$v, \"M j G:i:s\");"
+                )
             ),
             "date" => array(
                 "index" => 1,
                 "func"  => create_function(
-                    '$v',
-                    'return strftime("%c", strpdate($v,"M j G:i:s"));'
+                    "\$v",
+                    "return strftime(\"%c\", strpdate(\$v, \"M j G:i:s\"));"
                 )
             ),
             "event" => 3
