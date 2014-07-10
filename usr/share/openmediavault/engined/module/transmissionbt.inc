@@ -29,11 +29,14 @@ class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements
     OMVINotifyListener,
     OMVIModuleServiceStatus
 {
-    /* Helpers */
-
     private function getEventMessagePath()
     {
         return "org.openmediavault.services.transmissionbt";
+    }
+
+    private function getSharedFolderEventMessagePath()
+    {
+        return "org.openmediavault.system.shares.sharedfolder";
     }
 
     private function getXPath()
@@ -153,6 +156,15 @@ class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements
             $this->getEventMessagePath(),
             array(
                 $moduleMgr->getModule("zeroconf"),
+                "setDirty"
+            )
+        );
+
+        $dispatcher->addListener(
+            OMV_NOTIFY_MODIFY,
+            $this->getSharedFolderEventMessagePath(),
+            array(
+                $this,
                 "setDirty"
             )
         );
