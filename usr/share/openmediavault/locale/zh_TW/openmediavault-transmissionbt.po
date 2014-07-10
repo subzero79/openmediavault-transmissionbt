@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# kochin <kochinc@outlook.com>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-14 11:49-0600\n"
-"PO-Revision-Date: 2013-10-28 15:02+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-06-03 03:58+0000\n"
+"Last-Translator: kochin <kochinc@outlook.com>\n"
 "Language-Team: Chinese (Taiwan) (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,602 +19,602 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Add Torrent by URL"
-msgstr ""
+msgstr "以網址新增 Torrent"
 
 msgid "Add URL"
-msgstr ""
+msgstr "新增網址"
 
 msgid "Adding Torrent ..."
-msgstr ""
+msgstr "新增 Torrent ..."
 
 msgid "Authentication"
-msgstr ""
+msgstr "驗證"
 
 msgid "Auto sync"
-msgstr ""
+msgstr "自動同步"
 
 msgid "Bandwidth"
-msgstr ""
+msgstr "頻寬"
 
 msgid "Begin"
-msgstr ""
+msgstr "開始"
 
 msgid "Bindings"
-msgstr ""
+msgstr "綁定"
 
 msgid "BitTorrent"
-msgstr ""
+msgstr "BitTorrent"
 
 msgid "Blocklists"
-msgstr ""
+msgstr "黑名單"
 
 msgid "Cache Size"
-msgstr ""
+msgstr "快取大小"
 
 msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
-msgstr ""
+msgstr "快取大小(以 Mb 為單位)，用來減少磁碟的讀寫。"
 
 msgid "Checking files"
-msgstr ""
+msgstr "檢查檔案"
 
 msgid "DL-rate"
-msgstr ""
+msgstr "下載速率"
 
 msgid "Daily"
-msgstr ""
+msgstr "每日"
 
 msgid "Date & Time"
-msgstr ""
+msgstr "日期與時間"
 
 msgid "Date added"
-msgstr ""
+msgstr "加入日期"
 
 msgid "Date done"
-msgstr ""
+msgstr "完成日期"
 
 msgid "Days"
-msgstr ""
+msgstr "日"
 
 msgid "Debug"
-msgstr ""
+msgstr "除錯"
 
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 msgid "Delete Local Data"
-msgstr ""
+msgstr "刪除本地資料"
 
 msgid "Delete torrent"
-msgstr ""
+msgstr "刪除 torrent"
 
 msgid "Delete torrents added from the watch directory."
-msgstr ""
+msgstr "刪除從監測目錄加入的 torrents。"
 
 msgid "Deleting selected item(s)"
-msgstr ""
+msgstr "刪除所選的項目"
 
 msgid "Deleting torrent ..."
-msgstr ""
+msgstr "刪除 torrent 中 ..."
 
 msgid "Directory"
-msgstr ""
+msgstr "目錄"
 
 msgid ""
 "Directory to keep downloads. If incomplete is enabled, only complete "
 "downloads will be stored here."
-msgstr ""
+msgstr "存放下載的目錄。如果 未完成目錄 被啟用，則只有已完成的下載會被儲存在此。"
 
 msgid "Directory to keep files in until torrent is complete."
-msgstr ""
+msgstr "存放檔案的目錄，直到 torrent 完成。"
 
 msgid "Distributed hash table (DHT)."
-msgstr ""
+msgstr "分散式雜湊表(DHT)。"
 
 msgid "Done"
-msgstr ""
+msgstr "完成"
 
 msgid "Download"
-msgstr ""
+msgstr "下載"
 
 msgid "Download Queue"
-msgstr ""
+msgstr "下載佇列"
 
 msgid "Downloading"
-msgstr ""
+msgstr "下載中"
 
 msgid "ETA"
-msgstr ""
+msgstr "預計抵達時間"
 
 msgid "Enable"
-msgstr ""
+msgstr "啟用"
 
 msgid "Enable &micro;TP."
-msgstr ""
+msgstr "啟用 &micro;TP。"
 
 msgid "Enable DHT."
-msgstr ""
+msgstr "啟用 DHT。"
 
 msgid "Enable LPD."
-msgstr ""
+msgstr "啟用 LPD。"
 
 msgid "Enable PEX."
-msgstr ""
+msgstr "啟用 PEX。"
 
 msgid "Enable Turtle Mode."
-msgstr ""
+msgstr "啟用龜速模式。"
 
 msgid "Enable Watch directory."
-msgstr ""
+msgstr "啟用監測目錄。"
 
 msgid "Enable download limit."
-msgstr ""
+msgstr "啟用下載限制。"
 
 msgid "Enable incomplete directory."
-msgstr ""
+msgstr "啟用未完成目錄。"
 
 msgid "Enable paused torrent scraping."
-msgstr ""
+msgstr "啟用被暫停 torrent 的蒐羅。"
 
 msgid "Enable port forwarding via NAT-PMP or UPnP."
-msgstr ""
+msgstr "啟用連接埠轉送，利用 NAT-PMP 或 UPnP。"
 
 msgid "Enable upload limit."
-msgstr ""
+msgstr "啟用上傳限制。"
 
 msgid "Encryption"
-msgstr ""
+msgstr "加密"
 
 msgid "End"
-msgstr ""
+msgstr "結束"
 
 msgid "Enter path to script."
-msgstr ""
+msgstr "輸入指向腳本程式的路徑。"
 
 msgid "Error"
-msgstr ""
+msgstr "錯誤"
 
 msgid "Event"
-msgstr ""
+msgstr "事件"
 
 msgid "Fast"
-msgstr ""
+msgstr "快速"
 
 msgid "Files"
-msgstr ""
+msgstr "檔案"
 
 msgid "Files and locations"
-msgstr ""
+msgstr "檔案及位置"
 
 msgid "Forced"
-msgstr ""
+msgstr "強制"
 
 msgid "Friday"
-msgstr ""
+msgstr "週五"
 
 msgid "Full"
-msgstr ""
+msgstr "完整"
 
 msgid "General"
-msgstr ""
+msgstr "一般"
 
 msgid "General settings"
-msgstr ""
+msgstr "一般設定"
 
 msgid "Global"
-msgstr ""
+msgstr "全站"
 
 msgid "Hourly"
-msgstr ""
+msgstr "每小時"
 
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 msgid "IPv4"
-msgstr ""
+msgstr "IPv4"
 
 msgid "IPv4 address to listen on. Use 0.0.0.0 for all host IPs."
-msgstr ""
+msgstr "用來監聽的 IPv4 地址。使用 0.0.0.0 代表主機所有的 IPs。"
 
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 msgid "IPv6 address to listen on. Use :: for all host IPs."
-msgstr ""
+msgstr "用來監聽的 IPv6 地址。使用 :: 代表主機所有的 IPs。"
 
 msgid "Idle"
-msgstr ""
+msgstr "閒置"
 
 msgid "Idle Minutes"
-msgstr ""
+msgstr "閒置分鐘"
 
 msgid "Incomplete"
-msgstr ""
+msgstr "未完成"
 
 msgid "Infinite"
-msgstr ""
+msgstr "無限制"
 
 msgid "Info"
-msgstr ""
+msgstr "資訊"
 
 msgid "Invalid Uri."
-msgstr ""
+msgstr "不合法的網址。"
 
 msgid "Jobs"
-msgstr ""
+msgstr "工作"
 
 msgid "Lazy Bitfield"
-msgstr ""
+msgstr "懶惰 Bitfield"
 
 msgid "Limit Download"
-msgstr ""
+msgstr "限制下載"
 
 msgid "Limit Upload"
-msgstr ""
+msgstr "限制上傳"
 
 msgid "Limit download speed. Value is kb/s."
-msgstr ""
+msgstr "限制下載速度。數值是 kb/s。"
 
 msgid "Limit upload speed. Value is kb/s."
-msgstr ""
+msgstr "限制上傳速度。數值是 kb/s。"
 
 msgid "Limits"
-msgstr ""
+msgstr "限制"
 
 msgid "Local Peer Discovery (LPD)."
-msgstr ""
+msgstr "本地同伴探索 (LPD)。"
 
 msgid "Locations"
-msgstr ""
+msgstr "位置"
 
 msgid ""
 "Make sure the group 'debian-transmission' has read/write access to the "
 "shared folder."
-msgstr ""
+msgstr "請確定群組 'debian-transmission' 能夠讀/寫共享檔案夾。"
 
 msgid "May help get around some ISP filtering."
-msgstr ""
+msgstr "可能有助於避過某些 ISP 的篩選。"
 
 msgid "Message Level"
-msgstr ""
+msgstr "訊息層級"
 
 msgid "Micro Transport Protocol (&micro;TP)."
-msgstr ""
+msgstr "微型傳送協定 (&micro;TP)。"
 
 msgid "Missing Status: "
-msgstr ""
+msgstr "缺失狀態："
 
 msgid "Mode for preallocating files."
-msgstr ""
+msgstr "預先配置檔案模式"
 
 msgid "Monday"
-msgstr ""
+msgstr "週一"
 
 msgid "Monthly"
-msgstr ""
+msgstr "每月"
 
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 msgid "None"
-msgstr ""
+msgstr "無"
 
 msgid "Not available"
-msgstr ""
+msgstr "不適用"
 
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 msgid "Off"
-msgstr ""
+msgstr "關閉"
 
 msgid "Password"
-msgstr ""
+msgstr "密碼"
 
 msgid "Pause"
-msgstr ""
+msgstr "暫停"
 
 msgid "Pausing selected item(s)"
-msgstr ""
+msgstr "暫停所選項目"
 
 msgid "Peer"
-msgstr ""
+msgstr "同伴"
 
 msgid "Peer Ports"
-msgstr ""
+msgstr "同伴通訊埠"
 
 msgid "Peer exchange (PEX)"
-msgstr ""
+msgstr "同伴交換 (PEX)"
 
 msgid "Peer port"
-msgstr ""
+msgstr "同伴通訊埠"
 
 msgid "Peers"
-msgstr ""
+msgstr "同伴"
 
 msgid "Per torrent"
-msgstr ""
+msgstr "每則 torrent"
 
 msgid "Port"
-msgstr ""
+msgstr "通訊埠"
 
 msgid "Port forwarding"
-msgstr ""
+msgstr "連接埠轉送"
 
 msgid "Port to listen for incoming peer connections."
-msgstr ""
+msgstr "用來監聽傳入之同伴連接的通訊埠。"
 
 msgid "Port to open and listen for RPC/Web requests on."
-msgstr ""
+msgstr "所要開啟並用來監聽 RPC/Web 請求的通訊埠。"
 
 msgid "Postfix"
-msgstr ""
+msgstr "後置字串"
 
 msgid "Postfix partially downloaded files with .part."
-msgstr ""
+msgstr "將部分完成的下載檔案加上 .part 後置字串。"
 
 msgid "Preallocation"
-msgstr ""
+msgstr "預先配置"
 
 msgid "Preferred"
-msgstr ""
+msgstr "最好"
 
 msgid "Queue"
-msgstr ""
+msgstr "佇列"
 
 msgid "Queue Move Bottom"
-msgstr ""
+msgstr "佇列移至最後"
 
 msgid "Queue Move Down"
-msgstr ""
+msgstr "佇列移後"
 
 msgid "Queue Move Top"
-msgstr ""
+msgstr "佇列移至最前"
 
 msgid "Queue Move Up"
-msgstr ""
+msgstr "佇列移前"
 
 msgid "Queue Stalled"
-msgstr ""
+msgstr "佇列停滯"
 
 msgid "Queue moving selcted item(s)"
-msgstr ""
+msgstr "佇列移動所選項目"
 
 msgid "Queued to check files"
-msgstr ""
+msgstr "加入檢查檔案佇列"
 
 msgid "Queued to download"
-msgstr ""
+msgstr "加入下載佇列"
 
 msgid "Queued to seed"
-msgstr ""
+msgstr "加入播種佇列"
 
 msgid "Queuing"
-msgstr ""
+msgstr "佇列"
 
 msgid "RPC/WebUI Settings"
-msgstr ""
+msgstr "RPC/WebUI 設定"
 
 msgid "Random Port"
-msgstr ""
+msgstr "隨機通訊埠"
 
 msgid "Random Port on start."
-msgstr ""
+msgstr "啟動時指派隨機通訊埠。"
 
 msgid "Random high"
-msgstr ""
+msgstr "隨機最高值"
 
 msgid "Random low"
-msgstr ""
+msgstr "隨機最低值"
 
 msgid "Ratio"
-msgstr ""
+msgstr "比率"
 
 msgid "Ratio Limit"
-msgstr ""
+msgstr "比率限制"
 
 msgid "Reload"
-msgstr ""
+msgstr "重新載入"
 
 msgid "Require clients to authenticate themselves."
-msgstr ""
+msgstr "要求客戶端進行身份認證。"
 
 msgid "Resume"
-msgstr ""
+msgstr "繼續"
 
 msgid "Resuming selected item(s)"
-msgstr ""
+msgstr "繼續所選的項目"
 
 msgid "Run a script at torrent completion."
-msgstr ""
+msgstr "於 torrent 完成時執行一份腳本程式。"
 
 msgid "Saturday"
-msgstr ""
+msgstr "週六"
 
 msgid "Scheduling"
-msgstr ""
+msgstr "工作排程"
 
 msgid "Scrape paused torrents."
-msgstr ""
+msgstr "蒐羅被停止的 torrents。"
 
 msgid "Script"
-msgstr ""
+msgstr "腳本程式"
 
 msgid "Script to Proccess After Torrent Finishes"
-msgstr ""
+msgstr "於 Torrent 結束後所執行的腳本程式"
 
 msgid "Seed"
-msgstr ""
+msgstr "種子"
 
 msgid "Seed Queue"
-msgstr ""
+msgstr "種子佇列"
 
 msgid "Seeding"
-msgstr ""
+msgstr "播種"
 
 msgid "Seeding Limit"
-msgstr ""
+msgstr "播種限制"
 
 msgid "Server"
-msgstr ""
+msgstr "伺服器"
 
 msgid "Set verbosity of transmission messages."
-msgstr ""
+msgstr "設置 transmission 訊息的詳細程度。"
 
 msgid "Sets transmission's file mode creation mask."
-msgstr ""
+msgstr "設定 transmission 的檔案模式建立遮罩。"
 
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 msgid "Shared folder"
-msgstr ""
+msgstr "共享檔案夾"
 
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 msgid "Socket TOS"
-msgstr ""
+msgstr "插槽服務條款"
 
 msgid "Speed"
-msgstr ""
+msgstr "速度"
 
 msgid "Stalled Minutes"
-msgstr ""
+msgstr "停滯分鐘"
 
 msgid "Start Torrents"
-msgstr ""
+msgstr "開始 Torrents"
 
 msgid "Start download"
-msgstr ""
+msgstr "開始下載"
 
 msgid "Start torrents as soon as they are added."
-msgstr ""
+msgstr "一但加入立即開始 torrents。"
 
 msgid "Status"
-msgstr ""
+msgstr "狀態"
 
 msgid "Stop seeding after being idle for N minutes."
-msgstr ""
+msgstr "閒置 N 分鐘後停止播種。"
 
 msgid "Sunday"
-msgstr ""
+msgstr "週日"
 
 msgid "Sync frequency"
-msgstr ""
+msgstr "同步頻率"
 
 msgid "The URL of the blocklist."
-msgstr ""
+msgstr "黑名單的網址。"
 
 msgid "The peer connection encryption mode."
-msgstr ""
+msgstr "同伴連接加密模式。"
 
 msgid "Thursday"
-msgstr ""
+msgstr "週四"
 
 msgid "Time"
-msgstr ""
+msgstr "時間"
 
 msgid "Torrent is stopped"
-msgstr ""
+msgstr "Torrent 已停止"
 
 msgid ""
 "Torrents that have not shared data for queue-stalled-minutes are treated as "
 "'stalled' and are not counted against the queue-download-size and seed-"
 "queue-size limits."
-msgstr ""
+msgstr "沒有分享 queue-stalled-minutes 資料的 torrents 會被當作 '停滯'，並且不被計算入 queue-download-size 和 seed-queue-size 限制。"
 
 msgid ""
 "Transmission will only download download-queue-size non-stalled torrents at "
 "once."
-msgstr ""
+msgstr "Transmission 將只會同時下載 download-queue-size 個沒停滯的 torrents。"
 
 msgid ""
 "Transmission will only seed seed-queue-size non-stalled torrents at once."
-msgstr ""
+msgstr "Transmission 將只會同時播種 seed-queue-size 個沒停滯的 torrents。"
 
 msgid "Transmission will only seed until ratio limit is reached."
-msgstr ""
+msgstr "Transmission 將只會播種到比率限制達到。"
 
 msgid "Trash original"
-msgstr ""
+msgstr "廢棄原始檔"
 
 msgid "Tuesday"
-msgstr ""
+msgstr "週二"
 
 msgid "Turtle Mode"
-msgstr ""
+msgstr "龜速模式"
 
 msgid "Turtle Mode download speed. Value is kb/s."
-msgstr ""
+msgstr "龜速模式下載速度。數值是 kb/s。"
 
 msgid "Turtle Mode upload speed. Value is kb/s."
-msgstr ""
+msgstr "龜速模式上傳速度。數值是 kb/s。"
 
 msgid "UL-rate"
-msgstr ""
+msgstr "上傳速率"
 
 msgid "URL"
-msgstr ""
+msgstr "網址"
 
 msgid "Umask"
-msgstr ""
+msgstr "Umask"
 
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 msgid "Update blocklists automatically."
-msgstr ""
+msgstr "自動更新黑名單。"
 
 msgid "Upload"
-msgstr ""
+msgstr "上傳"
 
 msgid "Upload slots"
-msgstr ""
+msgstr "上傳槽位"
 
 msgid "Upload torrent"
-msgstr ""
+msgstr "上傳 torrent"
 
 msgid "Uri"
-msgstr ""
+msgstr "Uri"
 
 msgid "Url to access RPC (http://localhost/&lt;URI&gt;/(rpc|web)."
-msgstr ""
+msgstr "取用 RPC 的網址 (http://localhost/&lt;URI&gt;/(rpc|web)。"
 
 msgid "Use blocklists."
-msgstr ""
+msgstr "使用黑名單。"
 
 msgid "Used for client authentication."
-msgstr ""
+msgstr "用來做客戶端驗證。"
 
 msgid "Username"
-msgstr ""
+msgstr "用戶名稱"
 
 msgid "Watch"
-msgstr ""
+msgstr "監測"
 
 msgid "Watch a directory for torrent files and add them to transmission"
-msgstr ""
+msgstr "監測一個檔案夾內的 torrent 檔案，自動將它們加入 transmission"
 
 msgid "Wednesday"
-msgstr ""
+msgstr "週三"
 
 msgid "Weekly"
-msgstr ""
+msgstr "每週"
 
 msgid "When enabled, this will toggle the Turtle Mode."
-msgstr ""
+msgstr "當啟用時，這將切換龜速模式。"
 
 msgid "default"
-msgstr ""
+msgstr "預設"
 
 msgid "lowcost"
-msgstr ""
+msgstr "低成本"
 
 msgid "lowdelay"
-msgstr ""
+msgstr "低延遲"
 
 msgid "reliability"
-msgstr ""
+msgstr "可靠性"
 
 msgid "throughput"
-msgstr ""
+msgstr "通量"
