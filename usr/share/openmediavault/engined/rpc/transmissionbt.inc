@@ -300,7 +300,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         $object["incomplete.sharedfolderref"] = $object["incomplete.sharedfolderref"];
         $object["incomplete-dir"]             = $object["incomplete-dir"];
 
-        $object["watch-dir-enabled"]     = boolval($object["paths"]["watch"]["enabled"]);
+        $object["watch-dir-enabled"]     = boolval($object["watch-dir-enabled"]);
         $object["watch.sharedfolderref"] = $object["watch.sharedfolderref"];
         $object["watch-dir"]             = $object["watch-dir"];
 
