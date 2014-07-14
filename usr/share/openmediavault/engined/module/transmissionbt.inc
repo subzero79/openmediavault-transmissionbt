@@ -145,28 +145,19 @@ class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements
         $dispatcher->addListener(
             OMV_NOTIFY_MODIFY,
             $this->getEventMessagePath(),
-            array(
-                $this,
-                "setDirty"
-            )
+            array($this, "setDirty")
         );
 
         $dispatcher->addListener(
             OMV_NOTIFY_MODIFY,
             $this->getEventMessagePath(),
-            array(
-                $moduleMgr->getModule("zeroconf"),
-                "setDirty"
-            )
+            array($moduleMgr->getModule("zeroconf"), "setDirty")
         );
 
         $dispatcher->addListener(
             OMV_NOTIFY_MODIFY,
             $this->getSharedFolderEventMessagePath(),
-            array(
-                $this,
-                "setDirty"
-            )
+            array($this, "setDirty")
         );
     }
 }

@@ -262,7 +262,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this-getEventMessagePath(), $object);
+        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this->getEventMessagePath(), $object);
 
         return $object;
     }
@@ -375,7 +375,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this-getEventMessagePath(), $object);
+        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this->getEventMessagePath(), $object);
 
         return $object;
     }
@@ -473,7 +473,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this-getEventMessagePath(), $object);
+        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this->getEventMessagePath(), $object);
 
         return $object;
     }
@@ -567,7 +567,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this-getEventMessagePath(), $object);
+        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this->getEventMessagePath(), $object);
 
         return $object;
     }
@@ -686,7 +686,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
         $dispatcher = &OMVNotifyDispatcher::getInstance();
         $dispatcher->notify(
             OMV_NOTIFY_MODIFY,
-            $this-getEventMessagePath(),
+            $this->getEventMessagePath(),
             $object
         );
 
@@ -855,7 +855,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
         // Notify configuration changes
         $dispatcher = &OMVNotifyDispatcher::getInstance();
-        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this-getEventMessagePath(), $object);
+        $dispatcher->notify(OMV_NOTIFY_MODIFY, $this->getEventMessagePath(), $object);
 
         return $object;
     }
