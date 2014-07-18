@@ -1,3 +1,9 @@
+openmediavault-transmissionbt (1.0.4) unstable; urgency=low
+
+  * Remove unneeded images
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 18 Jul 2014 13:45:36 +0200
+
 openmediavault-transmissionbt (1.0.3) unstable; urgency=low
 
   * Stop depending on specific transmission version
