@@ -18,7 +18,7 @@
 // require("js/omv/PluginManager.js")
 // require("js/omv/module/admin/diagnostic/log/plugin/Plugin.js")
 
-Ext.define("OMV.module.admin.diagnostic.log.plugin.TransmissionBT", {
+Ext.define("OMV.module.admin.diagnostic.log.plugin.TransmissionBt", {
     extend : "OMV.module.admin.diagnostic.log.plugin.Plugin",
     alias  : "omv.plugin.diagnostic.log.transmissionbt",
 

@@ -25,7 +25,7 @@ require_once "openmediavault/initscript.inc";
 require_once "openmediavault/module.inc";
 require_once "openmediavault/util.inc";
 
-class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements
+class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
     OMVINotifyListener,
     OMVIModuleServiceStatus
 {
@@ -164,7 +164,7 @@ class OMVModuleTransmissionBT extends OMVModuleServiceAbstract implements
 
 // Register module
 $moduleMgr = &OMVModuleMgr::getInstance();
-$moduleMgr->registerModule(new OMVModuleTransmissionBT());
+$moduleMgr->registerModule(new OMVModuleTransmissionBt());
 
 // Register new logfile type.
 OMVLogFile::registerType(

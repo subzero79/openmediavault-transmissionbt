@@ -19,10 +19,10 @@
 // require("js/omv/WorkspaceManager.js")
 // require("js/omv/workspace/form/Panel.js")
 
-Ext.define("OMV.module.admin.service.transmissionbt.configure.Queuing", {
+Ext.define("OMV.module.admin.service.transmissionbt.settings.Queuing", {
     extend       : "OMV.workspace.form.Panel",
 
-    rpcService   : "TransmissionBT",
+    rpcService   : "TransmissionBt",
     rpcGetMethod : "getQueuing",
     rpcSetMethod : "setQueuing",
 

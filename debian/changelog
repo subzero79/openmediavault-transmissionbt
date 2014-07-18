@@ -1,3 +1,10 @@
+openmediavault-transmissionbt (1.0.3) unstable; urgency=low
+
+  * Stop depending on specific transmission version
+  * Change order of configure and manage tabs to follow the usual OMV design
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 18 Jul 2014 13:18:21 +0200
+
 openmediavault-transmissionbt (1.0.2) unstable; urgency=low
 
   * Fix error that made it impossible to apply the settings 

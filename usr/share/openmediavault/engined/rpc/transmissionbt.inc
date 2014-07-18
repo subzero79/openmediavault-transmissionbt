@@ -27,7 +27,7 @@ require_once "openmediavault/util.inc";
 require_once "transmission/ITorrentServer.php";
 require_once "transmission/TransmissionTorrentServer.php";
 
-class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
+class OMVRpcServiceTransmissionBt extends OMVRpcServiceAbstract
 {
     /* Helpers */
 
@@ -71,7 +71,7 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
      */
     public function getName()
     {
-        return "TransmissionBT";
+        return "TransmissionBt";
     }
 
     /**
@@ -1114,4 +1114,4 @@ class OMVRpcServiceTransmissionBT extends OMVRpcServiceAbstract
 
 // Register the RPC service.
 $rpcServiceMgr = &OMVRpcServiceMgr::getInstance();
-$rpcServiceMgr->registerService(new OMVRpcServiceTransmissionBT());
+$rpcServiceMgr->registerService(new OMVRpcServiceTransmissionBt());

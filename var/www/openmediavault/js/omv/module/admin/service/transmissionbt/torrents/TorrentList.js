@@ -23,18 +23,18 @@
 // require("js/omv/data/proxy/Rpc.js")
 // require("js/omv/window/Upload.js")
 // require("js/omv/module/admin/service/transmissionbt/util/Format.js")
-// require("js/omv/module/admin/service/transmissionbt/manage/window/AddTorrent.js")
-// require("js/omv/module/admin/service/transmissionbt/manage/window/DeleteTorrent.js")
+// require("js/omv/module/admin/service/transmissionbt/torrents/window/AddTorrent.js")
+// require("js/omv/module/admin/service/transmissionbt/torrents/window/DeleteTorrent.js")
 
-Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
+Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
     extend   : "OMV.workspace.grid.Panel",
     requires : [
         "OMV.data.Store",
         "OMV.data.Model",
         "OMV.data.proxy.Rpc",
         "OMV.module.admin.service.transmissionbt.util.Format",
-        "OMV.module.admin.service.transmissionbt.manage.window.AddTorrent",
-        "OMV.module.admin.service.transmissionbt.manage.window.DeleteTorrent"
+        "OMV.module.admin.service.transmissionbt.torrents.window.AddTorrent",
+        "OMV.module.admin.service.transmissionbt.torrents.window.DeleteTorrent"
     ],
 
     autoReload        : true,
@@ -154,7 +154,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
                 proxy : {
                     type    : "rpc",
                     rpcData : {
-                        service : "TransmissionBT",
+                        service : "TransmissionBt",
                         method  : "getTorrentList"
                     }
                 }
@@ -163,12 +163,12 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
 
         // Initialize context menu
         me.menu = me.getMenu();
-        
+
         me.callParent(arguments);
 
-        // Set up event listeners        
+        // Set up event listeners
         me.on("itemcontextmenu", me.onItemContextMenu, me);
-        
+
         var selModel = me.getSelectionModel();
         selModel.on("selectionchange", me.updateCustomButtonsState, me);
     },
@@ -208,7 +208,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
             scope    : me,
             callback : me.onReload,
             rpcData  : {
-                service : "TransmissionBT",
+                service : "TransmissionBt",
                 method  : "serverIsRunning"
             }
         });
@@ -241,7 +241,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
             id       : me.getId() + "-pause",
             xtype    : "button",
             text     : me.pauseButtonText,
-            icon     : "images/transmissionbt-pause.png",
+            icon     : "images/pause.png",
             iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
             handler  : Ext.Function.bind(me.onPauseButton, me, [ me ]),
             disabled : true,
@@ -312,7 +312,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
 
     toggleAddTorrentButtons : function(enable) {
         var me = this;
-        
+
         addTorrentButton = me.queryById(me.getId() + "-add");
         uploadTorrentButton = me.queryById(me.getId() + "-upload");
 
@@ -389,7 +389,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
     onAddButton : function() {
         var me = this;
 
-        Ext.create("OMV.module.admin.service.transmissionbt.manage.window.AddTorrent", {
+        Ext.create("OMV.module.admin.service.transmissionbt.torrents.window.AddTorrent", {
             title     : _("Add torrent"),
             listeners : {
                 scope  : me,
@@ -405,7 +405,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
 
         Ext.create("OMV.window.Upload", {
             title   : _("Upload torrent"),
-            service : "TransmissionBT",
+            service : "TransmissionBt",
             method  : "uploadTorrent",
             listeners : {
                 success : function () {
@@ -420,7 +420,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
         var me = this;
         var records = me.getSelection();
 
-        Ext.create("OMV.module.admin.service.transmissionbt.manage.window.DeleteTorrent", {
+        Ext.create("OMV.module.admin.service.transmissionbt.torrents.window.DeleteTorrent", {
             listeners : {
                 scope  : me,
                 submit : function(id, values) {
@@ -442,7 +442,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
             scope : me,
             callback : me.onDeletion,
             rpcData : {
-                service : "TransmissionBT",
+                service : "TransmissionBt",
                 method  : "deleteTorrent",
                 params  : {
                     id                : record.get("id"),
@@ -460,7 +460,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
             scope    : me,
             callback : me.doReload,
             rpcData  : {
-                service : "TransmissionBT",
+                service : "TransmissionBt",
                 method  : "resumeTorrent",
                 params  : {
                     id : record.get("id")
@@ -477,7 +477,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
             scope    : me,
             callback : me.doReload,
             rpcData  : {
-                service : "TransmissionBT",
+                service : "TransmissionBt",
                 method  : "pauseTorrent",
                 params  : {
                     id : record.get("id")
@@ -528,7 +528,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
             scope    : me,
             callback : me.onQueueMove,
             rpcData  : {
-                service : "TransmissionBT",
+                service : "TransmissionBt",
                 method  : "queueMoveTorrent",
                 params  : {
                     id     : record.get("id"),
@@ -574,14 +574,14 @@ Ext.define("OMV.module.admin.service.transmissionbt.manage.TorrentList", {
 
     updateQueueMoveProgress: function() {
         var me = this;
-        
+
         // Calculate percentage
         var p = (me.queueMoveActionInfo.count - me.queueMoveActionInfo.records.length) /
         me.queueMoveActionInfo.count;
-        
+
         // Create message text
         var text = Math.round(100 * p) + _("% completed ...");
-        
+
         // Update progress dialog
         OMV.MessageBox.updateProgress(p, text);
     }

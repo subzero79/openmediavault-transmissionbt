@@ -18,16 +18,16 @@
 
 // require("js/omv/WorkspaceManager.js")
 // require("js/omv/workspace/form/Panel.js")
-// require("js/omv/form/plugin/LinkedFields.js")
 // require("js/omv/form/field/SharedFolderComboBox.js")
+// require("js/omv/form/plugin/LinkedFields.js")
 
-Ext.define("OMV.module.admin.service.transmissionbt.configure.FilesAndLocations", {
-    extend       : "OMV.workspace.form.Panel",
-    uses         : [
+Ext.define("OMV.module.admin.service.transmissionbt.settings.FilesAndLocations", {
+    extend   : "OMV.workspace.form.Panel",
+    requires : [
         "OMV.form.field.SharedFolderComboBox"
     ],
 
-    rpcService   : "TransmissionBT",
+    rpcService   : "TransmissionBt",
     rpcGetMethod : "getFilesAndLocations",
     rpcSetMethod : "setFilesAndLocations",
 

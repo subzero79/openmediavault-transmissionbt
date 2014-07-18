@@ -19,7 +19,7 @@
 // require("js/omv/WorkspaceManager.js")
 // require("js/omv/workspace/window/Form.js")
 
-Ext.define("OMV.module.admin.service.transmissionbt.manage.window.DeleteTorrent", {
+Ext.define("OMV.module.admin.service.transmissionbt.torrents.window.DeleteTorrent", {
     extend : "OMV.workspace.window.Form",
 
     hideResetButton : true,

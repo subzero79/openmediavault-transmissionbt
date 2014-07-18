@@ -19,10 +19,10 @@
 // require("js/omv/WorkspaceManager.js")
 // require("js/omv/workspace/window/Form.js")
 
-Ext.define("OMV.module.admin.service.transmissionbt.manage.window.AddTorrent", {
+Ext.define("OMV.module.admin.service.transmissionbt.torrents.window.AddTorrent", {
     extend : "OMV.workspace.window.Form",
 
-    rpcService: "TransmissionBT",
+    rpcService: "TransmissionBt",
     rpcSetMethod    : "addTorrent",
     hideResetButton : true,
     width           : 500,

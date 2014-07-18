@@ -19,10 +19,10 @@
 // require("js/omv/WorkspaceManager.js")
 // require("js/omv/workspace/form/Panel.js")
 
-Ext.define("OMV.module.admin.service.transmissionbt.configure.Peer", {
+Ext.define("OMV.module.admin.service.transmissionbt.settings.Peer", {
     extend       : "OMV.workspace.form.Panel",
 
-    rpcService   : "TransmissionBT",
+    rpcService   : "TransmissionBt",
     rpcGetMethod : "getPeer",
     rpcSetMethod : "setPeer",
 

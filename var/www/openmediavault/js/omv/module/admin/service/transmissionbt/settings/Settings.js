@@ -21,10 +21,10 @@
 // require("js/omv/workspace/form/Panel.js")
 // require("js/omv/form/plugin/LinkedFields.js")
 
-Ext.define("OMV.module.admin.service.transmissionbt.configure.Settings", {
+Ext.define("OMV.module.admin.service.transmissionbt.settings.Settings", {
     extend       : "OMV.workspace.form.Panel",
 
-    rpcService   : "TransmissionBT",
+    rpcService   : "TransmissionBt",
     rpcGetMethod : "getSettings",
     rpcSetMethod : "setSettings",
 
@@ -298,7 +298,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.configure.Settings", {
             }]
         },{
             xtype    : "fieldset",
-            title    : _("Script to Proccess After Torrent Finishes"),
+            title    : _("Script to process after torrent finishes"),
             defaults : {
                 labelSeparator : ""
             },
