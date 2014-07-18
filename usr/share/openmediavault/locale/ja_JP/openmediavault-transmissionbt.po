@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-14 11:49-0600\n"
-"PO-Revision-Date: 2014-02-21 04:17+0000\n"
-"Last-Translator: Toshihiro Kan <kansuke4649@gmail.com>\n"
+"POT-Creation-Date: 2014-07-18 06:27-0500\n"
+"PO-Revision-Date: 2014-07-18 11:28+0000\n"
+"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
 "Language-Team: Japanese (Japan) (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/ja_JP/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,11 +17,17 @@ msgstr ""
 "Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+msgid "% completed ..."
+msgstr ""
+
+msgid "100% completed ..."
+msgstr ""
+
 msgid "Add Torrent by URL"
 msgstr "URLによるTorrentの追加"
 
-msgid "Add URL"
-msgstr "URLの追加"
+msgid "Add torrent"
+msgstr ""
 
 msgid "Adding Torrent ..."
 msgstr "Torrentを追加しています ..."
@@ -53,6 +59,9 @@ msgstr "キャッシュサイズ"
 msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
 msgstr "キャッシュサイズ(Mb単位)はディスクに対する読み、書きの回数を減らします。"
 
+msgid "Changing place in queue for selected item(s)"
+msgstr ""
+
 msgid "Checking files"
 msgstr "ファイルのチェック"
 
@@ -77,9 +86,6 @@ msgstr "日"
 msgid "Debug"
 msgstr "デバッグ"
 
-msgid "Delete"
-msgstr "削除"
-
 msgid "Delete Local Data"
 msgstr "ローカルデータを削除"
 
@@ -88,9 +94,6 @@ msgstr "torrentを削除"
 
 msgid "Delete torrents added from the watch directory."
 msgstr "監視ディレクトリから追加されたtorrentを削除します。"
-
-msgid "Deleting selected item(s)"
-msgstr "選択されたアイテムを削除しています"
 
 msgid "Deleting torrent ..."
 msgstr "torrentを削除しています ..."
@@ -238,9 +241,6 @@ msgstr "情報"
 msgid "Invalid Uri."
 msgstr "不正なUriです。"
 
-msgid "Jobs"
-msgstr "ジョブ"
-
 msgid "Lazy Bitfield"
 msgstr "レイジービットフィールド"
 
@@ -291,6 +291,18 @@ msgstr "月曜"
 msgid "Monthly"
 msgstr "毎月"
 
+msgid "Move down"
+msgstr ""
+
+msgid "Move to bottom"
+msgstr ""
+
+msgid "Move to top"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
 msgid "Name"
 msgstr "名前"
 
@@ -311,9 +323,6 @@ msgstr "パスワード"
 
 msgid "Pause"
 msgstr "一時停止"
-
-msgid "Pausing selected item(s)"
-msgstr "選択したアイテムを一時停止"
 
 msgid "Peer"
 msgstr "ピア"
@@ -360,23 +369,8 @@ msgstr "優先度"
 msgid "Queue"
 msgstr "キュー"
 
-msgid "Queue Move Bottom"
-msgstr "キューを最下位に移動"
-
-msgid "Queue Move Down"
-msgstr "キューを下に移動"
-
-msgid "Queue Move Top"
-msgstr "キューを最上位へ移動"
-
-msgid "Queue Move Up"
-msgstr "キューを上に移動"
-
 msgid "Queue Stalled"
 msgstr "キューが失速しました"
-
-msgid "Queue moving selcted item(s)"
-msgstr "選択したアイテムのキューを移動"
 
 msgid "Queued to check files"
 msgstr "チェックファイルをキューに入れました"
@@ -411,17 +405,11 @@ msgstr "比率"
 msgid "Ratio Limit"
 msgstr "比率の制限"
 
-msgid "Reload"
-msgstr "再読み込み"
-
 msgid "Require clients to authenticate themselves."
 msgstr "自分自身を認証するためにクライアントが必要になります。"
 
 msgid "Resume"
 msgstr "リジューム"
-
-msgid "Resuming selected item(s)"
-msgstr "選択したアイテムをリジュームする"
 
 msgid "Run a script at torrent completion."
 msgstr "torrent完了時にスクリプトを実行します。"
@@ -438,8 +426,8 @@ msgstr "スクレイプポーズしたtorrent。"
 msgid "Script"
 msgstr "スクリプト"
 
-msgid "Script to Proccess After Torrent Finishes"
-msgstr "Torrentが完了した後に実行されるスクリプト"
+msgid "Script to process after torrent finishes"
+msgstr ""
 
 msgid "Seed"
 msgstr "シード"
@@ -452,9 +440,6 @@ msgstr "シーディング"
 
 msgid "Seeding Limit"
 msgstr "シーディング制限"
-
-msgid "Server"
-msgstr "サーバ"
 
 msgid "Set verbosity of transmission messages."
 msgstr "伝送メッセージの詳細度を設定します。"
@@ -515,6 +500,9 @@ msgstr "時間"
 
 msgid "Torrent is stopped"
 msgstr "Torrentは停止しました。"
+
+msgid "Torrents"
+msgstr ""
 
 msgid ""
 "Torrents that have not shared data for queue-stalled-minutes are treated as "

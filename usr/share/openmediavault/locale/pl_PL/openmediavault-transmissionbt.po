@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-14 11:49-0600\n"
-"PO-Revision-Date: 2014-01-30 10:08+0000\n"
-"Last-Translator: Cyryl Sochacki <cyrylsochacki@gmail.com>\n"
+"POT-Creation-Date: 2014-07-18 06:27-0500\n"
+"PO-Revision-Date: 2014-07-18 11:28+0000\n"
+"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
 "Language-Team: Polish (Poland) (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/pl_PL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +19,17 @@ msgstr ""
 "Language: pl_PL\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+msgid "% completed ..."
+msgstr ""
+
+msgid "100% completed ..."
+msgstr ""
+
 msgid "Add Torrent by URL"
 msgstr "Dodaj link do torrenta "
 
-msgid "Add URL"
-msgstr "Dodaj link"
+msgid "Add torrent"
+msgstr ""
 
 msgid "Adding Torrent ..."
 msgstr "Dodaję torrenta ..."
@@ -55,6 +61,9 @@ msgstr "Rozmiar pamięci podręcznej"
 msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
 msgstr "Rozmiar pamięci cache (w Mb) w celu zmniejszenia liczby operacji zapisu/odczytu z dysku"
 
+msgid "Changing place in queue for selected item(s)"
+msgstr ""
+
 msgid "Checking files"
 msgstr "Sprawdź pliki"
 
@@ -79,9 +88,6 @@ msgstr "Dni"
 msgid "Debug"
 msgstr "Debugowanie"
 
-msgid "Delete"
-msgstr "Usuń"
-
 msgid "Delete Local Data"
 msgstr "Usuń lokalne dane"
 
@@ -90,9 +96,6 @@ msgstr "Usuń torrenta"
 
 msgid "Delete torrents added from the watch directory."
 msgstr "Usuń torrenty z obserwowanego folderu po dodaniu ."
-
-msgid "Deleting selected item(s)"
-msgstr "Usuń zaznaczone"
 
 msgid "Deleting torrent ..."
 msgstr "Usuwanie torrenta ..."
@@ -240,9 +243,6 @@ msgstr "Info"
 msgid "Invalid Uri."
 msgstr "Niepoprawny URI."
 
-msgid "Jobs"
-msgstr "Zadania"
-
 msgid "Lazy Bitfield"
 msgstr "Lazy Bitfield"
 
@@ -293,6 +293,18 @@ msgstr "Poniedziałek"
 msgid "Monthly"
 msgstr "Miesięczniy"
 
+msgid "Move down"
+msgstr ""
+
+msgid "Move to bottom"
+msgstr ""
+
+msgid "Move to top"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
 msgid "Name"
 msgstr "Nazwa"
 
@@ -313,9 +325,6 @@ msgstr "Hasło"
 
 msgid "Pause"
 msgstr "Pauza"
-
-msgid "Pausing selected item(s)"
-msgstr "Pauzuj zaznaczony(e)"
 
 msgid "Peer"
 msgstr "Peer"
@@ -362,23 +371,8 @@ msgstr "Preferowane"
 msgid "Queue"
 msgstr "Kolejka"
 
-msgid "Queue Move Bottom"
-msgstr "Kolejka - na koniec"
-
-msgid "Queue Move Down"
-msgstr "Kolejka - w dół"
-
-msgid "Queue Move Top"
-msgstr "Kolejka - na początek"
-
-msgid "Queue Move Up"
-msgstr "Kolejka - w górę"
-
 msgid "Queue Stalled"
 msgstr "Kolejka zablokowanych"
-
-msgid "Queue moving selcted item(s)"
-msgstr "Przenoszenie zaznaczonych pozycji"
 
 msgid "Queued to check files"
 msgstr "Kolejkuj do sprawdzenia plików"
@@ -413,17 +407,11 @@ msgstr "Udział"
 msgid "Ratio Limit"
 msgstr "Limit udziału"
 
-msgid "Reload"
-msgstr "Przeładuj"
-
 msgid "Require clients to authenticate themselves."
 msgstr "Wymagaj uwierzytelnienia klientów."
 
 msgid "Resume"
 msgstr "Ponów"
-
-msgid "Resuming selected item(s)"
-msgstr "Ponawianie zaznaczonych(ego)"
 
 msgid "Run a script at torrent completion."
 msgstr "Uruchom skrypt po zakończeniu torrenta."
@@ -440,8 +428,8 @@ msgstr ""
 msgid "Script"
 msgstr "Skrypt"
 
-msgid "Script to Proccess After Torrent Finishes"
-msgstr "Skrypt do wykonania po pobraniu torrentów"
+msgid "Script to process after torrent finishes"
+msgstr ""
 
 msgid "Seed"
 msgstr "Seed"
@@ -454,9 +442,6 @@ msgstr "Seeduję"
 
 msgid "Seeding Limit"
 msgstr "Limit Seedowania"
-
-msgid "Server"
-msgstr "Serwer"
 
 msgid "Set verbosity of transmission messages."
 msgstr "Ustaw poziom szczegółowości wiadomości."
@@ -517,6 +502,9 @@ msgstr "Czas"
 
 msgid "Torrent is stopped"
 msgstr "Torrent jest zatrzymany"
+
+msgid "Torrents"
+msgstr ""
 
 msgid ""
 "Torrents that have not shared data for queue-stalled-minutes are treated as "
