@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-14 11:49-0600\n"
-"PO-Revision-Date: 2013-11-20 11:34+0000\n"
+"POT-Creation-Date: 2014-07-18 06:27-0500\n"
+"PO-Revision-Date: 2014-07-18 11:28+0000\n"
 "Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
 "Language-Team: Ukrainian (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/uk/)\n"
 "MIME-Version: 1.0\n"
@@ -19,11 +19,17 @@ msgstr ""
 "Language: uk\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
+msgid "% completed ..."
+msgstr ""
+
+msgid "100% completed ..."
+msgstr ""
+
 msgid "Add Torrent by URL"
 msgstr "Додати торрент за URL"
 
-msgid "Add URL"
-msgstr "Додати URL"
+msgid "Add torrent"
+msgstr ""
 
 msgid "Adding Torrent ..."
 msgstr "Додається торрент ..."
@@ -55,6 +61,9 @@ msgstr ""
 msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
 msgstr ""
 
+msgid "Changing place in queue for selected item(s)"
+msgstr ""
+
 msgid "Checking files"
 msgstr ""
 
@@ -79,9 +88,6 @@ msgstr ""
 msgid "Debug"
 msgstr "Діагностика"
 
-msgid "Delete"
-msgstr ""
-
 msgid "Delete Local Data"
 msgstr ""
 
@@ -89,9 +95,6 @@ msgid "Delete torrent"
 msgstr ""
 
 msgid "Delete torrents added from the watch directory."
-msgstr ""
-
-msgid "Deleting selected item(s)"
 msgstr ""
 
 msgid "Deleting torrent ..."
@@ -240,9 +243,6 @@ msgstr ""
 msgid "Invalid Uri."
 msgstr ""
 
-msgid "Jobs"
-msgstr ""
-
 msgid "Lazy Bitfield"
 msgstr ""
 
@@ -293,6 +293,18 @@ msgstr "Понеділок"
 msgid "Monthly"
 msgstr ""
 
+msgid "Move down"
+msgstr ""
+
+msgid "Move to bottom"
+msgstr ""
+
+msgid "Move to top"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
 msgid "Name"
 msgstr "Назва"
 
@@ -313,9 +325,6 @@ msgstr "Пароль"
 
 msgid "Pause"
 msgstr "Пауза"
-
-msgid "Pausing selected item(s)"
-msgstr ""
 
 msgid "Peer"
 msgstr ""
@@ -362,22 +371,7 @@ msgstr ""
 msgid "Queue"
 msgstr "Додати до черги"
 
-msgid "Queue Move Bottom"
-msgstr ""
-
-msgid "Queue Move Down"
-msgstr ""
-
-msgid "Queue Move Top"
-msgstr ""
-
-msgid "Queue Move Up"
-msgstr ""
-
 msgid "Queue Stalled"
-msgstr ""
-
-msgid "Queue moving selcted item(s)"
 msgstr ""
 
 msgid "Queued to check files"
@@ -413,16 +407,10 @@ msgstr ""
 msgid "Ratio Limit"
 msgstr ""
 
-msgid "Reload"
-msgstr ""
-
 msgid "Require clients to authenticate themselves."
 msgstr ""
 
 msgid "Resume"
-msgstr ""
-
-msgid "Resuming selected item(s)"
 msgstr ""
 
 msgid "Run a script at torrent completion."
@@ -440,7 +428,7 @@ msgstr ""
 msgid "Script"
 msgstr ""
 
-msgid "Script to Proccess After Torrent Finishes"
+msgid "Script to process after torrent finishes"
 msgstr ""
 
 msgid "Seed"
@@ -454,9 +442,6 @@ msgstr ""
 
 msgid "Seeding Limit"
 msgstr ""
-
-msgid "Server"
-msgstr "Сервер"
 
 msgid "Set verbosity of transmission messages."
 msgstr ""
@@ -516,6 +501,9 @@ msgid "Time"
 msgstr "Час"
 
 msgid "Torrent is stopped"
+msgstr ""
+
+msgid "Torrents"
 msgstr ""
 
 msgid ""

@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-14 11:49-0600\n"
-"PO-Revision-Date: 2013-11-22 16:08+0000\n"
-"Last-Translator: Stefan Thrane Overby <stoverby@gmail.com>\n"
+"POT-Creation-Date: 2014-07-18 06:27-0500\n"
+"PO-Revision-Date: 2014-07-18 11:28+0000\n"
+"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,11 +18,17 @@ msgstr ""
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "% completed ..."
+msgstr ""
+
+msgid "100% completed ..."
+msgstr ""
+
 msgid "Add Torrent by URL"
 msgstr "Tilføj Torrent med URL"
 
-msgid "Add URL"
-msgstr "Tilføj URL"
+msgid "Add torrent"
+msgstr ""
 
 msgid "Adding Torrent ..."
 msgstr "Tilføjer Torrent ..."
@@ -54,6 +60,9 @@ msgstr "Cachestørrelse"
 msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
 msgstr "Cachestørrelse (i Mb) for at reducere læse og skrive antallet på disken."
 
+msgid "Changing place in queue for selected item(s)"
+msgstr ""
+
 msgid "Checking files"
 msgstr "Kontroller filer"
 
@@ -78,9 +87,6 @@ msgstr "Dage"
 msgid "Debug"
 msgstr "Debug"
 
-msgid "Delete"
-msgstr "Slet"
-
 msgid "Delete Local Data"
 msgstr "Slet Lokal Data"
 
@@ -89,9 +95,6 @@ msgstr "Slet torrent"
 
 msgid "Delete torrents added from the watch directory."
 msgstr "Slet tilføjet torrents fra overvågnings mappen."
-
-msgid "Deleting selected item(s)"
-msgstr "Sletter valgte emne(r)"
 
 msgid "Deleting torrent ..."
 msgstr "Sletter torrent ..."
@@ -239,9 +242,6 @@ msgstr "Oplysning"
 msgid "Invalid Uri."
 msgstr "Ugyldig Uri."
 
-msgid "Jobs"
-msgstr "Opgaver"
-
 msgid "Lazy Bitfield"
 msgstr "Doven Bitfelt"
 
@@ -292,6 +292,18 @@ msgstr "Mandag"
 msgid "Monthly"
 msgstr "Månedlig"
 
+msgid "Move down"
+msgstr ""
+
+msgid "Move to bottom"
+msgstr ""
+
+msgid "Move to top"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
 msgid "Name"
 msgstr "Navn"
 
@@ -312,9 +324,6 @@ msgstr "Adgangskode"
 
 msgid "Pause"
 msgstr "Pause"
-
-msgid "Pausing selected item(s)"
-msgstr "Pauser valgte emne(r)"
 
 msgid "Peer"
 msgstr "Peer"
@@ -361,23 +370,8 @@ msgstr "Foretrukken"
 msgid "Queue"
 msgstr "Kø"
 
-msgid "Queue Move Bottom"
-msgstr "Kø Flyt Bund"
-
-msgid "Queue Move Down"
-msgstr "Kø Flyt Bund"
-
-msgid "Queue Move Top"
-msgstr "Kø Flyt Top"
-
-msgid "Queue Move Up"
-msgstr "Kø Flyt Op"
-
 msgid "Queue Stalled"
 msgstr "Kø Stoppet"
-
-msgid "Queue moving selcted item(s)"
-msgstr "Kø flytter valgte emne(r)"
 
 msgid "Queued to check files"
 msgstr "I kø for at kontroller filer"
@@ -412,17 +406,11 @@ msgstr "Forhold"
 msgid "Ratio Limit"
 msgstr "Forholdsgrænse"
 
-msgid "Reload"
-msgstr "Genindlæs"
-
 msgid "Require clients to authenticate themselves."
 msgstr "Kræv at, klienter godkender sig."
 
 msgid "Resume"
 msgstr "Genoptag"
-
-msgid "Resuming selected item(s)"
-msgstr "Genoptager valgte emne(r)"
 
 msgid "Run a script at torrent completion."
 msgstr "Kør et script ved torrent færdiggørelse."
@@ -439,8 +427,8 @@ msgstr "Høst pauset torrents."
 msgid "Script"
 msgstr "Script"
 
-msgid "Script to Proccess After Torrent Finishes"
-msgstr "Script der udføres efter torrent er færdig"
+msgid "Script to process after torrent finishes"
+msgstr ""
 
 msgid "Seed"
 msgstr "Seed"
@@ -453,9 +441,6 @@ msgstr "Seeder"
 
 msgid "Seeding Limit"
 msgstr "Seed Grænse"
-
-msgid "Server"
-msgstr "Server"
 
 msgid "Set verbosity of transmission messages."
 msgstr "Angiv informationsniveauet af transmission beskeder."
@@ -516,6 +501,9 @@ msgstr "Tid"
 
 msgid "Torrent is stopped"
 msgstr "Torrent er stoppet"
+
+msgid "Torrents"
+msgstr ""
 
 msgid ""
 "Torrents that have not shared data for queue-stalled-minutes are treated as "

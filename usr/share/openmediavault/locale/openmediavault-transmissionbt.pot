@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-14 11:49-0600\n"
+"POT-Creation-Date: 2014-07-18 06:27-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+msgid "% completed ..."
+msgstr ""
+
+msgid "100% completed ..."
+msgstr ""
+
 msgid "Add Torrent by URL"
 msgstr ""
 
-msgid "Add URL"
+msgid "Add torrent"
 msgstr ""
 
 msgid "Adding Torrent ..."
@@ -53,6 +59,9 @@ msgstr ""
 msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
 msgstr ""
 
+msgid "Changing place in queue for selected item(s)"
+msgstr ""
+
 msgid "Checking files"
 msgstr ""
 
@@ -77,9 +86,6 @@ msgstr ""
 msgid "Debug"
 msgstr ""
 
-msgid "Delete"
-msgstr ""
-
 msgid "Delete Local Data"
 msgstr ""
 
@@ -87,9 +93,6 @@ msgid "Delete torrent"
 msgstr ""
 
 msgid "Delete torrents added from the watch directory."
-msgstr ""
-
-msgid "Deleting selected item(s)"
 msgstr ""
 
 msgid "Deleting torrent ..."
@@ -236,9 +239,6 @@ msgstr ""
 msgid "Invalid Uri."
 msgstr ""
 
-msgid "Jobs"
-msgstr ""
-
 msgid "Lazy Bitfield"
 msgstr ""
 
@@ -287,6 +287,18 @@ msgstr ""
 msgid "Monthly"
 msgstr ""
 
+msgid "Move down"
+msgstr ""
+
+msgid "Move to bottom"
+msgstr ""
+
+msgid "Move to top"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
 msgid "Name"
 msgstr ""
 
@@ -306,9 +318,6 @@ msgid "Password"
 msgstr ""
 
 msgid "Pause"
-msgstr ""
-
-msgid "Pausing selected item(s)"
 msgstr ""
 
 msgid "Peer"
@@ -356,22 +365,7 @@ msgstr ""
 msgid "Queue"
 msgstr ""
 
-msgid "Queue Move Bottom"
-msgstr ""
-
-msgid "Queue Move Down"
-msgstr ""
-
-msgid "Queue Move Top"
-msgstr ""
-
-msgid "Queue Move Up"
-msgstr ""
-
 msgid "Queue Stalled"
-msgstr ""
-
-msgid "Queue moving selcted item(s)"
 msgstr ""
 
 msgid "Queued to check files"
@@ -407,16 +401,10 @@ msgstr ""
 msgid "Ratio Limit"
 msgstr ""
 
-msgid "Reload"
-msgstr ""
-
 msgid "Require clients to authenticate themselves."
 msgstr ""
 
 msgid "Resume"
-msgstr ""
-
-msgid "Resuming selected item(s)"
 msgstr ""
 
 msgid "Run a script at torrent completion."
@@ -434,7 +422,7 @@ msgstr ""
 msgid "Script"
 msgstr ""
 
-msgid "Script to Proccess After Torrent Finishes"
+msgid "Script to process after torrent finishes"
 msgstr ""
 
 msgid "Seed"
@@ -447,9 +435,6 @@ msgid "Seeding"
 msgstr ""
 
 msgid "Seeding Limit"
-msgstr ""
-
-msgid "Server"
 msgstr ""
 
 msgid "Set verbosity of transmission messages."
@@ -510,6 +495,9 @@ msgid "Time"
 msgstr ""
 
 msgid "Torrent is stopped"
+msgstr ""
+
+msgid "Torrents"
 msgstr ""
 
 msgid "Torrents that have not shared data for queue-stalled-minutes are treated as 'stalled' and are not counted against the queue-download-size and seed-queue-size limits."

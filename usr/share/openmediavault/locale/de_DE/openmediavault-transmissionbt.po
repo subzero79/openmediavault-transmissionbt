@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-14 11:49-0600\n"
-"PO-Revision-Date: 2013-11-20 11:34+0000\n"
-"Last-Translator: David Hönel <davidh1990@gmx.de>\n"
+"POT-Creation-Date: 2014-07-18 06:27-0500\n"
+"PO-Revision-Date: 2014-07-18 11:28+0000\n"
+"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,11 +18,17 @@ msgstr ""
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+msgid "% completed ..."
+msgstr ""
+
+msgid "100% completed ..."
+msgstr ""
+
 msgid "Add Torrent by URL"
 msgstr "Torrent durch URL hinzufügen"
 
-msgid "Add URL"
-msgstr "URL hinzufügen"
+msgid "Add torrent"
+msgstr ""
 
 msgid "Adding Torrent ..."
 msgstr "Torrent hinzfügen ..."
@@ -54,6 +60,9 @@ msgstr "Cachegröße"
 msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
 msgstr "Cachegröße (in Megabyte) um die Anzahl der Festplattenzugriffe zu verringern."
 
+msgid "Changing place in queue for selected item(s)"
+msgstr ""
+
 msgid "Checking files"
 msgstr "Dateien prüfen"
 
@@ -78,9 +87,6 @@ msgstr "Tage"
 msgid "Debug"
 msgstr "Debug"
 
-msgid "Delete"
-msgstr "Entfernen"
-
 msgid "Delete Local Data"
 msgstr "Entferne Lokale Daten"
 
@@ -89,9 +95,6 @@ msgstr "Entferne Torrent"
 
 msgid "Delete torrents added from the watch directory."
 msgstr "Torrents entfernen die durch den Überwachten Ordner hinzugefügt wurden."
-
-msgid "Deleting selected item(s)"
-msgstr "Entferne ausgewählte Obejekte"
 
 msgid "Deleting torrent ..."
 msgstr "Entferne Torrent ..."
@@ -239,9 +242,6 @@ msgstr "Info"
 msgid "Invalid Uri."
 msgstr "Ungültige URL."
 
-msgid "Jobs"
-msgstr "Aufträge"
-
 msgid "Lazy Bitfield"
 msgstr "Lazy Bitfield"
 
@@ -292,6 +292,18 @@ msgstr "Montag"
 msgid "Monthly"
 msgstr "Monatlich"
 
+msgid "Move down"
+msgstr ""
+
+msgid "Move to bottom"
+msgstr ""
+
+msgid "Move to top"
+msgstr ""
+
+msgid "Move up"
+msgstr ""
+
 msgid "Name"
 msgstr "Name"
 
@@ -312,9 +324,6 @@ msgstr "Passwort"
 
 msgid "Pause"
 msgstr "Pause"
-
-msgid "Pausing selected item(s)"
-msgstr "Pausiere ausgewählte Elemente"
 
 msgid "Peer"
 msgstr "Peer"
@@ -361,23 +370,8 @@ msgstr "Bevorzugt"
 msgid "Queue"
 msgstr "Warteschlange"
 
-msgid "Queue Move Bottom"
-msgstr "Bewege zum Ende der Warteschlange "
-
-msgid "Queue Move Down"
-msgstr "Bewege nach unten in der Warteschlange"
-
-msgid "Queue Move Top"
-msgstr "Bewege zum Anfang der Warteschlange"
-
-msgid "Queue Move Up"
-msgstr "Bewege nach oben in der Warteschlange"
-
 msgid "Queue Stalled"
 msgstr "Warteschlange angehalten"
-
-msgid "Queue moving selcted item(s)"
-msgstr "Bewegte die ausgewählten Elemente in der Warteschlange"
 
 msgid "Queued to check files"
 msgstr "Eingereit zum Überprüfen der Dateien"
@@ -412,17 +406,11 @@ msgstr "Verhältnis"
 msgid "Ratio Limit"
 msgstr "Verhältnis Limit"
 
-msgid "Reload"
-msgstr "Aktualisieren"
-
 msgid "Require clients to authenticate themselves."
 msgstr "Erzwinge dass Clients sich selbst authentifizieren müssen."
 
 msgid "Resume"
 msgstr "Fortsetzen"
-
-msgid "Resuming selected item(s)"
-msgstr "Setze die ausgewählten Objekte fort."
 
 msgid "Run a script at torrent completion."
 msgstr "Führe ein Skript aus wenn ein Torrent fertig gestellt wurde."
@@ -439,8 +427,8 @@ msgstr ""
 msgid "Script"
 msgstr "Skript"
 
-msgid "Script to Proccess After Torrent Finishes"
-msgstr "Führe ein Skript aus wenn ein Torrent fertig gestellt wurde."
+msgid "Script to process after torrent finishes"
+msgstr ""
 
 msgid "Seed"
 msgstr "Seed"
@@ -453,9 +441,6 @@ msgstr "Seeding"
 
 msgid "Seeding Limit"
 msgstr "Seeding Limit"
-
-msgid "Server"
-msgstr "Server"
 
 msgid "Set verbosity of transmission messages."
 msgstr "Setze die die Stufe der Transmission Mitteilungen."
@@ -516,6 +501,9 @@ msgstr "Zeit"
 
 msgid "Torrent is stopped"
 msgstr "Torrent ist gestoppt"
+
+msgid "Torrents"
+msgstr ""
 
 msgid ""
 "Torrents that have not shared data for queue-stalled-minutes are treated as "
