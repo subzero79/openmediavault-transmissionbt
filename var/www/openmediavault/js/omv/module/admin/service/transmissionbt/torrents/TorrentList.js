@@ -233,7 +233,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             handler  : Ext.Function.bind(me.onResumeButton, me, [ me ]),
             disabled : true,
             scope    : me,
-            selectionChangeConfig : {
+            selectionConfig : {
                 minSelection : 1,
                 maxSelection : 1,
                 enableFn     : function(button, records) {
@@ -263,7 +263,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             handler  : Ext.Function.bind(me.onPauseButton, me, [ me ]),
             disabled : true,
             scope    : me,
-            selectionChangeConfig : {
+            selectionConfig : {
                 minSelection : 1,
                 maxSelection : 1,
                 enableFn     : function(button, records) {
