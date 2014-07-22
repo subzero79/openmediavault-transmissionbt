@@ -163,14 +163,10 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
 
         // Initialize context menu
         me.menu = me.getMenu();
-
         me.callParent(arguments);
 
         // Set up event listeners
         me.on("itemcontextmenu", me.onItemContextMenu, me);
-
-        var selModel = me.getSelectionModel();
-        selModel.on("selectionchange", me.updateCustomButtonsState, me);
     },
 
     onReload : function(id, success, response) {
@@ -236,7 +232,28 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
             handler  : Ext.Function.bind(me.onResumeButton, me, [ me ]),
             disabled : true,
-            scope    : me
+            scope    : me,
+            selectionChangeConfig : {
+                minSelection : 1,
+                maxSelection : 1,
+                enableFn     : function(records) {
+                    var record = records[0];
+                    var status = parseInt(record.get("status"), 10);
+
+                    // 0: Torrent is stopped
+                    // 1: Queued to check files
+                    // 2: Checking files
+                    // 3: Queued to download
+                    // 4: Downloading
+                    // 5: Queued to seed
+                    // 6: Seeding
+                    if (status === 0) {
+                        return true;
+                    }
+
+                    return false;
+                },
+            }
         },{
             id       : me.getId() + "-pause",
             xtype    : "button",
@@ -245,10 +262,46 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
             handler  : Ext.Function.bind(me.onPauseButton, me, [ me ]),
             disabled : true,
-            scope    : me
+            scope    : me,
+            selectionChangeConfig : {
+                minSelection : 1,
+                maxSelection : 1,
+                enableFn     : function(records) {
+                    var record = records[0];
+                    var status = parseInt(record.get("status"), 10);
+
+                    // 0: Torrent is stopped
+                    // 1: Queued to check files
+                    // 2: Checking files
+                    // 3: Queued to download
+                    // 4: Downloading
+                    // 5: Queued to seed
+                    // 6: Seeding
+                    if (status === 0) {
+                        return false;
+                    }
+
+                    return true;
+                },
+            }
         }]);
 
         return items;
+    },
+
+    toggleAddTorrentButtons : function(enable) {
+        var me = this;
+
+        addTorrentButton = me.queryById(me.getId() + "-add");
+        uploadTorrentButton = me.queryById(me.getId() + "-upload");
+
+        if (enable) {
+            addTorrentButton.enable();
+            uploadTorrentButton.enable();
+        } else {
+            addTorrentButton.disable();
+            uploadTorrentButton.disable();
+        }
     },
 
     getMenu : function() {
@@ -299,91 +352,6 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
 
         e.stopEvent();
         me.menu.showAt(e.getXY());
-    },
-
-    updateCustomButtonsState : function(model, records) {
-        var me = this;
-
-        // Don't pass records since we use pop
-        // in these methods and arrays are
-        // passed by reference
-        me.toggleTopToolbarButtons(Ext.Array.clone(records));
-    },
-
-    toggleAddTorrentButtons : function(enable) {
-        var me = this;
-
-        addTorrentButton = me.queryById(me.getId() + "-add");
-        uploadTorrentButton = me.queryById(me.getId() + "-upload");
-
-        if (enable) {
-            addTorrentButton.enable();
-            uploadTorrentButton.enable();
-        } else {
-            addTorrentButton.disable();
-            uploadTorrentButton.disable();
-        }
-    },
-
-    toggleTopToolbarButtons : function(records) {
-        var me = this;
-
-        var tbarBtnName = [
-            "resume",
-            "pause"
-        ];
-
-        var tbarBtnDisabled = {
-            "resume" : false,
-            "pause"  : false
-        };
-
-        // Set button states on resume, pause and delete depending
-        // selected row/s
-        if (records.length > 1) {
-            tbarBtnDisabled = {
-                "resume" : true,
-                "pause"  : true
-            };
-        } else if (records.length == 1) {
-            var record = records.pop();
-            var status = parseInt(record.get("status"), 10);
-
-            /* 0: Torrent is stopped    */
-            /* 1: Queued to check files */
-            /* 2: Checking files        */
-            /* 3: Queued to download    */
-            /* 4: Downloading           */
-            /* 5: Queued to seed        */
-            /* 6: Seeding               */
-            switch (status) {
-                case 0:
-                    tbarBtnDisabled = {
-                        "resume" : true,
-                        "pause"  : false
-                    };
-                    break;
-                default:
-                    tbarBtnDisabled = {
-                        "resume" : false,
-                        "pause"  : true
-                    };
-                    break;
-            }
-        }
-
-        for (var i = 0, j = tbarBtnName.length; i < j; i++) {
-            var tbarBtnCtrl = me.queryById(me.getId() + "-" +
-                tbarBtnName[i]);
-
-            if (!Ext.isEmpty(tbarBtnCtrl)) {
-                if (tbarBtnDisabled[tbarBtnName[i]] === false) {
-                    tbarBtnCtrl.disable();
-                } else {
-                    tbarBtnCtrl.enable();
-                }
-            }
-        }
     },
 
     onAddButton : function() {
