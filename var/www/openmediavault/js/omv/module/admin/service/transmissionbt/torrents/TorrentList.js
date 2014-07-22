@@ -234,9 +234,9 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             disabled : true,
             scope    : me,
             selectionConfig : {
-                minSelection : 1,
-                maxSelection : 1,
-                enableFn     : function(button, records) {
+                minSelections : 1,
+                maxSelections : 1,
+                enabledFn     : function(button, records) {
                     var record = records[0];
                     var status = parseInt(record.get("status"), 10);
 
@@ -264,9 +264,9 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             disabled : true,
             scope    : me,
             selectionConfig : {
-                minSelection : 1,
-                maxSelection : 1,
-                enableFn     : function(button, records) {
+                minSelections : 1,
+                maxSelections : 1,
+                enabledFn     : function(button, records) {
                     var record = records[0];
                     var status = parseInt(record.get("status"), 10);
 
