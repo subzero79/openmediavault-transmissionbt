@@ -236,7 +236,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             selectionChangeConfig : {
                 minSelection : 1,
                 maxSelection : 1,
-                enableFn     : function(records) {
+                enableFn     : function(button, records) {
                     var record = records[0];
                     var status = parseInt(record.get("status"), 10);
 
@@ -266,7 +266,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             selectionChangeConfig : {
                 minSelection : 1,
                 maxSelection : 1,
-                enableFn     : function(records) {
+                enableFn     : function(button, records) {
                     var record = records[0];
                     var status = parseInt(record.get("status"), 10);
 
