@@ -37,15 +37,17 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
         "OMV.module.admin.service.transmissionbt.torrents.window.DeleteTorrent"
     ],
 
-    autoReload        : true,
-    hidePagingToolbar : false,
-    hideRefreshButton : false,
-    hideEditButton    : true,
-    rememberSelected  : true,
+    autoReload            : true,
+    hidePagingToolbar     : false,
+    hideEditButton        : true,
+    rememberSelected      : true,
+    disableLoadMaskOnLoad : true,
+    reloadInterval        : 2500,
 
     uploadButtonText  : _("Upload"),
     resumeButtonText  : _("Resume"),
     pauseButtonText   : _("Pause"),
+    moveButtonText    : _("Move"),
     topButtonText     : _("Move to top"),
     upButtonText      : _("Move up"),
     downButtonText    : _("Move down"),
@@ -157,57 +159,63 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
                         service : "TransmissionBt",
                         method  : "getTorrentList"
                     }
+                },
+                listeners : {
+                    beforeload : me.beforeStoreLoad,
+                    scope      : me
                 }
             })
         });
 
-        // Initialize context menu
-        me.menu = me.getMenu();
         me.callParent(arguments);
-
-        // Set up event listeners
-        me.on("itemcontextmenu", me.onItemContextMenu, me);
+        me.toggleAddTorrentButtons();
     },
 
-    onReload : function(id, success, response) {
-        var me = this;
+    transmissionIsRunning : false,
 
-        if (success) {
-            if (!response)  {
-                me.disableReloadAndButtons();
-            } else {
-                if (me.store !== null)
-                    me.store.reload();
+    beforeStoreLoad : function() {
+        // Doing this here means that the status will be delayed.
+        // So we won't know if the server is actually running
+        // until the next call.
+        this.doCheckIfTransmissionIsRunning();
 
-                me.toggleAddTorrentButtons(true);
-            }
-        } else {
-            OMV.MessageBox.error(null, response);
-            me.disableReloadAndButtons();
-        }
+        this.toggleAddTorrentButtons();
 
+        return this.transmissionIsRunning;
     },
 
-    disableReloadAndButtons : function() {
-        var me = this;
-
-        me.toggleAddTorrentButtons(false);
-        me.store.removeAll();
-    },
-
-    doReload : function() {
-        var me = this;
-
-        // Run a rpc request to see if we
-        // should enable automatic reload
+    doCheckIfTransmissionIsRunning : function() {
         OMV.Rpc.request({
-            scope    : me,
-            callback : me.onReload,
+            scope    : this,
+            callback : function(id, success, response) {
+                var running = false;
+
+                if (success) {
+                    if (response)  {
+                        running = true;
+                    }
+                }
+
+                this.transmissionIsRunning = running;
+            },
             rpcData  : {
                 service : "TransmissionBt",
                 method  : "serverIsRunning"
             }
         });
+    },
+
+    toggleAddTorrentButtons : function() {
+        var status = this.transmissionIsRunning ? "enable" : "disable";
+        var addTorrentButton = this.queryById(this.getId() + "-add");
+        var uploadTorrentButton = this.queryById(this.getId() + "-upload");
+
+        addTorrentButton[status]();
+        uploadTorrentButton[status]();
+
+        if (!this.transmissionIsRunning) {
+            this.store.removeAll();
+        }
     },
 
     getTopToolbarItems : function() {
@@ -236,24 +244,9 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             selectionConfig : {
                 minSelections : 1,
                 maxSelections : 1,
-                enabledFn     : function(button, records) {
-                    var record = records[0];
-                    var status = parseInt(record.get("status"), 10);
-
-                    // 0: Torrent is stopped
-                    // 1: Queued to check files
-                    // 2: Checking files
-                    // 3: Queued to download
-                    // 4: Downloading
-                    // 5: Queued to seed
-                    // 6: Seeding
-                    if (status === 0) {
-                        return true;
-                    }
-
-                    return false;
-                },
-            }
+                enabledFn     : me.setStatusButtonEnabled
+            },
+            action : "resume"
         },{
             id       : me.getId() + "-pause",
             xtype    : "button",
@@ -266,49 +259,21 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             selectionConfig : {
                 minSelections : 1,
                 maxSelections : 1,
-                enabledFn     : function(button, records) {
-                    var record = records[0];
-                    var status = parseInt(record.get("status"), 10);
-
-                    // 0: Torrent is stopped
-                    // 1: Queued to check files
-                    // 2: Checking files
-                    // 3: Queued to download
-                    // 4: Downloading
-                    // 5: Queued to seed
-                    // 6: Seeding
-                    if (status === 0) {
-                        return false;
-                    }
-
-                    return true;
-                },
-            }
-        }]);
-
-        return items;
-    },
-
-    toggleAddTorrentButtons : function(enable) {
-        var me = this;
-
-        addTorrentButton = me.queryById(me.getId() + "-add");
-        uploadTorrentButton = me.queryById(me.getId() + "-upload");
-
-        if (enable) {
-            addTorrentButton.enable();
-            uploadTorrentButton.enable();
-        } else {
-            addTorrentButton.disable();
-            uploadTorrentButton.disable();
-        }
-    },
-
-    getMenu : function() {
-        var me = this;
-
-        return Ext.create("Ext.menu.Menu", {
-            items: [{
+                enabledFn     : me.setStatusButtonEnabled
+            },
+            action : "pause"
+        },{
+            id       : me.getId() + "-queue",
+            xtype    : "button",
+            text     : me.moveButtonText,
+            icon     : "images/menu.png",
+            iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
+            disabled : true,
+            scope    : me,
+            selectionConfig : {
+                minSelections : 1
+            },
+            menu : [{
                 id      : me.getId() + "-queue-top",
                 text    : me.topButtonText,
                 icon    : "images/arrow-up.png",
@@ -337,21 +302,34 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
                 handler : Ext.Function.bind(me.onQueueMoveButton, me, [ "bottom" ]),
                 scope   : me
             }]
-        });
+        }]);
+
+        return items;
     },
 
-    onDestroy : function() {
-        var me = this;
+    setStatusButtonEnabled : function(button, records) {
+        if (!this.transmissionIsRunning) {
+            return false;
+        }
 
-        me.menu.destroy();
-        me.callParent(arguments);
-    },
+        var record = records[0];
+        var status = parseInt(record.get("status"), 10);
 
-    onItemContextMenu : function (view, record, item, index, e) {
-        var me = this;
+        // 0: Torrent is stopped
+        // 1: Queued to check files
+        // 2: Checking files
+        // 3: Queued to download
+        // 4: Downloading
+        // 5: Queued to seed
+        // 6: Seeding
+        if (status === 0 && button.action === "resume") {
+            return true;
+        }
+        if (status !== 0 && button.action === "pause") {
+            return true;
+        }
 
-        e.stopEvent();
-        me.menu.showAt(e.getXY());
+        return false;
     },
 
     onAddButton : function() {
