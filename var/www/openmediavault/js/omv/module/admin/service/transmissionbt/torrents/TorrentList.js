@@ -42,7 +42,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
     hideEditButton        : true,
     rememberSelected      : true,
     disableLoadMaskOnLoad : true,
-    reloadInterval        : 2500,
+    reloadInterval        : 5000,
 
     uploadButtonText  : _("Upload"),
     resumeButtonText  : _("Resume"),
@@ -130,12 +130,11 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
 
         Ext.apply(me, {
             store : Ext.create("OMV.data.Store", {
-                autoload   : true,
+                autoLoad   : true,
                 remoteSort : false,
                 model      : OMV.data.Model.createImplicit({
-                    idProperty   : "uuid",
-                    totalPoperty : "total",
-                    fields       : [
+                    idProperty : "uuid",
+                    fields     : [
                         { name : "id" },
                         { name : "name" },
                         { name : "status" },
