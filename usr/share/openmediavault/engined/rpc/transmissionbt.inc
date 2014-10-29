@@ -917,7 +917,7 @@ class OMVRpcServiceTransmissionBt extends OMVRpcServiceAbstract
         return $this->applyFilter(
             $torrents,
             $params["start"],
-            $params["count"],
+            $params["limit"],
             $params["sortfield"],
             $params["sortdir"]
         );
