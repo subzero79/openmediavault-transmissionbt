@@ -864,7 +864,12 @@ class OMVRpcServiceTransmissionBt extends OMVRpcServiceAbstract
 
     public function serverIsRunning()
     {
-        $module = new OMVModuleTransmissionBT();
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, array(
+            "role" => OMV_ROLE_ADMINISTRATOR
+        ));
+
+        $module = new OMVModuleTransmissionBt();
         $status = $module->getStatus();
 
         return $status["running"];
