@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Stefan Thrane Overby <stoverby@gmail.com>, 2013
+# Stefan Thrane Overby <stoverby@gmail.com>, 2013-2014
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-18 06:27-0500\n"
-"PO-Revision-Date: 2014-07-21 15:36+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
+"PO-Revision-Date: 2014-07-28 19:23+0000\n"
+"Last-Translator: Stefan Thrane Overby <stoverby@gmail.com>\n"
 "Language-Team: Danish (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,16 +19,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "% completed ..."
-msgstr ""
+msgstr "% færdig ..."
 
 msgid "100% completed ..."
-msgstr ""
+msgstr "100% færdig ..."
 
 msgid "Add Torrent by URL"
 msgstr "Tilføj Torrent med URL"
 
 msgid "Add torrent"
-msgstr ""
+msgstr "Tilføj torrent"
 
 msgid "Adding Torrent ..."
 msgstr "Tilføjer Torrent ..."
@@ -61,7 +61,7 @@ msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
 msgstr "Cachestørrelse (i Mb) for at reducere læse og skrive antallet på disken."
 
 msgid "Changing place in queue for selected item(s)"
-msgstr ""
+msgstr "Ændre plads i køen for valgte emne(r)"
 
 msgid "Checking files"
 msgstr "Kontroller filer"
@@ -293,16 +293,16 @@ msgid "Monthly"
 msgstr "Månedlig"
 
 msgid "Move down"
-msgstr ""
+msgstr "Flyt ned"
 
 msgid "Move to bottom"
-msgstr ""
+msgstr "Flyt til bund"
 
 msgid "Move to top"
-msgstr ""
+msgstr "Flyt til top"
 
 msgid "Move up"
-msgstr ""
+msgstr "Flyt op"
 
 msgid "Name"
 msgstr "Navn"
@@ -428,7 +428,7 @@ msgid "Script"
 msgstr "Script"
 
 msgid "Script to process after torrent finishes"
-msgstr ""
+msgstr "Script, der udføres efter torrent er færdig"
 
 msgid "Seed"
 msgstr "Seed"
@@ -503,7 +503,7 @@ msgid "Torrent is stopped"
 msgstr "Torrent er stoppet"
 
 msgid "Torrents"
-msgstr ""
+msgstr "Torrents"
 
 msgid ""
 "Torrents that have not shared data for queue-stalled-minutes are treated as "
