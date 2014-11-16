@@ -862,7 +862,7 @@ class OMVRpcServiceTransmissionBt extends OMVRpcServiceAbstract
 
     /* Torrent management section */
 
-    public function serverIsRunning()
+    public function serverIsRunning($params, $context)
     {
         // Validate the RPC caller context.
         $this->validateMethodContext($context, array(
