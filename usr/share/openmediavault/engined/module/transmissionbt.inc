@@ -72,6 +72,7 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
             );
         }
     }
+
     /**
      * Start the managed service
      */

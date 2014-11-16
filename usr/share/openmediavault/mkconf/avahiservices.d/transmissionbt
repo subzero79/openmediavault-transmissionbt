@@ -25,20 +25,22 @@ set -e
 OMV_AVAHIDAEMON_TRANSMISSIONBTSERVICE=${OMV_AVAHIDAEMON_TRANSMISSIONBTSERVICE:-"/etc/avahi/services/transmissionbt.service"}
 OMV_AVAHIDAEMON_TRANSMISSIONBTSERVICE_NAME=${OMV_AVAHIDAEMON_TRANSMISSIONBTSERVICE_NAME:-"%h - BitTorrent"}
 
-# Is the service enabled?
+# Remove current service file.
 rm -f ${OMV_AVAHIDAEMON_TRANSMISSIONBTSERVICE}
+
+# Is the service enabled?
 [ "$(omv_config_get "//services/transmissionbt/enable")" = "0" ] && exit 0
 
-# Create '/etc/avahi/services/transmissionbt.service' file.
+# Create service file.
 port=$(omv_config_get "//services/transmissionbt/rpcport")
 cat <<EOF > ${OMV_AVAHIDAEMON_TRANSMISSIONBTSERVICE}
 <?xml version="1.0" standalone='no'?>
 <!DOCTYPE service-group SYSTEM "avahi-service.dtd">
 <service-group>
-  <name replace-wildcards="yes">${OMV_AVAHIDAEMON_TRANSMISSIONBTSERVICE_NAME}</name>
-  <service>
-    <type>_bittorrent._tcp</type>
-    <port>${port}</port>
-  </service>
+    <name replace-wildcards="yes">${OMV_AVAHIDAEMON_TRANSMISSIONBTSERVICE_NAME}</name>
+    <service>
+        <type>_bittorrent._tcp</type>
+        <port>${port}</port>
+    </service>
 </service-group>
 EOF

@@ -3,18 +3,18 @@
 set -e
 
 case "$1" in
-	purge|remove|failed-upgrade|abort-install|abort-upgrade|disappear)
-		# Stop service
-		invoke-rc.d --quiet transmission-daemon stop
-	;;
+    purge|remove|failed-upgrade|abort-install|abort-upgrade|disappear)
+        # Stop service
+        invoke-rc.d --quiet transmission-daemon stop
+    ;;
 
-	upgrade)
-	;;
+    upgrade)
+    ;;
 
-	*)
-		echo "postrm called with unknown argument '$1'" >&2
-		exit 1
-	;;
+    *)
+        echo "postrm called with unknown argument '$1'" >&2
+        exit 1
+    ;;
 esac
 
 #DEBHELPER#
