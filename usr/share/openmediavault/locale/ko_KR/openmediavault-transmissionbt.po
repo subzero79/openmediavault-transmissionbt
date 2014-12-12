@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-07-18 06:27-0500\n"
-"PO-Revision-Date: 2014-11-14 19:51+0000\n"
-"Last-Translator: Aaron Murray <aaron27@ryecoinc.com>\n"
+"PO-Revision-Date: 2014-11-22 13:40+0000\n"
+"Last-Translator: Hyeonkyu Chu <hyeonkyu@gmail.com>\n"
 "Language-Team: Korean (Korea) (http://www.transifex.com/projects/p/openmediavault-transmissionbt/language/ko_KR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +46,7 @@ msgid "Begin"
 msgstr "시작"
 
 msgid "Bindings"
-msgstr "묶음"
+msgstr "결합"
 
 msgid "BitTorrent"
 msgstr "BitTorrent"
@@ -58,22 +58,22 @@ msgid "Cache Size"
 msgstr "캐시 크기"
 
 msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
-msgstr "디스크 읽기 및 쓰기 캐시 크기(MB)를 줄일 수 있습니다."
+msgstr "디스크 읽기/쓰기의 횟수를 줄일, 캐시 크기(MiB)."
 
 msgid "Changing place in queue for selected item(s)"
-msgstr "선택된 항목(들)에 대한 대기열 위치 변경"
+msgstr "선택된 항목(들)에 대해 대기열 위치 변경"
 
 msgid "Checking files"
 msgstr "파일 확인 중"
 
 msgid "DL-rate"
-msgstr "DL-rate"
+msgstr "DL-속도"
 
 msgid "Daily"
 msgstr "일간"
 
 msgid "Date & Time"
-msgstr "날짜 및 시각"
+msgstr "날짜 & 시간"
 
 msgid "Date added"
 msgstr "추가된 날짜"
@@ -94,7 +94,7 @@ msgid "Delete torrent"
 msgstr "토런트 지우기"
 
 msgid "Delete torrents added from the watch directory."
-msgstr "감시 디렉토리를 통해 추가된 토런트를 지웁니다."
+msgstr "감시 디렉터리를 통해 추가된 토런트를 지웁니다."
 
 msgid "Deleting torrent ..."
 msgstr "토런트 지우는 중 ..."
@@ -105,13 +105,13 @@ msgstr "디렉터리"
 msgid ""
 "Directory to keep downloads. If incomplete is enabled, only complete "
 "downloads will be stored here."
-msgstr "내려받기를 유지하는 디렉터리. 불완전을 사용하는 경우, 완료된 내려받기만이 여기에 저장됩니다. 불완전을 사용하지 않는 경우에는 모든 내려받기가 여기에 저장됩니다."
+msgstr "내려받기를 유지하는 디렉터리. 미완료를 활성화한 경우, 완료된 내려받기만 여기에 저장됩니다. 미완료를 사용하지 않는 경우에는 모든 내려받기가 여기에 저장됩니다."
 
 msgid "Directory to keep files in until torrent is complete."
 msgstr "토런트가 완료되기 전까지 파일들이 유지되는 디렉터리."
 
 msgid "Distributed hash table (DHT)."
-msgstr "Distributed hash table (DHT)."
+msgstr "Distributed Hash Table (DHT)."
 
 msgid "Done"
 msgstr "완료"
@@ -126,7 +126,7 @@ msgid "Downloading"
 msgstr "다운로드 중"
 
 msgid "ETA"
-msgstr "ETA"
+msgstr "완료 예정"
 
 msgid "Enable"
 msgstr "활성화"
@@ -153,13 +153,13 @@ msgid "Enable download limit."
 msgstr "내려받기 제한 활성화."
 
 msgid "Enable incomplete directory."
-msgstr "불완전 디렉터리 활성화."
+msgstr "미완료 디렉터리 활성화."
 
 msgid "Enable paused torrent scraping."
-msgstr "일시 정지된 토런트의 스크랩을 활성화합니다."
+msgstr "일시 정지된 토런트 수집을 활성화합니다."
 
 msgid "Enable port forwarding via NAT-PMP or UPnP."
-msgstr "NAT-PMP 또는 UPnP를 통한 포트 전달 활성화."
+msgstr "NAT-PMP 또는 UPnP를 통한 포트 전달 활성화합니다."
 
 msgid "Enable upload limit."
 msgstr "올려주기 제한 활성화."
@@ -231,7 +231,7 @@ msgid "Idle Minutes"
 msgstr "유휴 분"
 
 msgid "Incomplete"
-msgstr "불완전"
+msgstr "미완료"
 
 msgid "Infinite"
 msgstr "무한대"
@@ -252,10 +252,10 @@ msgid "Limit Upload"
 msgstr "올려주기 제한"
 
 msgid "Limit download speed. Value is kb/s."
-msgstr "내려받기 속도 제한. 값은 kb/s."
+msgstr "내려받기 속도 제한. 값은 KiB/s."
 
 msgid "Limit upload speed. Value is kb/s."
-msgstr "올려주기 속도 제한. 값은 kb/s."
+msgstr "올려주기 속도 제한. 값은 KiB/s."
 
 msgid "Limits"
 msgstr "제한"
@@ -269,7 +269,7 @@ msgstr "위치"
 msgid ""
 "Make sure the group 'debian-transmission' has read/write access to the "
 "shared folder."
-msgstr "공유 폴더에 대한 그룹 'debian-transmission'의 읽기/쓰기 접근 권한을 확인합니다."
+msgstr "이 공유 폴더에 대해 '<b>debian-transmission</b>' 그룹이 <b>읽기/쓰기</b> 권한을 가져야 합니다."
 
 msgid "May help get around some ISP filtering."
 msgstr "일부 ISP 차단을 우회하는 데 도움이 될 수 있습니다."
@@ -284,7 +284,7 @@ msgid "Missing Status: "
 msgstr "누락된 상태:"
 
 msgid "Mode for preallocating files."
-msgstr "사전 할당 파일 방식."
+msgstr "파일 사전 할당 방식."
 
 msgid "Monday"
 msgstr "월요일"
@@ -296,10 +296,10 @@ msgid "Move down"
 msgstr "아래로 이동"
 
 msgid "Move to bottom"
-msgstr "밑바닥으로 이동"
+msgstr "맨 아래로 이동"
 
 msgid "Move to top"
-msgstr "꼭대기로 이동"
+msgstr "맨 위로 이동"
 
 msgid "Move up"
 msgstr "위로 이동"
@@ -311,7 +311,7 @@ msgid "None"
 msgstr "없음"
 
 msgid "Not available"
-msgstr "무효한"
+msgstr "사용 불가"
 
 msgid "OK"
 msgstr "OK"
@@ -353,7 +353,7 @@ msgid "Port to listen for incoming peer connections."
 msgstr "들어오는 피어 연결을 수신하는 포트입니다."
 
 msgid "Port to open and listen for RPC/Web requests on."
-msgstr "포트를 열고 RPC/Web 요청에 대한 수신을 켭니다."
+msgstr "포트를 열고 RPC/Web 요청을 수신합니다."
 
 msgid "Postfix"
 msgstr "접미사"
@@ -371,16 +371,16 @@ msgid "Queue"
 msgstr "대기열"
 
 msgid "Queue Stalled"
-msgstr "대기열 정체"
+msgstr "정체된 대기열"
 
 msgid "Queued to check files"
-msgstr "대기된 파일 확인"
+msgstr "파일 확인을 위해 대기"
 
 msgid "Queued to download"
-msgstr "대기된 내려받기"
+msgstr "내려받기를 위해 대기"
 
 msgid "Queued to seed"
-msgstr "대기된 씨앗"
+msgstr "뿌리기를 위해 대기"
 
 msgid "Queuing"
 msgstr "대기열"
@@ -422,7 +422,7 @@ msgid "Scheduling"
 msgstr "일정 관리"
 
 msgid "Scrape paused torrents."
-msgstr "일시 정지된 토런트 스크랩"
+msgstr "일시 정지된 토런트 수집"
 
 msgid "Script"
 msgstr "스크립트"
@@ -443,10 +443,10 @@ msgid "Seeding Limit"
 msgstr "씨앗 유지 제한"
 
 msgid "Set verbosity of transmission messages."
-msgstr "트랜스미션 메시지의 상세를 설정합니다."
+msgstr "트랜스미션 알림 전달의 상세를 설정합니다."
 
 msgid "Sets transmission's file mode creation mask."
-msgstr "트랜스미션의 파일 방식 생성 마스크를 설정합니다."
+msgstr "트랜스미션의 파일 상태 생성 마스크를 설정합니다."
 
 msgid "Settings"
 msgstr "설정"
@@ -476,10 +476,10 @@ msgid "Start torrents as soon as they are added."
 msgstr "토런트가 추가되면 바로 시작"
 
 msgid "Status"
-msgstr "상황"
+msgstr "상태"
 
 msgid "Stop seeding after being idle for N minutes."
-msgstr "N 분의 유휴 이후 씨앗 유지를 중지합니다."
+msgstr "N 분의 유휴 상태 후에 씨앗 유지를 중지합니다."
 
 msgid "Sunday"
 msgstr "일요일"
@@ -500,7 +500,7 @@ msgid "Time"
 msgstr "시간"
 
 msgid "Torrent is stopped"
-msgstr "중지된 토런트"
+msgstr "토렌트 중지됨"
 
 msgid "Torrents"
 msgstr "토런트"
@@ -509,16 +509,16 @@ msgid ""
 "Torrents that have not shared data for queue-stalled-minutes are treated as "
 "'stalled' and are not counted against the queue-download-size and seed-"
 "queue-size limits."
-msgstr "토런트는 queue-stalled-minutes에 대해 '정체'로 취급하여 데이터를 공유하지 않으며, download-queue-size와 seed-queue-size의 한계는 계산되지 않습니다."
+msgstr "아래의 <b>정체 분</b>에 의해 <b>'정체'</b>로 취급하여 데이터를 공유하지 않고 <b>download-queue-size</b> 및 <b>seed-queue-size</b> 의 한계에 계산되지 않는, 토런트."
 
 msgid ""
 "Transmission will only download download-queue-size non-stalled torrents at "
 "once."
-msgstr "트랜스미션은 한 번에 download-queue-size 만큼의 비-정체 토런트만를 내려받습니다."
+msgstr "트랜스미션은 한 번에 <b>download-queue-size</b> 만큼의 <b>비-정체</b> 토런트만을 내려받습니다."
 
 msgid ""
 "Transmission will only seed seed-queue-size non-stalled torrents at once."
-msgstr "트랜스미션은 한번에 seed-queue-size 만큼의 비-정체 토런트의 씨앗을 뿌립니다."
+msgstr "트랜스미션은 한 번에 <b>seed-queue-size</b> 만큼의 <b>비-정체</b> 토런트의 씨앗만을 뿌립니다."
 
 msgid "Transmission will only seed until ratio limit is reached."
 msgstr "트랜스미션은 비율 제한에 도달할 때까지만 씨앗을 뿌립니다."
@@ -533,13 +533,13 @@ msgid "Turtle Mode"
 msgstr "거북이 방식"
 
 msgid "Turtle Mode download speed. Value is kb/s."
-msgstr "거북이 방식 내려받기 속도. 값은 kb/s."
+msgstr "거북이 방식 내려받기 속도. 값은 KiB/s."
 
 msgid "Turtle Mode upload speed. Value is kb/s."
-msgstr "거북이 방식 올려주기 속도. 값은 kb/s."
+msgstr "거북이 방식 올려주기 속도. 값은 KiB/s."
 
 msgid "UL-rate"
-msgstr "UL-rate"
+msgstr "UL-속도"
 
 msgid "URL"
 msgstr "URL"
@@ -572,7 +572,7 @@ msgid "Use blocklists."
 msgstr "차단 목록 사용"
 
 msgid "Used for client authentication."
-msgstr "클라이언트 인증 사용."
+msgstr "클라이언트 인증에서 사용됩니다."
 
 msgid "Username"
 msgstr "사용자 이름"
@@ -596,10 +596,10 @@ msgid "default"
 msgstr "기본"
 
 msgid "lowcost"
-msgstr "적은 비용"
+msgstr "낮은 비용"
 
 msgid "lowdelay"
-msgstr "적은 지연"
+msgstr "낮은 지연"
 
 msgid "reliability"
 msgstr "신뢰도"
