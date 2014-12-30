@@ -60,7 +60,7 @@ xmlstarlet sel -t -m "//services/transmissionbt" \
     -o "," -n \
     -v "concat('\"script-torrent-done-filename\": \"',script-torrent-done-filename,'\",')" -n \
     -v "concat('\"encryption\": ',encryption,',')" -n \
-    -o "\"dht-enabled:\": " \
+    -o "\"dht-enabled\": " \
     -i "dhtenabled[. = '0']" -o "false" -b \
     -i "dhtenabled[. = '1']" -o "true" -b \
     -o "," -n \
