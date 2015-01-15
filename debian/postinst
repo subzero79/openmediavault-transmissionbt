@@ -130,9 +130,6 @@ case "$1" in
         # Restart rsyslog
         service rsyslog restart
 
-        echo "Add debian-transmission user to group: users"
-        usermod -G users debian-transmission
-
         echo "Write Config"
         omv-mkconf transmissionbt 2>&1
 
