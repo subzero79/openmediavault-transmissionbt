@@ -49,7 +49,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Bandwidth", {
                 value         : 100,
                 plugins       : [{
                     ptype : "fieldinfo",
-                    text  : _("Limit download speed. Value is kb/s.")
+                    text  : _("Limit download speed. Value is KB/s.")
                 }]
             },{
                 xtype      : "checkbox",
@@ -67,7 +67,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Bandwidth", {
                 value         : 100,
                 plugins       : [{
                     ptype : "fieldinfo",
-                    text  : _("Limit upload speed. Value is kb/s.")
+                    text  : _("Limit upload speed. Value is KB/s.")
                 }]
             },{
                 xtype         : "numberfield",
@@ -100,7 +100,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Bandwidth", {
                 value         : 50,
                 plugins       : [{
                     ptype : "fieldinfo",
-                    text  : _("Turtle Mode download speed. Value is kb/s.")
+                    text  : _("Turtle Mode download speed. Value is KB/s.")
                 }]
             },{
                 xtype         : "numberfield",
@@ -112,7 +112,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Bandwidth", {
                 value         : 50,
                 plugins       : [{
                     ptype : "fieldinfo",
-                    text  : _("Turtle Mode upload speed. Value is kb/s.")
+                    text  : _("Turtle Mode upload speed. Value is KB/s.")
                 }]
             }]
         }];
