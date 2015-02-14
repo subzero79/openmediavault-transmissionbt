@@ -14,7 +14,7 @@ case "$1" in
         if [ -z "$2" ]; then
             echo "Updating init script links and actions"
             invoke-rc.d --force transmission-daemon stop
-            update-rc.d transmission-daemon disable &>/dev/null
+            update-rc.d transmission-daemon disable >/dev/null
         fi
 
         ########################################################################
@@ -137,7 +137,7 @@ case "$1" in
             echo "Updating init script links and actions"
             echo "Stopping transmission-daemon"
             invoke-rc.d --force transmission-daemon stop
-            update-rc.d transmission-daemon disable &>/dev/null
+            update-rc.d transmission-daemon disable >/dev/null
         else
             echo "Updating init script links and actions"
             echo "Reloading configuration"
