@@ -26,8 +26,9 @@ require_once "openmediavault/module.inc";
 require_once "openmediavault/util.inc";
 
 class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
-    OMVINotifyListener,
-    OMVIModuleServiceStatus
+    OMVIModuleServiceStatus,
+    OMVIModuleZeroconf,
+    OMVINotifyListener
 {
     private function getEventMessagePath()
     {
@@ -46,6 +47,8 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
 
     /**
      * Get the module name.
+     *
+     * @return string
      */
     public function getName()
     {
@@ -54,6 +57,8 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
 
     /**
      * Generate the configuration.
+     *
+     * @return void
      */
     public function applyConfig()
     {
@@ -74,7 +79,9 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
     }
 
     /**
-     * Start the managed service
+     * Start the managed service.
+     *
+     * @return void
      */
     public function startService()
     {
@@ -100,6 +107,8 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
 
     /**
      * Stop the managed service.
+     *
+     * @return void
      */
     public function stopService()
     {
@@ -109,6 +118,8 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
 
     /**
      * Get the status of the managed service.
+     *
+     * @return array
      */
     public function getStatus()
     {
@@ -137,7 +148,22 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
     }
 
     /**
+     * Get the Zeroconf service configuration.
+     *
+     * @return array
+     */
+    public function getZeroconfConfig()
+    {
+        return array(
+            "id" => "transmissionbt",
+            "title" => gettext("BitTorrent"),
+        );
+    }
+
+    /**
      * Bind listeners.
+     *
+     * @return void
      */
     public function bindListeners(OMVNotifyDispatcher $dispatcher)
     {
@@ -163,7 +189,7 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
     }
 }
 
-// Register module
+// Register module.
 $moduleMgr = &OMVModuleMgr::getInstance();
 $moduleMgr->registerModule(new OMVModuleTransmissionBt());
 
