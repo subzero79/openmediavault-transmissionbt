@@ -31,7 +31,6 @@ OMV_TRANSMISSIONBT_RPCWHITELISTENABLED=${OMV_TRANSMISSIONBT_RPCWHITELISTENABLED:
 cat <<EOF > ${OMV_TRANSMISSIONBT_DEFAULT}
 # defaults for transmission-daemon
 # sourced by /etc/init.d/transmission-daemon
-
 EOF
 
 xmlstarlet sel -t -m "//services/transmissionbt" \
@@ -235,7 +234,6 @@ if [ 1 = ${enable} -a 1 = ${blocklistsyncenabled} ]; then
 set -e
 
 transmission-remote http://localhost:${rpcport}${rpcurl} -n ${rpcusername}:${rpcpassword} --blocklist-update
-
 EOF
     chmod 755 ${cronfile}
 fi
