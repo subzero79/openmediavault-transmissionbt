@@ -7,8 +7,11 @@ set -e
 
 case "$1" in
     purge)
-        # Remove the configuration data
-        omv_config_delete "//services/transmissionbt"
+        # Remove the configuration data.
+        omv_config_delete "/config/services/transmissionbt"
+
+        # Remove Zeroconf configuration.
+        omv_config_delete "/config/services/zeroconf/services/service[id='transmissionbt']"
     ;;
 
     remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)

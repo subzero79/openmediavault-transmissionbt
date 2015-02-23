@@ -8,9 +8,11 @@ XB-Plugin-Section: downloaders
 
 Package: openmediavault-transmissionbt
 Architecture: all
-Depends: openmediavault (>= 1.0.7), transmission-daemon, transmission-cli,
- ${misc:Depends}
+Depends: openmediavault (>= 1.0.7),
+         transmission-cli,
+         transmission-daemon,
+         ${misc:Depends}
 Priority: optional
-Description: OpenMediaVault Transmission (BitTorrent client) plugin
+Description: OpenMediaVault Transmission (BitTorrent client) plugin.
  Transmission is a simple BitTorrent client that features a very simple and
  intuitive interface.
