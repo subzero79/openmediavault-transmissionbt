@@ -1,3 +1,9 @@
+openmediavault-transmissionbt (1.1) stable; urgency=medium
+
+  * Integrate Avahi better with OpenMediaVault.
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 23 Feb 2015 21:14:40 +0100
+
 openmediavault-transmissionbt (1.0.13) stable; urgency=low
 
   * Fix dhtenabled typo
