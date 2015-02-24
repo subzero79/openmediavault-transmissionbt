@@ -13,6 +13,10 @@ case "$1" in
             echo "Updating init script links and actions."
             invoke-rc.d --force transmission-daemon stop
             update-rc.d transmission-daemon disable >/dev/null
+
+            # Restart rsyslog to load the provided configuration. Only needs
+            # to be done when the plugin is installed.
+            invoke-rc.d rsyslog restart
         fi
 
         # Update the configuration.
@@ -127,10 +131,6 @@ case "$1" in
 
             omv_config_add_element "${ZEROCONF_XPATH}" "service" "${zeroconf}" true
         fi
-
-        # Restart rsyslog.
-        # TODO: Clarify and rewrite/remove if possible.
-        invoke-rc.d rsyslog restart
 
         # Activate package triggers. These triggers are only set during the
         # package installation.
