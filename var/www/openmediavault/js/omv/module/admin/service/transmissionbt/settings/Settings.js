@@ -86,13 +86,13 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Settings", {
             }, {
                 xtype: "checkbox",
                 name: "lpd-enabled",
-                fieldLabel: _("Local Peer Discovery (LPD)."),
+                fieldLabel: _("Local peer discovery (LPD)."),
                 checked: false,
                 boxLabel: _("Enable LPD.")
             }, {
                 xtype: "checkbox",
                 name: "utp-enabled",
-                fieldLabel: _("Micro Transport Protocol (&micro;TP)."),
+                fieldLabel: _("Micro transport protocol (&micro;TP)."),
                 checked: true,
                 boxLabel: _("Enable &micro;TP.")
             }, {
@@ -124,7 +124,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Settings", {
             }, {
                 xtype: "combo",
                 name: "message-level",
-                fieldLabel: _("Message Level"),
+                fieldLabel: _("Message level"),
                 queryMode: "local",
                 store: Ext.create("Ext.data.ArrayStore", {
                     fields: [
@@ -175,14 +175,14 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Settings", {
             }, {
                 xtype: "numberfield",
                 name: "cache-size-mb",
-                fieldLabel: _("Cache Size"),
+                fieldLabel: _("Cache size"),
                 allowDecimals: false,
                 allowNegative: false,
                 allowBlank: false,
                 value: 4,
                 plugins: [{
                     ptype: "fieldinfo",
-                    text: _("Cache size (in Mb) to reduce the number of disk reads and writes.")
+                    text: _("Cache size (in MB) to reduce the number of disk reads and writes.")
                 }]
             }]
         }, {

@@ -36,13 +36,13 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Queuing", {
             items: [{
                 xtype: "checkbox",
                 name: "queue-stalled-enabled",
-                fieldLabel: _("Queue Stalled"),
+                fieldLabel: _("Queue stalled"),
                 checked: true,
                 boxLabel: _("Torrents that have not shared data for queue-stalled-minutes are treated as 'stalled' and are not counted against the queue-download-size and seed-queue-size limits.")
             }, {
                 xtype: "numberfield",
                 name: "queue-stalled-minutes",
-                fieldLabel: _("Stalled Minutes"),
+                fieldLabel: _("Stalled minutes"),
                 allowDecimals: false,
                 allowNegative: false,
                 allowBlank: false,
@@ -50,7 +50,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Queuing", {
             }]
         }, {
             xtype: "fieldset",
-            title: _("Download Queue"),
+            title: _("Download queue"),
             defaults: {
                 labelSeparator: ""
             },
@@ -71,7 +71,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Queuing", {
             }]
         }, {
             xtype: "fieldset",
-            title: _("Seed Queue"),
+            title: _("Seed queue"),
             defaults: {
                 labelSeparator: ""
             },

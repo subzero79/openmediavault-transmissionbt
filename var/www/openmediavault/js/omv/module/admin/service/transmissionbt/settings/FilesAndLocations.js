@@ -197,7 +197,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.FilesAndLocations",
             }, {
                 xtype: "checkbox",
                 name: "start-added-torrents",
-                fieldLabel: _("Start Torrents"),
+                fieldLabel: _("Start torrents"),
                 checked: true,
                 boxLabel: _("Start torrents as soon as they are added.")
             }, {

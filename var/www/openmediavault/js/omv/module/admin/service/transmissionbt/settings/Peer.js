@@ -111,7 +111,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Peer", {
             }]
         }, {
             xtype: "fieldset",
-            title: _("Peer Ports"),
+            title: _("Peer ports"),
             defaults: {
                 labelSeparator: ""
             },
@@ -133,7 +133,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Peer", {
             }, {
                 xtype: "checkbox",
                 name: "peer-port-random-on-start",
-                fieldLabel: _("Random Port"),
+                fieldLabel: _("Random port"),
                 checked: false,
                 boxLabel: _("Random Port on start.")
             }, {

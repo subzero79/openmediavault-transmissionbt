@@ -160,13 +160,13 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Scheduling", {
             items: [{
                 xtype: "checkbox",
                 name: "idle-seeding-limit-enabled",
-                fieldLabel: _("Seeding Limit"),
+                fieldLabel: _("Seeding limit"),
                 checked: false,
                 boxLabel: _("Stop seeding after being idle for N minutes.")
             }, {
                 xtype: "numberfield",
                 name: "idle-seeding-limit",
-                fieldLabel: _("Idle Minutes"),
+                fieldLabel: _("Idle minutes"),
                 allowDecimals: false,
                 allowNegative: false,
                 allowBlank: false,
@@ -187,7 +187,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Scheduling", {
             }, {
                 xtype: "numberfield",
                 name: "ratio-limit",
-                fieldLabel: _("Ratio Limit"),
+                fieldLabel: _("Ratio limit"),
                 allowDecimals: true,
                 allowNegative: false,
                 allowBlank: false,

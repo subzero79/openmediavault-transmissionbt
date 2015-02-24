@@ -36,7 +36,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Bandwidth", {
             items: [{
                 xtype: "checkbox",
                 name: "speed-limit-down-enabled",
-                fieldLabel: _("Limit Download"),
+                fieldLabel: _("Limit download"),
                 checked: false,
                 boxLabel: _("Enable download limit.")
             }, {
@@ -54,7 +54,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Bandwidth", {
             }, {
                 xtype: "checkbox",
                 name: "speed-limit-up-enabled",
-                fieldLabel: _("Limit Upload"),
+                fieldLabel: _("Limit upload"),
                 checked: false,
                 boxLabel: _("Enable upload limit.")
             }, {
@@ -80,7 +80,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Bandwidth", {
             }]
         }, {
             xtype: "fieldset",
-            title: _("Turtle Mode"),
+            title: _("Turtle mode"),
             defaults: {
                 labelSeparator: ""
             },
@@ -89,7 +89,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Bandwidth", {
                 name: "alt-speed-enabled",
                 fieldLabel: _("Enable"),
                 checked: false,
-                boxLabel: _("Enable Turtle Mode.")
+                boxLabel: _("Enable turtle mode.")
             }, {
                 xtype: "numberfield",
                 name: "alt-speed-down",
@@ -100,7 +100,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Bandwidth", {
                 value: 50,
                 plugins: [{
                     ptype: "fieldinfo",
-                    text: _("Turtle Mode download speed. Value is KB/s.")
+                    text: _("Turtle mode download speed. Value is KB/s.")
                 }]
             }, {
                 xtype: "numberfield",
@@ -112,7 +112,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Bandwidth", {
                 value: 50,
                 plugins: [{
                     ptype: "fieldinfo",
-                    text: _("Turtle Mode upload speed. Value is KB/s.")
+                    text: _("Turtle mode upload speed. Value is KB/s.")
                 }]
             }]
         }];
