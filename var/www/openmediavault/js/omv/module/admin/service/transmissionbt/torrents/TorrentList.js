@@ -348,7 +348,9 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             title: _("Add torrent"),
             listeners: {
                 scope: this,
-                submit: this.doReload()
+                submit: function() {
+                    this.doReload();
+                }
             }
         }).show();
     },
@@ -360,7 +362,9 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
             method: "uploadTorrent",
             listeners: {
                 scope: this,
-                success: this.doReload()
+                success: function() {
+                    this.doReload();
+                }
             }
         }).show();
     },
