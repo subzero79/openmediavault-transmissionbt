@@ -187,30 +187,3 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
 // Register module.
 $moduleMgr = &OMVModuleMgr::getInstance();
 $moduleMgr->registerModule(new OMVModuleTransmissionBt());
-
-// Register new logfile type.
-OMVLogFile::registerType(
-    "transmissionbt",
-    array(
-        "filename" => "transmissionbt",
-        "filepath" => "/var/log/transmissionbt.log",
-        "regex" => "/^(\S+\s+\d+\s+\S+)\s+(\S+)\s+transmission-daemon\[\d+\]:\s+(.*)$/",
-        "columns" => array(
-            "ts" => array(
-                "index" => 1,
-                "func" => create_function(
-                    "\$v",
-                    "return strpdate(\$v, \"M j G:i:s\");"
-                )
-            ),
-            "date" => array(
-                "index" => 1,
-                "func" => create_function(
-                    "\$v",
-                    "return strftime(\"%c\", strpdate(\$v, \"M j G:i:s\"));"
-                )
-            ),
-            "event" => 3
-        )
-    )
-);
