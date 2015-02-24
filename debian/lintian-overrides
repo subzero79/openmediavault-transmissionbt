@@ -1,1 +1,6 @@
 dir-or-file-in-var-www
+
+# Overrides caused by handling services in install scripts.
+postrm-does-not-call-updaterc.d-for-init.d-script etc/init.d/transmission-daemon
+init.d-script-not-marked-as-conffile etc/init.d/transmission-daemon
+init.d-script-not-included-in-package etc/init.d/transmission-daemon
