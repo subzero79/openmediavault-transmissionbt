@@ -209,13 +209,13 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Settings", {
             }, {
                 xtype: "textfield",
                 name: "rpcurl",
-                fieldLabel: _("Path"),
-                vtype: "transmissionbturipath",
+                fieldLabel: _("URL"),
+                vtype: "transmissionbturl",
                 allowBlank: false,
                 value: 'transmission',
                 plugins: [{
                     ptype: "fieldinfo",
-                    text: _("Path in the URI to access RPC and web interface (http://localhost/&lt;path&gt;/(rpc|web).")
+                    text: _("URL to access RPC and web interface (http://localhost/&lt;URL&gt;/(rpc|web).")
                 }]
             }, {
                 xtype: "checkbox",
@@ -325,7 +325,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Settings", {
 
 Ext.apply(Ext.form.VTypes, {
 
-    transmissionbturipath: function(v) {
+    transmissionbturl: function(v) {
         return (/^[a-z0-9]+$/i).test(v);
     },
     transmissionbturiText: _("Invalid path."),
