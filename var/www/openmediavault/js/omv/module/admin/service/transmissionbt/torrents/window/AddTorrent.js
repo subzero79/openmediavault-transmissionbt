@@ -45,9 +45,8 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.window.AddTorrent",
     },
 
     onOkButton: function() {
-        var me = this;
-
-        if (me.isValid())
-            me.doSubmit();
+        if (this.isValid()) {
+            this.doSubmit();
+        }
     }
 });

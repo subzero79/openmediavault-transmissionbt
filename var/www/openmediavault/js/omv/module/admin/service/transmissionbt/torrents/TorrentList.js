@@ -126,9 +126,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
     }],
 
     initComponent: function() {
-        var me = this;
-
-        Ext.apply(me, {
+        Ext.apply(this, {
             store: Ext.create("OMV.data.Store", {
                 autoLoad: true,
                 remoteSort: false,
@@ -174,14 +172,14 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
                     }
                 },
                 listeners: {
-                    beforeload: me.beforeStoreLoad,
-                    scope: me
+                    beforeload: this.beforeStoreLoad,
+                    scope: this
                 }
             })
         });
 
-        me.callParent(arguments);
-        me.toggleAddTorrentButtons();
+        this.callParent(arguments);
+        this.toggleAddTorrentButtons();
     },
 
     transmissionIsRunning: false,
@@ -232,88 +230,87 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
     },
 
     getTopToolbarItems: function() {
-        var me = this;
-        var items = me.callParent(arguments);
+        var items = this.callParent(arguments);
 
         Ext.Array.insert(items, 1, [{
-            id: me.getId() + "-upload",
+            id: this.getId() + "-upload",
             xtype: "button",
-            text: me.uploadButtonText,
+            text: this.uploadButtonText,
             icon: "images/upload.png",
             iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
-            handler: Ext.Function.bind(me.onUploadButton, me, [me]),
-            scope: me
+            handler: Ext.Function.bind(this.onUploadButton, this),
+            scope: this
         }]);
 
         Ext.Array.push(items, [{
-            id: me.getId() + "-resume",
+            id: this.getId() + "-resume",
             xtype: "button",
-            text: me.resumeButtonText,
+            text: this.resumeButtonText,
             icon: "images/play.png",
             iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
-            handler: Ext.Function.bind(me.onResumeButton, me, [me]),
+            handler: Ext.Function.bind(this.onResumeButton, this),
             disabled: true,
-            scope: me,
+            scope: this,
             selectionConfig: {
                 minSelections: 1,
                 maxSelections: 1,
-                enabledFn: me.setStatusButtonEnabled
+                enabledFn: this.setStatusButtonEnabled
             },
             action: "resume"
         }, {
-            id: me.getId() + "-pause",
+            id: this.getId() + "-pause",
             xtype: "button",
-            text: me.pauseButtonText,
+            text: this.pauseButtonText,
             icon: "images/pause.png",
             iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
-            handler: Ext.Function.bind(me.onPauseButton, me, [me]),
+            handler: Ext.Function.bind(this.onPauseButton, this),
             disabled: true,
-            scope: me,
+            scope: this,
             selectionConfig: {
                 minSelections: 1,
                 maxSelections: 1,
-                enabledFn: me.setStatusButtonEnabled
+                enabledFn: this.setStatusButtonEnabled
             },
             action: "pause"
         }, {
-            id: me.getId() + "-queue",
+            id: this.getId() + "-queue",
             xtype: "button",
-            text: me.moveButtonText,
+            text: this.moveButtonText,
             icon: "images/menu.png",
             iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
             disabled: true,
-            scope: me,
+            scope: this,
             selectionConfig: {
                 minSelections: 1
             },
             menu: [{
-                id: me.getId() + "-queue-top",
-                text: me.topButtonText,
+                id: this.getId() + "-queue-top",
+                text: this.topButtonText,
                 icon: "images/arrow-up.png",
                 iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
-                handler: Ext.Function.bind(me.onQueueMoveButton, me, ["top"]),
-                scope: me
+                handler: Ext.Function.bind(this.onQueueMoveButton, this, ["top"]),
+                scope: this
             }, {
-                id: me.getId() + "-queue-up",
-                text: me.upButtonText,
+                id: this.getId() + "-queue-up",
+                text: this.upButtonText,
                 icon: "images/arrow-up.png",
                 iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
-                handler: Ext.Function.bind(me.onQueueMoveButton, me, ["up"]),
-                scope: me
+                handler: Ext.Function.bind(this.onQueueMoveButton, this, ["up"]),
+                scope: this
             }, {
-                id: me.getId() + "-queue-down",
-                text: me.downButtonText,
+                id: this.getId() + "-queue-down",
+                text: this.downButtonText,
                 icon: "images/arrow-down.png",
                 iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
-                handler: Ext.Function.bind(me.onQueueMoveButton, me, ["down"]),
-                scope: me
+                handler: Ext.Function.bind(this.onQueueMoveButton, this, ["down"]),
+                scope: this
             }, {
-                id: me.getId() + "-queue-bottom",
-                text: me.bottomButtonText,
+                id: this.getId() + "-queue-bottom",
+                text: this.bottomButtonText,
                 icon: "images/arrow-down.png",
                 iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
-                handler: Ext.Function.bind(me.onQueueMoveButton, me, ["bottom"]),
-                scope: me
+                handler: Ext.Function.bind(this.onQueueMoveButton, this, ["bottom"]),
+                scope: this
             }]
         }]);
 
@@ -338,6 +335,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
         if (status === 0 && button.action === "resume") {
             return true;
         }
+
         if (status !== 0 && button.action === "pause") {
             return true;
         }
@@ -346,60 +344,49 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
     },
 
     onAddButton: function() {
-        var me = this;
-
         Ext.create("OMV.module.admin.service.transmissionbt.torrents.window.AddTorrent", {
             title: _("Add torrent"),
             listeners: {
-                scope: me,
-                submit: function() {
-                    me.doReload();
-                }
+                scope: this,
+                submit: this.doReload()
             }
         }).show();
     },
 
     onUploadButton: function() {
-        var me = this;
-
         Ext.create("OMV.window.Upload", {
             title: _("Upload torrent"),
             service: "TransmissionBt",
             method: "uploadTorrent",
             listeners: {
-                success: function() {
-                    me.doReload();
-                },
-                scope: me
+                scope: this,
+                success: this.doReload()
             }
         }).show();
     },
 
     onDeleteButton: function() {
-        var me = this;
-        var records = me.getSelection();
+        var records = this.getSelection();
 
         Ext.create("OMV.module.admin.service.transmissionbt.torrents.window.DeleteTorrent", {
             listeners: {
-                scope: me,
+                scope: this,
                 submit: function(id, values) {
                     // Add delete_local_data to each item
                     Ext.Array.forEach(records, function(record) {
                         record.delete_local_data = values.delete_local_data;
                     });
 
-                    me.startDeletion(records);
+                    this.startDeletion(records);
                 }
             }
         }).show();
     },
 
     doDeletion: function(record) {
-        var me = this;
-
         OMV.Rpc.request({
-            scope: me,
-            callback: me.onDeletion,
+            scope: this,
+            callback: this.onDeletion,
             rpcData: {
                 service: "TransmissionBt",
                 method: "deleteTorrent",
@@ -412,12 +399,11 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
     },
 
     onResumeButton: function() {
-        var me = this;
-        var record = me.getSelected();
+        var record = this.getSelected();
 
         OMV.Rpc.request({
-            scope: me,
-            callback: me.doReload,
+            scope: this,
+            callback: this.doReload,
             rpcData: {
                 service: "TransmissionBt",
                 method: "resumeTorrent",
@@ -429,12 +415,11 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
     },
 
     onPauseButton: function() {
-        var me = this;
-        var record = me.getSelected();
+        var record = this.getSelected();
 
         OMV.Rpc.request({
-            scope: me,
-            callback: me.doReload,
+            scope: this,
+            callback: this.doReload,
             rpcData: {
                 service: "TransmissionBt",
                 method: "pauseTorrent",
@@ -446,46 +431,41 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
     },
 
     onQueueMoveButton: function(action) {
-        var me = this;
-        var records = me.getSelection();
+        var records = this.getSelection();
 
-        // Add action to each record
+        // Add action to each record.
         Ext.Array.forEach(records, function(record) {
             record.action = action;
         });
 
-        me.startQueueMove(records);
+        this.startQueueMove(records);
     },
 
     startQueueMove: function(records) {
-        var me = this;
-
-        if (records.length <= 0)
+        if (records.length <= 0) {
             return;
+        }
 
-        // Store selected records in a local variable
-        me.queueMoveActionInfo = {
+        // Store selected records in a local variable.
+        this.queueMoveActionInfo = {
             records: records,
             count: records.length
         };
 
-        // Get first record to be moved
-        var record = me.queueMoveActionInfo.records.pop();
+        // Get first record to be moved.
+        var record = this.queueMoveActionInfo.records.pop();
 
-        // Display progress dialog
-        OMV.MessageBox.progress("", me.queueMoveWaitMsg, "");
-        me.updateQueueMoveProgress();
+        // Display progress dialog.
+        OMV.MessageBox.progress("", this.queueMoveWaitMsg, "");
+        this.updateQueueMoveProgress();
 
-        // Execute move function
-        me.doQueueMove(record);
+        this.doQueueMove(record);
     },
 
     doQueueMove: function(record) {
-        var me = this;
-
         OMV.Rpc.request({
-            scope: me,
-            callback: me.onQueueMove,
+            scope: this,
+            callback: this.onQueueMove,
             rpcData: {
                 service: "TransmissionBt",
                 method: "queueMoveTorrent",
@@ -498,50 +478,39 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
     },
 
     onQueueMove: function(id, success, response) {
-        var me = this;
-
         if (!success) {
-            // Remove temporary local variables
-            delete me.queueMoveActionInfo;
+            // Remove temporary local variables.
+            delete this.queueMoveActionInfo;
 
-            // Hide progress dialog
+            // Hide progress dialog.
             OMV.MessageBox.hide();
 
             // Display error message
             OMV.MessageBox.error(null, response);
         } else {
-            if (me.queueMoveActionInfo.records.length > 0) {
-                var record = me.queueMoveActionInfo.records.pop();
-                var action = me.queueMoveActionInfo.action;
+            if (this.queueMoveActionInfo.records.length > 0) {
+                var record = this.queueMoveActionInfo.records.pop();
+                var action = this.queueMoveActionInfo.action;
 
-                // Update progress dialog
-                me.updateQueueMoveProgress();
+                this.updateQueueMoveProgress();
 
-                // Execute move function
-                me.doQueueMove(record);
+                this.doQueueMove(record);
             } else {
-                // Remove temporary local variables
-                delete me.queueMoveActionInfo;
+                // Remove temporary local variables.
+                delete this.queueMoveActionInfo;
 
-                // Update and hide progress dialog
+                // Update and hide progress dialog.
                 OMV.MessageBox.updateProgress(1, _("100% completed ..."));
                 OMV.MessageBox.hide();
-                me.doReload();
+                this.doReload();
             }
         }
     },
 
     updateQueueMoveProgress: function() {
-        var me = this;
+        var percentage = (this.queueMoveActionInfo.count - this.queueMoveActionInfo.records.length) / this.queueMoveActionInfo.count;
+        var text = Math.round(100 * percentage) + _("% completed ...");
 
-        // Calculate percentage
-        var p = (me.queueMoveActionInfo.count - me.queueMoveActionInfo.records.length) /
-            me.queueMoveActionInfo.count;
-
-        // Create message text
-        var text = Math.round(100 * p) + _("% completed ...");
-
-        // Update progress dialog
-        OMV.MessageBox.updateProgress(p, text);
+        OMV.MessageBox.updateProgress(percentage, text);
     }
 });

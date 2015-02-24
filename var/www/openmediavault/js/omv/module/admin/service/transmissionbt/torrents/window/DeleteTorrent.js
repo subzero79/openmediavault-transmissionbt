@@ -30,7 +30,6 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.window.DeleteTorren
     mode: "local",
 
     getFormItems: function() {
-        var me = this;
         return [{
             xtype: "checkbox",
             name: "delete_local_data",
@@ -40,7 +39,6 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.window.DeleteTorren
     },
 
     onOkButton: function() {
-        var me = this;
-        me.doSubmit();
+        this.doSubmit();
     }
 });

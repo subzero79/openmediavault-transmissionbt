@@ -36,9 +36,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.Settings", {
     ],
 
     initComponent: function() {
-        var me = this;
-
-        Ext.apply(me, {
+        Ext.apply(this, {
             items: [
                 Ext.create("OMV.module.admin.service.transmissionbt.settings.Settings", {
                     title: _("Settings")
@@ -61,7 +59,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.Settings", {
             ]
         });
 
-        me.callParent(arguments);
+        this.callParent(arguments);
     }
 });
 
