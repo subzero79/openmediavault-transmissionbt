@@ -158,6 +158,8 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
     /**
      * Bind listeners.
      *
+     * @param OMVNotifyDispatcher $dispatcher The dispatcher object.
+     *
      * @return void
      */
     public function bindListeners(OMVNotifyDispatcher $dispatcher)
