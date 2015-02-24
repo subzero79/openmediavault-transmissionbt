@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
- * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,150 +20,150 @@
 // require("js/omv/workspace/form/Panel.js")
 
 Ext.define("OMV.module.admin.service.transmissionbt.settings.Peer", {
-    extend       : "OMV.workspace.form.Panel",
+    extend: "OMV.workspace.form.Panel",
 
-    rpcService   : "TransmissionBt",
-    rpcGetMethod : "getPeer",
-    rpcSetMethod : "setPeer",
+    rpcService: "TransmissionBt",
+    rpcGetMethod: "getPeer",
+    rpcSetMethod: "setPeer",
 
-    getFormItems : function() {
+    getFormItems: function() {
         return [{
-            xtype    : "fieldset",
-            title    : _("Peers"),
-            defaults : {
-                labelSeparator : ""
+            xtype: "fieldset",
+            title: _("Peers"),
+            defaults: {
+                labelSeparator: ""
             },
-            items : [{
-                xtype    : "fieldset",
-                title    : _("Bindings"),
-                defaults : {
-                    labelSeparator : ""
+            items: [{
+                xtype: "fieldset",
+                title: _("Bindings"),
+                defaults: {
+                    labelSeparator: ""
                 },
-                items : [{
-                    xtype      : "textfield",
-                    name       : "bind-address-ipv4",
-                    fieldLabel : _("IPv4"),
-                    vtype      : "IPv4Net",
-                    allowBlank : false,
-                    value      : "0.0.0.0",
-                    plugins    : [{
-                        ptype : "fieldinfo",
-                        text  : _("IPv4 address to listen on. Use 0.0.0.0 for all host IPs.")
+                items: [{
+                    xtype: "textfield",
+                    name: "bind-address-ipv4",
+                    fieldLabel: _("IPv4"),
+                    vtype: "IPv4Net",
+                    allowBlank: false,
+                    value: "0.0.0.0",
+                    plugins: [{
+                        ptype: "fieldinfo",
+                        text: _("IPv4 address to listen on. Use 0.0.0.0 for all host IPs.")
                     }]
-                },{
-                    xtype      : "textfield",
-                    name       : "bind-address-ipv6",
-                    fieldLabel : _("IPv6"),
-                    allowBlank : false,
-                    value      : "::",
-                    plugins    : [{
-                        ptype : "fieldinfo",
-                        text  : _("IPv6 address to listen on. Use :: for all host IPs.")
+                }, {
+                    xtype: "textfield",
+                    name: "bind-address-ipv6",
+                    fieldLabel: _("IPv6"),
+                    allowBlank: false,
+                    value: "::",
+                    plugins: [{
+                        ptype: "fieldinfo",
+                        text: _("IPv6 address to listen on. Use :: for all host IPs.")
                     }]
                 }]
-            },{
-                xtype    : "fieldset",
-                title    : _("Limits"),
-                defaults : {
-                    labelSeparator : ""
+            }, {
+                xtype: "fieldset",
+                title: _("Limits"),
+                defaults: {
+                    labelSeparator: ""
                 },
-                items : [{
-                    xtype         : "numberfield",
-                    name          : "peer-limit-global",
-                    fieldLabel    : _("Global"),
-                    allowDecimals : false,
-                    allowNegative : false,
-                    allowBlank    : false,
-                    value         : 240
-                },{
-                    xtype         : "numberfield",
-                    name          : "peer-limit-per-torrent",
-                    fieldLabel    : _("Per torrent"),
-                    allowDecimals : false,
-                    allowNegative : false,
-                    allowBlank    : false,
-                    value         : 60
-                },{
-                    xtype      : "combo",
-                    name       : "peer-socket-tos",
-                    fieldLabel :  _("Socket TOS"),
-                    queryMode  : "local",
-                    store      : Ext.create("Ext.data.SimpleStore", {
-                        fields : [
+                items: [{
+                    xtype: "numberfield",
+                    name: "peer-limit-global",
+                    fieldLabel: _("Global"),
+                    allowDecimals: false,
+                    allowNegative: false,
+                    allowBlank: false,
+                    value: 240
+                }, {
+                    xtype: "numberfield",
+                    name: "peer-limit-per-torrent",
+                    fieldLabel: _("Per torrent"),
+                    allowDecimals: false,
+                    allowNegative: false,
+                    allowBlank: false,
+                    value: 60
+                }, {
+                    xtype: "combo",
+                    name: "peer-socket-tos",
+                    fieldLabel: _("Socket TOS"),
+                    queryMode: "local",
+                    store: Ext.create("Ext.data.SimpleStore", {
+                        fields: [
                             "value",
                             "text"
                         ],
-                        data   : [
-                            [ "default", _("default") ],
-                            [ "lowcost", _("lowcost") ],
-                            [ "throughput", _("throughput") ],
-                            [ "lowdelay", _("lowdelay") ],
-                            [ "reliability", _("reliability") ]
+                        data: [
+                            ["default", _("default")],
+                            ["lowcost", _("lowcost")],
+                            ["throughput", _("throughput")],
+                            ["lowdelay", _("lowdelay")],
+                            ["reliability", _("reliability")]
                         ]
                     }),
-                    displayField  : "text",
-                    valueField    : "value",
-                    allowBlank    : false,
-                    editable      : false,
-                    triggerAction : "all",
-                    value         : "default"
+                    displayField: "text",
+                    valueField: "value",
+                    allowBlank: false,
+                    editable: false,
+                    triggerAction: "all",
+                    value: "default"
                 }]
             }]
-        },{
-            xtype    : "fieldset",
-            title    : _("Peer Ports"),
-            defaults : {
-                labelSeparator : ""
+        }, {
+            xtype: "fieldset",
+            title: _("Peer Ports"),
+            defaults: {
+                labelSeparator: ""
             },
-            items : [{
-                xtype         : "numberfield",
-                name          : "peer-port",
-                fieldLabel    : _("Peer port"),
-                vtype         : "port",
-                minValue      : 1024,
-                maxValue      : 65535,
-                allowDecimals : false,
-                allowNegative : false,
-                allowBlank    : false,
-                value         : 51413,
-                plugins       : [{
-                    ptype : "fieldinfo",
-                    text  : _("Port to listen for incoming peer connections.")
+            items: [{
+                xtype: "numberfield",
+                name: "peer-port",
+                fieldLabel: _("Peer port"),
+                vtype: "port",
+                minValue: 1024,
+                maxValue: 65535,
+                allowDecimals: false,
+                allowNegative: false,
+                allowBlank: false,
+                value: 51413,
+                plugins: [{
+                    ptype: "fieldinfo",
+                    text: _("Port to listen for incoming peer connections.")
                 }]
-            },{
-                xtype      : "checkbox",
-                name       : "peer-port-random-on-start",
-                fieldLabel : _("Random Port"),
-                checked    : false,
-                boxLabel   : _("Random Port on start.")
-            },{
-                xtype         : "numberfield",
-                name          : "peer-port-random-low",
-                fieldLabel    : _("Random low"),
-                vtype         : "port",
-                minValue      : 1024,
-                maxValue      : 65535,
-                allowDecimals : false,
-                allowNegative : false,
-                allowBlank    : false,
-                value         : 1024
-            },{
-                xtype         : "numberfield",
-                name          : "peer-port-random-high",
-                fieldLabel    : _("Random high"),
-                vtype         : "port",
-                minValue      : 1024,
-                maxValue      : 65535,
-                allowDecimals : false,
-                allowNegative : false,
-                allowBlank    : false,
-                value         : 65535
-            },{
-                xtype      : "checkbox",
-                name       : "port-forwarding-enabled",
-                fieldLabel : _("Port forwarding"),
-                checked    : true,
-                boxLabel   : _("Enable port forwarding via NAT-PMP or UPnP.")
+            }, {
+                xtype: "checkbox",
+                name: "peer-port-random-on-start",
+                fieldLabel: _("Random Port"),
+                checked: false,
+                boxLabel: _("Random Port on start.")
+            }, {
+                xtype: "numberfield",
+                name: "peer-port-random-low",
+                fieldLabel: _("Random low"),
+                vtype: "port",
+                minValue: 1024,
+                maxValue: 65535,
+                allowDecimals: false,
+                allowNegative: false,
+                allowBlank: false,
+                value: 1024
+            }, {
+                xtype: "numberfield",
+                name: "peer-port-random-high",
+                fieldLabel: _("Random high"),
+                vtype: "port",
+                minValue: 1024,
+                maxValue: 65535,
+                allowDecimals: false,
+                allowNegative: false,
+                allowBlank: false,
+                value: 65535
+            }, {
+                xtype: "checkbox",
+                name: "port-forwarding-enabled",
+                fieldLabel: _("Port forwarding"),
+                checked: true,
+                boxLabel: _("Enable port forwarding via NAT-PMP or UPnP.")
             }]
         }];
     }

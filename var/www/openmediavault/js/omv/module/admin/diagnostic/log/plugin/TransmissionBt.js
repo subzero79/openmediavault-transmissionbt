@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2013 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,42 +19,42 @@
 // require("js/omv/module/admin/diagnostic/log/plugin/Plugin.js")
 
 Ext.define("OMV.module.admin.diagnostic.log.plugin.TransmissionBt", {
-    extend : "OMV.module.admin.diagnostic.log.plugin.Plugin",
-    alias  : "omv.plugin.diagnostic.log.transmissionbt",
+    extend: "OMV.module.admin.diagnostic.log.plugin.Plugin",
+    alias: "omv.plugin.diagnostic.log.transmissionbt",
 
-    id       : "transmissionbt",
-    text     : _("BitTorrent"),
-    stateful : true,
-    stateId  : "3459acb0-2b5a-11e3-8224-0800200c9a66",
-    columns  : [{
-        text      : _("Date & Time"),
-        sortable  : true,
-        dataIndex : "rownum",
-        stateId   : "date",
-        renderer  : function(value, metaData, record) {
+    id: "transmissionbt",
+    text: _("BitTorrent"),
+    stateful: true,
+    stateId: "3459acb0-2b5a-11e3-8224-0800200c9a66",
+    columns: [{
+        text: _("Date & Time"),
+        sortable: true,
+        dataIndex: "rownum",
+        stateId: "date",
+        renderer: function(value, metaData, record) {
             return record.get("date");
         }
-    },{
-        text      : _("Event"),
-        sortable  : true,
-        dataIndex : "event",
-        stateId   : "event",
-        flex      : 1
+    }, {
+        text: _("Event"),
+        sortable: true,
+        dataIndex: "event",
+        stateId: "event",
+        flex: 1
     }],
-    rpcParams : {
-        id : "transmissionbt"
+    rpcParams: {
+        id: "transmissionbt"
     },
-    rpcFields : [{
-        name : "rownum",
-        type : "int"
-    },{
-        name : "ts",
-        type : "int"
-    },{
-        name : "date",
-        type : "string"
-    },{
-        name : "event",
-        type : "string"
+    rpcFields: [{
+        name: "rownum",
+        type: "int"
+    }, {
+        name: "ts",
+        type: "int"
+    }, {
+        name: "date",
+        type: "string"
+    }, {
+        name: "event",
+        type: "string"
     }]
 });

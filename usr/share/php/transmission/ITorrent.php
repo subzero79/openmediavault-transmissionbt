@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (C) 2014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2014-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,21 +22,21 @@ interface ITorrent
     public function __construct($data);
 
     /**
-     * Get torrent id
+     * Get torrent ID.
      *
      * @return mixed
      */
     public function getId();
 
     /**
-     * Get the torrent name
+     * Get the torrent name.
      *
      * @return string
      */
     public function getName();
 
     /**
-     * Get the torrent status
+     * Get the torrent status.
      *
      * 0: "Torrent is stopped";
      * 1: "Queued to check files"
@@ -52,28 +52,28 @@ interface ITorrent
     public function getStatus();
 
     /**
-     * Get the torrent total size in bytes
+     * Get the torrent total size in bytes.
      *
      * @return int
      */
     public function getTotalSize();
 
     /**
-     * Get the torrent valid downloaded size in bytes
+     * Get the torrent valid downloaded size in bytes.
      *
      * @return int
      */
     public function getHaveValid();
 
     /**
-     * Get the downloaded percentage
+     * Get the downloaded percentage.
      *
      * @return int
      */
     public function getPercentDownloaded();
 
     /**
-     * Get the downloaded percentage
+     * Get the downloaded percentage.
      *
      * -1: "Not available"
      * -2: "Unknown"
@@ -83,42 +83,42 @@ interface ITorrent
     public function getEta();
 
     /**
-     * Get the connected peers count
+     * Get the connected peers count.
      *
      * @return int
      */
     public function getConnectedPeers();
 
     /**
-     * Get the connected peers sending to us count
+     * Get the connected peers sending to us count.
      *
      * @return int
      */
     public function getConnectedPeersSending();
 
     /**
-     * Get the download speed in bytes
+     * Get the download speed in bytes.
      *
      * @return int
      */
     public function getDownloadSpeed();
 
     /**
-     * Get the upload speed in bytes
+     * Get the upload speed in bytes.
      *
      * @return int
      */
     public function getUploadSpeed();
 
     /**
-     * Get the date the torrent was added
+     * Get the date the torrent was added.
      *
      * @return string
      */
     public function getDateAdded();
 
     /**
-     * Get the date the torrent was completed
+     * Get the date the torrent was completed.
      *
      * @return string
      */
@@ -132,7 +132,7 @@ interface ITorrent
     public function getRatio();
 
     /**
-     * Get the position of the torrent in the queue
+     * Get the position of the torrent in the queue.
      *
      * @return int
      */

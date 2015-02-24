@@ -3,7 +3,7 @@
 /**
  * Copyright (C) 2009-2012 Volker Theile <volker.theile@openmediavault.org>
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
- * Copyright (C) 2013-2014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,7 +42,7 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
 
     private function getXPath()
     {
-        return "//services/transmissionbt";
+        return "/config/services/transmissionbt";
     }
 
     /**
@@ -62,12 +62,7 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
      */
     public function applyConfig()
     {
-        // Currently transmission overwrites the settings.json configuration
-        // file on exit. This means transmission must be terminated before
-        // writing the new settings.json file.
-        $this->stopService();
-
-        $cmd = sprintf("omv-mkconf %s 2>&1", $this->getName());
+        $cmd = sprintf("export LANG=C; omv-mkconf %s 2>&1", $this->getName());
 
         if (0 !== $this->exec($cmd, $output)) {
             throw new OMVException(
@@ -140,8 +135,8 @@ class OMVModuleTransmissionBt extends OMVModuleServiceAbstract implements
         $this->exec($cmd, $output);
 
         return array(
-            "name"    => $this->getName(),
-            "title"   => gettext("BitTorrent"),
+            "name" => $this->getName(),
+            "title" => gettext("BitTorrent"),
             "enabled" => boolval($object['enable']),
             "running" => !empty($output[0])
         );
@@ -199,8 +194,8 @@ OMVLogFile::registerType(
     array(
         "filename" => "transmissionbt",
         "filepath" => "/var/log/transmissionbt.log",
-        "regex"    => "/^(\S+\s+\d+\s+\S+)\s+(\S+)\s+transmission-daemon\[\d+\]:\s+(.*)$/",
-        "columns"  => array(
+        "regex" => "/^(\S+\s+\d+\s+\S+)\s+(\S+)\s+transmission-daemon\[\d+\]:\s+(.*)$/",
+        "columns" => array(
             "ts" => array(
                 "index" => 1,
                 "func" => create_function(
@@ -210,7 +205,7 @@ OMVLogFile::registerType(
             ),
             "date" => array(
                 "index" => 1,
-                "func"  => create_function(
+                "func" => create_function(
                     "\$v",
                     "return strftime(\"%c\", strpdate(\$v, \"M j G:i:s\"));"
                 )

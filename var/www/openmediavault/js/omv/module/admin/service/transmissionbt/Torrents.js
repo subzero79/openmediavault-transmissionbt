@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,9 +19,9 @@
 // require("js/omv/module/admin/service/transmissionbt/torrents/TorrentList.js")
 
 OMV.WorkspaceManager.registerPanel({
-    id        : "torrents",
-    path      : "/service/transmissionbt",
-    text      : _("Torrents"),
-    position  : 20,
-    className : "OMV.module.admin.service.transmissionbt.torrents.TorrentList"
+    id: "torrents",
+    path: "/service/transmissionbt",
+    text: _("Torrents"),
+    position: 20,
+    className: "OMV.module.admin.service.transmissionbt.torrents.TorrentList"
 });

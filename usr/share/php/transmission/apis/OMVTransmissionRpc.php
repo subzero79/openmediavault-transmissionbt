@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright (C) 2014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2014-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,8 +24,9 @@ class OMVTransmissionRpc extends TransmissionRPC
     /**
      * Move torrents in the queue
      *
-     * @param int|array ids A list of transmission torrent ids
-     * @param string action The move action to perform
+     * @param int|array $ids    A list of transmission torrent ids
+     * @param string    $action The move action to perform
+     *
      * @return void
      */
     public function queueMove($ids, $action)

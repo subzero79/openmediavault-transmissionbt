@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,9 +18,9 @@
 // require("js/omv/WorkspaceManager.js")
 
 OMV.WorkspaceManager.registerNode({
-    id      : "transmissionbt",
-    path    : "/service",
-    text    : _("BitTorrent"),
-    icon16  : "images/transmissionbt.png",
-    iconSvg : "images/transmissionbt.svg"
+    id: "transmissionbt",
+    path: "/service",
+    text: _("BitTorrent"),
+    icon16: "images/transmissionbt.png",
+    iconSvg: "images/transmissionbt.svg"
 });

@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,8 +25,8 @@
 // require("js/omv/module/admin/service/transmissionbt/settings/Settings.js")
 
 Ext.define("OMV.module.admin.service.transmissionbt.Settings", {
-    extend   : "OMV.workspace.tab.Panel",
-    requires : [
+    extend: "OMV.workspace.tab.Panel",
+    requires: [
         "OMV.module.admin.service.transmissionbt.settings.Bandwidth",
         "OMV.module.admin.service.transmissionbt.settings.FilesAndLocations",
         "OMV.module.admin.service.transmissionbt.settings.Peer",
@@ -35,11 +35,11 @@ Ext.define("OMV.module.admin.service.transmissionbt.Settings", {
         "OMV.module.admin.service.transmissionbt.settings.Settings"
     ],
 
-    initComponent : function() {
+    initComponent: function() {
         var me = this;
 
         Ext.apply(me, {
-            items : [
+            items: [
                 Ext.create("OMV.module.admin.service.transmissionbt.settings.Settings", {
                     title: _("Settings")
                 }),
@@ -66,9 +66,9 @@ Ext.define("OMV.module.admin.service.transmissionbt.Settings", {
 });
 
 OMV.WorkspaceManager.registerPanel({
-    id        : "settings",
-    path      : "/service/transmissionbt",
-    text      : _("Settings"),
-    position  : 10,
-    className : "OMV.module.admin.service.transmissionbt.Settings"
+    id: "settings",
+    path: "/service/transmissionbt",
+    text: _("Settings"),
+    position: 10,
+    className: "OMV.module.admin.service.transmissionbt.Settings"
 });

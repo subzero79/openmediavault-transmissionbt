@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
- * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,7 +27,7 @@ OMV.module.admin.service.transmissionbt.util.Format = function() {
 
     Ext.extend(o, f, function() {
         return {
-            bytesToSize : function(bytes) {
+            bytesToSize: function(bytes) {
                 var sizes = ["Bytes", "KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"];
 
                 if (bytes === 0)
@@ -38,8 +38,17 @@ OMV.module.admin.service.transmissionbt.util.Format = function() {
                 return ((i === 0) ? (bytes / Math.pow(1024, i)) : (bytes / Math.pow(1024, i)).toFixed(1)) + " " + sizes[i];
             },
 
-            timeInterval : function(seconds) {
-                var weeks = Math.floor(seconds / 604800), days = Math.floor((seconds % 604800) / 86400), hours = Math.floor((seconds % 86400) / 3600), minutes = Math.floor((seconds % 3600) / 60), secondsLeft = Math.floor(seconds % 60), w = weeks + "w", d = days + "d", h = hours + "h", m = minutes + "m", s = secondsLeft + "s";
+            timeInterval: function(seconds) {
+                var weeks = Math.floor(seconds / 604800),
+                    days = Math.floor((seconds % 604800) / 86400),
+                    hours = Math.floor((seconds % 86400) / 3600),
+                    minutes = Math.floor((seconds % 3600) / 60),
+                    secondsLeft = Math.floor(seconds % 60),
+                    w = weeks + "w",
+                    d = days + "d",
+                    h = hours + "h",
+                    m = minutes + "m",
+                    s = secondsLeft + "s";
 
                 if (weeks)
                     return w + " " + d;
@@ -53,17 +62,17 @@ OMV.module.admin.service.transmissionbt.util.Format = function() {
                 return s;
             },
 
-            rate : function(Bps) {
+            rate: function(Bps) {
                 var speed = Math.floor(Bps / 1000);
 
-                if (speed <= 999.95)// 0 KBps to 999 K
+                if (speed <= 999.95) // 0 KBps to 999 K
                     return [speed.toTruncFixed(0), "KB/s"].join(" ");
 
                 speed /= 1000;
 
-                if (speed <= 99.995)// 1 M to 99.99 M
+                if (speed <= 99.995) // 1 M to 99.99 M
                     return [speed.toTruncFixed(2), "MB/s"].join(" ");
-                if (speed <= 999.95)// 100 M to 999.9 M
+                if (speed <= 999.95) // 100 M to 999.9 M
                     return [speed.toTruncFixed(1), "MB/s"].join(" ");
 
                 // Insane speeds
@@ -72,7 +81,7 @@ OMV.module.admin.service.transmissionbt.util.Format = function() {
             },
 
             /** Renderers **/
-            doneRenderer : function(value, metaData, record) {
+            doneRenderer: function(value, metaData, record) {
                 var percentage = parseFloat(record.get("percent_done"));
                 var totalSize = parseInt(record.get("total_size"), 10);
                 var haveValid = parseInt(record.get("have_valid"), 10);
@@ -88,7 +97,7 @@ OMV.module.admin.service.transmissionbt.util.Format = function() {
                 return renderer.apply(this, arguments);
             },
 
-            statusRenderer : function(value) {
+            statusRenderer: function(value) {
                 switch (value) {
                     case 0:
                         value = _("Torrent is stopped");
@@ -119,7 +128,7 @@ OMV.module.admin.service.transmissionbt.util.Format = function() {
                 return value;
             },
 
-            etaRenderer : function(value) {
+            etaRenderer: function(value) {
                 switch (value) {
                     case -1:
                         value = _("Not available");
@@ -135,7 +144,7 @@ OMV.module.admin.service.transmissionbt.util.Format = function() {
                 return value;
             },
 
-            peersRenderer : function(value, metaData, record) {
+            peersRenderer: function(value, metaData, record) {
                 var peersConnected = parseInt(record.get("connected_peers"), 10);
                 var peersSendingToUs = parseInt(record.get("connected_peers_sending"), 10);
 
@@ -144,11 +153,11 @@ OMV.module.admin.service.transmissionbt.util.Format = function() {
                 return value;
             },
 
-            rateRenderer : function(value) {
+            rateRenderer: function(value) {
                 return OMV.module.admin.service.transmissionbt.util.Format.rate(value);
             },
 
-            timestampRenderer : function(value) {
+            timestampRenderer: function(value) {
                 if (value <= 0)
                     return;
 
@@ -157,7 +166,7 @@ OMV.module.admin.service.transmissionbt.util.Format = function() {
                 return Ext.util.Format.date(dt, "Y-m-d H:i:s");
             },
 
-            ratioRenderer : function(value) {
+            ratioRenderer: function(value) {
                 switch (value) {
                     case -1:
                         value = _("Not available");

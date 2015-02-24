@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
- * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,31 +20,31 @@
 // require("js/omv/workspace/window/Form.js")
 
 Ext.define("OMV.module.admin.service.transmissionbt.torrents.window.AddTorrent", {
-    extend : "OMV.workspace.window.Form",
+    extend: "OMV.workspace.window.Form",
 
     rpcService: "TransmissionBt",
-    rpcSetMethod    : "addTorrent",
-    hideResetButton : true,
-    width           : 500,
-    title           : _("Add Torrent by URL"),
-    okButtonText    : _("OK"),
-    submitMsg       : _("Adding Torrent ..."),
+    rpcSetMethod: "addTorrent",
+    hideResetButton: true,
+    width: 500,
+    title: _("Add Torrent by URL"),
+    okButtonText: _("OK"),
+    submitMsg: _("Adding Torrent ..."),
 
-    getFormItems : function () {
+    getFormItems: function() {
         return [{
-            xtype      : "textfield",
-            name       : "url",
-            fieldLabel : _("URL"),
-            allowBlank : false
-        },{
-            xtype      : "checkbox",
-            name       : "start_download",
-            fieldLabel : _("Start download"),
-            checked    : true
+            xtype: "textfield",
+            name: "url",
+            fieldLabel: _("URL"),
+            allowBlank: false
+        }, {
+            xtype: "checkbox",
+            name: "start_download",
+            fieldLabel: _("Start download"),
+            checked: true
         }];
     },
 
-    onOkButton : function() {
+    onOkButton: function() {
         var me = this;
 
         if (me.isValid())

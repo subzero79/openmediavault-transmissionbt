@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
- * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,26 +20,26 @@
 // require("js/omv/workspace/window/Form.js")
 
 Ext.define("OMV.module.admin.service.transmissionbt.torrents.window.DeleteTorrent", {
-    extend : "OMV.workspace.window.Form",
+    extend: "OMV.workspace.window.Form",
 
-    hideResetButton : true,
-    width           : 500,
-    title           : _("Delete torrent"),
-    okButtonText    : _("OK"),
-    submitMsg       : _("Deleting torrent ..."),
-    mode            : "local",
+    hideResetButton: true,
+    width: 500,
+    title: _("Delete torrent"),
+    okButtonText: _("OK"),
+    submitMsg: _("Deleting torrent ..."),
+    mode: "local",
 
-    getFormItems : function () {
+    getFormItems: function() {
         var me = this;
         return [{
-            xtype      : "checkbox",
-            name       : "delete_local_data",
-            fieldLabel : _("Delete Local Data"),
-            checked    : false
+            xtype: "checkbox",
+            name: "delete_local_data",
+            fieldLabel: _("Delete Local Data"),
+            checked: false
         }];
     },
 
-    onOkButton : function() {
+    onOkButton: function() {
         var me = this;
         me.doSubmit();
     }

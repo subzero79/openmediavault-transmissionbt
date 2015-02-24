@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
- * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,8 +27,8 @@
 // require("js/omv/module/admin/service/transmissionbt/torrents/window/DeleteTorrent.js")
 
 Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
-    extend   : "OMV.workspace.grid.Panel",
-    requires : [
+    extend: "OMV.workspace.grid.Panel",
+    requires: [
         "OMV.data.Store",
         "OMV.data.Model",
         "OMV.data.proxy.Rpc",
@@ -37,131 +37,145 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
         "OMV.module.admin.service.transmissionbt.torrents.window.DeleteTorrent"
     ],
 
-    autoReload            : true,
-    hidePagingToolbar     : false,
-    hideEditButton        : true,
-    rememberSelected      : true,
-    disableLoadMaskOnLoad : true,
-    reloadInterval        : 5000,
+    autoReload: true,
+    hidePagingToolbar: false,
+    hideEditButton: true,
+    rememberSelected: true,
+    disableLoadMaskOnLoad: true,
+    reloadInterval: 5000,
 
-    uploadButtonText  : _("Upload"),
-    resumeButtonText  : _("Resume"),
-    pauseButtonText   : _("Pause"),
-    moveButtonText    : _("Move"),
-    topButtonText     : _("Move to top"),
-    upButtonText      : _("Move up"),
-    downButtonText    : _("Move down"),
-    bottomButtonText  : _("Move to bottom"),
-    queueMoveWaitMsg  : _("Changing place in queue for selected item(s)"),
+    uploadButtonText: _("Upload"),
+    resumeButtonText: _("Resume"),
+    pauseButtonText: _("Pause"),
+    moveButtonText: _("Move"),
+    topButtonText: _("Move to top"),
+    upButtonText: _("Move up"),
+    downButtonText: _("Move down"),
+    bottomButtonText: _("Move to bottom"),
+    queueMoveWaitMsg: _("Changing place in queue for selected item(s)"),
 
-    columns : [{
-        header    : _("ID"),
-        sortable  : true,
-        dataIndex : "id",
-        flex      : 1
-    },{
-        header    : _("Name"),
-        sortable  : true,
-        dataIndex : "name",
-        flex      : 4
-    },{
-        header    : _("Status"),
-        sortable  : true,
-        dataIndex : "status",
-        flex      : 2,
-        renderer  : OMV.module.admin.service.transmissionbt.util.Format.statusRenderer
-    },{
-        header    : _("Done"),
-        sortable  : true,
-        dataIndex : "percent_done",
-        flex      : 3,
-        renderer  : OMV.module.admin.service.transmissionbt.util.Format.doneRenderer
-    },{
-        header    : _("DL-rate"),
-        sortable  : true,
-        dataIndex : "download_rate",
-        flex      : 1,
-        renderer  : OMV.module.admin.service.transmissionbt.util.Format.rateRenderer
-    },{
-        header    : _("UL-rate"),
-        sortable  : true,
-        dataIndex : "upload_rate",
-        flex      : 1,
-        renderer  : OMV.module.admin.service.transmissionbt.util.Format.rateRenderer
-    },{
-        header    : _("Peers"),
-        sortable  : true,
-        dataIndex : "peers",
-        flex      : 1,
-        renderer  : OMV.module.admin.service.transmissionbt.util.Format.peersRenderer
-    },{
-        header    : _("ETA"),
-        sortable  : true,
-        dataIndex : "eta",
-        flex      : 1,
-        renderer  : OMV.module.admin.service.transmissionbt.util.Format.etaRenderer
-    },{
-        header    : _("Date added"),
-        sortable  : true,
-        dataIndex : "date_added",
-        flex      : 2,
-        renderer  : OMV.module.admin.service.transmissionbt.util.Format.timestampRenderer
-    },{
-        header    : _("Date done"),
-        sortable  : true,
-        dataIndex : "date_done",
-        flex      : 2,
-        renderer  : OMV.module.admin.service.transmissionbt.util.Format.timestampRenderer
-    },{
-        header    : _("Ratio"),
-        sortable  : true,
-        dataIndex : "upload_ratio",
-        flex      : 1,
-        renderer  : OMV.module.admin.service.transmissionbt.util.Format.ratioRenderer
-    },{
-        header    : _("Queue"),
-        sortable  : true,
-        flex      : 1,
-        dataIndex : "queue_position"
+    columns: [{
+        header: _("ID"),
+        sortable: true,
+        dataIndex: "id",
+        flex: 1
+    }, {
+        header: _("Name"),
+        sortable: true,
+        dataIndex: "name",
+        flex: 4
+    }, {
+        header: _("Status"),
+        sortable: true,
+        dataIndex: "status",
+        flex: 2,
+        renderer: OMV.module.admin.service.transmissionbt.util.Format.statusRenderer
+    }, {
+        header: _("Done"),
+        sortable: true,
+        dataIndex: "percent_done",
+        flex: 3,
+        renderer: OMV.module.admin.service.transmissionbt.util.Format.doneRenderer
+    }, {
+        header: _("DL-rate"),
+        sortable: true,
+        dataIndex: "download_rate",
+        flex: 1,
+        renderer: OMV.module.admin.service.transmissionbt.util.Format.rateRenderer
+    }, {
+        header: _("UL-rate"),
+        sortable: true,
+        dataIndex: "upload_rate",
+        flex: 1,
+        renderer: OMV.module.admin.service.transmissionbt.util.Format.rateRenderer
+    }, {
+        header: _("Peers"),
+        sortable: true,
+        dataIndex: "peers",
+        flex: 1,
+        renderer: OMV.module.admin.service.transmissionbt.util.Format.peersRenderer
+    }, {
+        header: _("ETA"),
+        sortable: true,
+        dataIndex: "eta",
+        flex: 1,
+        renderer: OMV.module.admin.service.transmissionbt.util.Format.etaRenderer
+    }, {
+        header: _("Date added"),
+        sortable: true,
+        dataIndex: "date_added",
+        flex: 2,
+        renderer: OMV.module.admin.service.transmissionbt.util.Format.timestampRenderer
+    }, {
+        header: _("Date done"),
+        sortable: true,
+        dataIndex: "date_done",
+        flex: 2,
+        renderer: OMV.module.admin.service.transmissionbt.util.Format.timestampRenderer
+    }, {
+        header: _("Ratio"),
+        sortable: true,
+        dataIndex: "upload_ratio",
+        flex: 1,
+        renderer: OMV.module.admin.service.transmissionbt.util.Format.ratioRenderer
+    }, {
+        header: _("Queue"),
+        sortable: true,
+        flex: 1,
+        dataIndex: "queue_position"
     }],
 
-    initComponent : function() {
+    initComponent: function() {
         var me = this;
 
         Ext.apply(me, {
-            store : Ext.create("OMV.data.Store", {
-                autoLoad   : true,
-                remoteSort : false,
-                model      : OMV.data.Model.createImplicit({
-                    idProperty : "uuid",
-                    fields     : [
-                        { name : "id" },
-                        { name : "name" },
-                        { name : "status" },
-                        { name : "percent_done" },
-                        { name : "total_size" },
-                        { name : "have_valid" },
-                        { name : "download_rate" },
-                        { name : "upload_rate" },
-                        { name : "connected_peers" },
-                        { name : "connected_peers_sending" },
-                        { name : "eta" },
-                        { name : "date_added" },
-                        { name : "date_done" },
-                        { name : "upload_ratio" },
-                        { name : "queue_position" },
-                    ]
+            store: Ext.create("OMV.data.Store", {
+                autoLoad: true,
+                remoteSort: false,
+                model: OMV.data.Model.createImplicit({
+                    idProperty: "uuid",
+                    fields: [{
+                        name: "id"
+                    }, {
+                        name: "name"
+                    }, {
+                        name: "status"
+                    }, {
+                        name: "percent_done"
+                    }, {
+                        name: "total_size"
+                    }, {
+                        name: "have_valid"
+                    }, {
+                        name: "download_rate"
+                    }, {
+                        name: "upload_rate"
+                    }, {
+                        name: "connected_peers"
+                    }, {
+                        name: "connected_peers_sending"
+                    }, {
+                        name: "eta"
+                    }, {
+                        name: "date_added"
+                    }, {
+                        name: "date_done"
+                    }, {
+                        name: "upload_ratio"
+                    }, {
+                        name: "queue_position"
+                    }, ]
                 }),
-                proxy : {
-                    type    : "rpc",
-                    rpcData : {
-                        service : "TransmissionBt",
-                        method  : "getTorrentList"
+                proxy: {
+                    type: "rpc",
+                    rpcData: {
+                        service: "TransmissionBt",
+                        method: "getTorrentList"
                     }
                 },
-                listeners : {
-                    beforeload : me.beforeStoreLoad,
-                    scope      : me
+                listeners: {
+                    beforeload: me.beforeStoreLoad,
+                    scope: me
                 }
             })
         });
@@ -170,9 +184,9 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
         me.toggleAddTorrentButtons();
     },
 
-    transmissionIsRunning : false,
+    transmissionIsRunning: false,
 
-    beforeStoreLoad : function() {
+    beforeStoreLoad: function() {
         // Doing this here means that the status will be delayed.
         // So we won't know if the server is actually running
         // until the next call.
@@ -183,28 +197,28 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
         return this.transmissionIsRunning;
     },
 
-    doCheckIfTransmissionIsRunning : function() {
+    doCheckIfTransmissionIsRunning: function() {
         OMV.Rpc.request({
-            scope    : this,
-            callback : function(id, success, response) {
+            scope: this,
+            callback: function(id, success, response) {
                 var running = false;
 
                 if (success) {
-                    if (response)  {
+                    if (response) {
                         running = true;
                     }
                 }
 
                 this.transmissionIsRunning = running;
             },
-            rpcData  : {
-                service : "TransmissionBt",
-                method  : "serverIsRunning"
+            rpcData: {
+                service: "TransmissionBt",
+                method: "serverIsRunning"
             }
         });
     },
 
-    toggleAddTorrentButtons : function() {
+    toggleAddTorrentButtons: function() {
         var status = this.transmissionIsRunning ? "enable" : "disable";
         var addTorrentButton = this.queryById(this.getId() + "-add");
         var uploadTorrentButton = this.queryById(this.getId() + "-upload");
@@ -217,96 +231,96 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
         }
     },
 
-    getTopToolbarItems : function() {
+    getTopToolbarItems: function() {
         var me = this;
         var items = me.callParent(arguments);
 
         Ext.Array.insert(items, 1, [{
-            id      : me.getId() + "-upload",
-            xtype   : "button",
-            text    : me.uploadButtonText,
-            icon    : "images/upload.png",
-            iconCls : Ext.baseCSSPrefix + "btn-icon-16x16",
-            handler : Ext.Function.bind(me.onUploadButton, me, [ me ]),
-            scope   : me
+            id: me.getId() + "-upload",
+            xtype: "button",
+            text: me.uploadButtonText,
+            icon: "images/upload.png",
+            iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
+            handler: Ext.Function.bind(me.onUploadButton, me, [me]),
+            scope: me
         }]);
 
         Ext.Array.push(items, [{
-            id       : me.getId() + "-resume",
-            xtype    : "button",
-            text     : me.resumeButtonText,
-            icon     : "images/play.png",
-            iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
-            handler  : Ext.Function.bind(me.onResumeButton, me, [ me ]),
-            disabled : true,
-            scope    : me,
-            selectionConfig : {
-                minSelections : 1,
-                maxSelections : 1,
-                enabledFn     : me.setStatusButtonEnabled
+            id: me.getId() + "-resume",
+            xtype: "button",
+            text: me.resumeButtonText,
+            icon: "images/play.png",
+            iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
+            handler: Ext.Function.bind(me.onResumeButton, me, [me]),
+            disabled: true,
+            scope: me,
+            selectionConfig: {
+                minSelections: 1,
+                maxSelections: 1,
+                enabledFn: me.setStatusButtonEnabled
             },
-            action : "resume"
-        },{
-            id       : me.getId() + "-pause",
-            xtype    : "button",
-            text     : me.pauseButtonText,
-            icon     : "images/pause.png",
-            iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
-            handler  : Ext.Function.bind(me.onPauseButton, me, [ me ]),
-            disabled : true,
-            scope    : me,
-            selectionConfig : {
-                minSelections : 1,
-                maxSelections : 1,
-                enabledFn     : me.setStatusButtonEnabled
+            action: "resume"
+        }, {
+            id: me.getId() + "-pause",
+            xtype: "button",
+            text: me.pauseButtonText,
+            icon: "images/pause.png",
+            iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
+            handler: Ext.Function.bind(me.onPauseButton, me, [me]),
+            disabled: true,
+            scope: me,
+            selectionConfig: {
+                minSelections: 1,
+                maxSelections: 1,
+                enabledFn: me.setStatusButtonEnabled
             },
-            action : "pause"
-        },{
-            id       : me.getId() + "-queue",
-            xtype    : "button",
-            text     : me.moveButtonText,
-            icon     : "images/menu.png",
-            iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
-            disabled : true,
-            scope    : me,
-            selectionConfig : {
-                minSelections : 1
+            action: "pause"
+        }, {
+            id: me.getId() + "-queue",
+            xtype: "button",
+            text: me.moveButtonText,
+            icon: "images/menu.png",
+            iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
+            disabled: true,
+            scope: me,
+            selectionConfig: {
+                minSelections: 1
             },
-            menu : [{
-                id      : me.getId() + "-queue-top",
-                text    : me.topButtonText,
-                icon    : "images/arrow-up.png",
-                iconCls : Ext.baseCSSPrefix + "btn-icon-16x16",
-                handler : Ext.Function.bind(me.onQueueMoveButton, me, [ "top" ]),
-                scope   : me
-            },{
-                id      : me.getId() + "-queue-up",
-                text    : me.upButtonText,
-                icon    : "images/arrow-up.png",
-                iconCls : Ext.baseCSSPrefix + "btn-icon-16x16",
-                handler : Ext.Function.bind(me.onQueueMoveButton, me, [ "up" ]),
-                scope   : me
-            },{
-                id      : me.getId() + "-queue-down",
-                text    : me.downButtonText,
-                icon    : "images/arrow-down.png",
-                iconCls : Ext.baseCSSPrefix + "btn-icon-16x16",
-                handler : Ext.Function.bind(me.onQueueMoveButton, me, [ "down" ]),
-                scope   : me
-            },{
-                id      : me.getId() + "-queue-bottom",
-                text    : me.bottomButtonText,
-                icon    : "images/arrow-down.png",
-                iconCls : Ext.baseCSSPrefix + "btn-icon-16x16",
-                handler : Ext.Function.bind(me.onQueueMoveButton, me, [ "bottom" ]),
-                scope   : me
+            menu: [{
+                id: me.getId() + "-queue-top",
+                text: me.topButtonText,
+                icon: "images/arrow-up.png",
+                iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
+                handler: Ext.Function.bind(me.onQueueMoveButton, me, ["top"]),
+                scope: me
+            }, {
+                id: me.getId() + "-queue-up",
+                text: me.upButtonText,
+                icon: "images/arrow-up.png",
+                iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
+                handler: Ext.Function.bind(me.onQueueMoveButton, me, ["up"]),
+                scope: me
+            }, {
+                id: me.getId() + "-queue-down",
+                text: me.downButtonText,
+                icon: "images/arrow-down.png",
+                iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
+                handler: Ext.Function.bind(me.onQueueMoveButton, me, ["down"]),
+                scope: me
+            }, {
+                id: me.getId() + "-queue-bottom",
+                text: me.bottomButtonText,
+                icon: "images/arrow-down.png",
+                iconCls: Ext.baseCSSPrefix + "btn-icon-16x16",
+                handler: Ext.Function.bind(me.onQueueMoveButton, me, ["bottom"]),
+                scope: me
             }]
         }]);
 
         return items;
     },
 
-    setStatusButtonEnabled : function(button, records) {
+    setStatusButtonEnabled: function(button, records) {
         if (!this.transmissionIsRunning) {
             return false;
         }
@@ -331,44 +345,44 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
         return false;
     },
 
-    onAddButton : function() {
+    onAddButton: function() {
         var me = this;
 
         Ext.create("OMV.module.admin.service.transmissionbt.torrents.window.AddTorrent", {
-            title     : _("Add torrent"),
-            listeners : {
-                scope  : me,
-                submit : function() {
+            title: _("Add torrent"),
+            listeners: {
+                scope: me,
+                submit: function() {
                     me.doReload();
                 }
             }
         }).show();
     },
 
-    onUploadButton : function() {
+    onUploadButton: function() {
         var me = this;
 
         Ext.create("OMV.window.Upload", {
-            title   : _("Upload torrent"),
-            service : "TransmissionBt",
-            method  : "uploadTorrent",
-            listeners : {
-                success : function () {
+            title: _("Upload torrent"),
+            service: "TransmissionBt",
+            method: "uploadTorrent",
+            listeners: {
+                success: function() {
                     me.doReload();
                 },
-                scope : me
+                scope: me
             }
         }).show();
     },
 
-    onDeleteButton : function() {
+    onDeleteButton: function() {
         var me = this;
         var records = me.getSelection();
 
         Ext.create("OMV.module.admin.service.transmissionbt.torrents.window.DeleteTorrent", {
-            listeners : {
-                scope  : me,
-                submit : function(id, values) {
+            listeners: {
+                scope: me,
+                submit: function(id, values) {
                     // Add delete_local_data to each item
                     Ext.Array.forEach(records, function(record) {
                         record.delete_local_data = values.delete_local_data;
@@ -380,58 +394,58 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
         }).show();
     },
 
-    doDeletion : function(record) {
+    doDeletion: function(record) {
         var me = this;
 
         OMV.Rpc.request({
-            scope : me,
-            callback : me.onDeletion,
-            rpcData : {
-                service : "TransmissionBt",
-                method  : "deleteTorrent",
-                params  : {
-                    id                : record.get("id"),
-                    delete_local_data : record.delete_local_data
+            scope: me,
+            callback: me.onDeletion,
+            rpcData: {
+                service: "TransmissionBt",
+                method: "deleteTorrent",
+                params: {
+                    id: record.get("id"),
+                    delete_local_data: record.delete_local_data
                 }
             }
         });
     },
 
-    onResumeButton : function() {
-        var me = this;
-        var record = me.getSelected();
-
-        OMV.Rpc.request({
-            scope    : me,
-            callback : me.doReload,
-            rpcData  : {
-                service : "TransmissionBt",
-                method  : "resumeTorrent",
-                params  : {
-                    id : record.get("id")
-                }
-            }
-        });
-    },
-
-    onPauseButton : function() {
+    onResumeButton: function() {
         var me = this;
         var record = me.getSelected();
 
         OMV.Rpc.request({
-            scope    : me,
-            callback : me.doReload,
-            rpcData  : {
-                service : "TransmissionBt",
-                method  : "pauseTorrent",
-                params  : {
-                    id : record.get("id")
+            scope: me,
+            callback: me.doReload,
+            rpcData: {
+                service: "TransmissionBt",
+                method: "resumeTorrent",
+                params: {
+                    id: record.get("id")
                 }
             }
         });
     },
 
-    onQueueMoveButton : function(action) {
+    onPauseButton: function() {
+        var me = this;
+        var record = me.getSelected();
+
+        OMV.Rpc.request({
+            scope: me,
+            callback: me.doReload,
+            rpcData: {
+                service: "TransmissionBt",
+                method: "pauseTorrent",
+                params: {
+                    id: record.get("id")
+                }
+            }
+        });
+    },
+
+    onQueueMoveButton: function(action) {
         var me = this;
         var records = me.getSelection();
 
@@ -443,7 +457,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
         me.startQueueMove(records);
     },
 
-    startQueueMove : function(records) {
+    startQueueMove: function(records) {
         var me = this;
 
         if (records.length <= 0)
@@ -451,8 +465,8 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
 
         // Store selected records in a local variable
         me.queueMoveActionInfo = {
-            records : records,
-            count   : records.length
+            records: records,
+            count: records.length
         };
 
         // Get first record to be moved
@@ -466,24 +480,24 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
         me.doQueueMove(record);
     },
 
-    doQueueMove : function(record) {
+    doQueueMove: function(record) {
         var me = this;
 
         OMV.Rpc.request({
-            scope    : me,
-            callback : me.onQueueMove,
-            rpcData  : {
-                service : "TransmissionBt",
-                method  : "queueMoveTorrent",
-                params  : {
-                    id     : record.get("id"),
-                    action : record.action
+            scope: me,
+            callback: me.onQueueMove,
+            rpcData: {
+                service: "TransmissionBt",
+                method: "queueMoveTorrent",
+                params: {
+                    id: record.get("id"),
+                    action: record.action
                 }
             }
         });
     },
 
-    onQueueMove : function (id, success, response) {
+    onQueueMove: function(id, success, response) {
         var me = this;
 
         if (!success) {
@@ -522,7 +536,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.torrents.TorrentList", {
 
         // Calculate percentage
         var p = (me.queueMoveActionInfo.count - me.queueMoveActionInfo.records.length) /
-        me.queueMoveActionInfo.count;
+            me.queueMoveActionInfo.count;
 
         // Create message text
         var text = Math.round(100 * p) + _("% completed ...");

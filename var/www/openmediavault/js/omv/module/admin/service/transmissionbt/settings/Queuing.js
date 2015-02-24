@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
- * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,75 +20,75 @@
 // require("js/omv/workspace/form/Panel.js")
 
 Ext.define("OMV.module.admin.service.transmissionbt.settings.Queuing", {
-    extend       : "OMV.workspace.form.Panel",
+    extend: "OMV.workspace.form.Panel",
 
-    rpcService   : "TransmissionBt",
-    rpcGetMethod : "getQueuing",
-    rpcSetMethod : "setQueuing",
+    rpcService: "TransmissionBt",
+    rpcGetMethod: "getQueuing",
+    rpcSetMethod: "setQueuing",
 
-    getFormItems : function() {
+    getFormItems: function() {
         return [{
-            xtype    : "fieldset",
-            title    : _("General"),
-            defaults : {
-                labelSeparator : ""
+            xtype: "fieldset",
+            title: _("General"),
+            defaults: {
+                labelSeparator: ""
             },
-            items : [{
-                xtype      : "checkbox",
-                name       : "queue-stalled-enabled",
-                fieldLabel : _("Queue Stalled"),
-                checked    : true,
-                boxLabel   : _("Torrents that have not shared data for queue-stalled-minutes are treated as 'stalled' and are not counted against the queue-download-size and seed-queue-size limits.")
-            },{
-                xtype         : "numberfield",
-                name          : "queue-stalled-minutes",
-                fieldLabel    : _("Stalled Minutes"),
-                allowDecimals : false,
-                allowNegative : false,
-                allowBlank    : false,
-                value         : 30
+            items: [{
+                xtype: "checkbox",
+                name: "queue-stalled-enabled",
+                fieldLabel: _("Queue Stalled"),
+                checked: true,
+                boxLabel: _("Torrents that have not shared data for queue-stalled-minutes are treated as 'stalled' and are not counted against the queue-download-size and seed-queue-size limits.")
+            }, {
+                xtype: "numberfield",
+                name: "queue-stalled-minutes",
+                fieldLabel: _("Stalled Minutes"),
+                allowDecimals: false,
+                allowNegative: false,
+                allowBlank: false,
+                value: 30
             }]
-        },{
-            xtype   :"fieldset",
-            title   :_("Download Queue"),
-            defaults:{
-                labelSeparator:""
+        }, {
+            xtype: "fieldset",
+            title: _("Download Queue"),
+            defaults: {
+                labelSeparator: ""
             },
-            items : [{
-                xtype      : "checkbox",
-                name       : "download-queue-enabled",
-                fieldLabel : _("Download"),
-                checked    : true,
-                boxLabel   : _("Transmission will only download download-queue-size non-stalled torrents at once.")
-            },{
-                xtype         : "numberfield",
-                name          : "download-queue-size",
-                fieldLabel    : _("Size"),
-                allowDecimals : false,
-                allowNegative : false,
-                allowBlank    : false,
-                value         : 5
+            items: [{
+                xtype: "checkbox",
+                name: "download-queue-enabled",
+                fieldLabel: _("Download"),
+                checked: true,
+                boxLabel: _("Transmission will only download download-queue-size non-stalled torrents at once.")
+            }, {
+                xtype: "numberfield",
+                name: "download-queue-size",
+                fieldLabel: _("Size"),
+                allowDecimals: false,
+                allowNegative: false,
+                allowBlank: false,
+                value: 5
             }]
-        },{
-            xtype    : "fieldset",
-            title    : _("Seed Queue"),
-            defaults : {
-                labelSeparator : ""
+        }, {
+            xtype: "fieldset",
+            title: _("Seed Queue"),
+            defaults: {
+                labelSeparator: ""
             },
-            items : [{
-                xtype      : "checkbox",
-                name       : "seed-queue-enabled",
-                fieldLabel : _("Seed"),
-                checked    : false,
-                boxLabel   : _("Transmission will only seed seed-queue-size non-stalled torrents at once.")
-            },{
-                xtype         : "numberfield",
-                name          : "seed-queue-size",
-                fieldLabel    : _("Size"),
-                allowDecimals : false,
-                allowNegative : false,
-                allowBlank    : false,
-                value         : 10
+            items: [{
+                xtype: "checkbox",
+                name: "seed-queue-enabled",
+                fieldLabel: _("Seed"),
+                checked: false,
+                boxLabel: _("Transmission will only seed seed-queue-size non-stalled torrents at once.")
+            }, {
+                xtype: "numberfield",
+                name: "seed-queue-size",
+                fieldLabel: _("Size"),
+                allowDecimals: false,
+                allowNegative: false,
+                allowBlank: false,
+                value: 10
             }]
         }];
     }

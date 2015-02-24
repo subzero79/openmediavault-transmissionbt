@@ -1,6 +1,6 @@
 /**
  * Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
- * Copyright (C) 2013-1014 OpenMediaVault Plugin Developers
+ * Copyright (C) 2013-2015 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,178 +20,178 @@
 // require("js/omv/workspace/form/Panel.js")
 
 Ext.define("OMV.module.admin.service.transmissionbt.settings.Scheduling", {
-    extend       : "OMV.workspace.form.Panel",
+    extend: "OMV.workspace.form.Panel",
 
-    rpcService   : "TransmissionBt",
-    rpcGetMethod : "getScheduling",
-    rpcSetMethod : "setScheduling",
+    rpcService: "TransmissionBt",
+    rpcGetMethod: "getScheduling",
+    rpcSetMethod: "setScheduling",
 
-    getFormItems : function() {
+    getFormItems: function() {
         return [{
-            xtype    : "fieldset",
-            title    : _("General"),
-            defaults : {
-                labelSeparator : ""
+            xtype: "fieldset",
+            title: _("General"),
+            defaults: {
+                labelSeparator: ""
             },
-            items : [{
-                xtype      : "checkbox",
-                name       : "alt-speed-time-enabled",
-                fieldLabel : _("Scheduling"),
-                checked    : false,
-                boxLabel   : _("When enabled, this will toggle the Turtle Mode.")
-            },{
-                xtype    : "fieldset",
-                title    : _("Time"),
-                defaults : {
-                    labelSeparator : ""
+            items: [{
+                xtype: "checkbox",
+                name: "alt-speed-time-enabled",
+                fieldLabel: _("Scheduling"),
+                checked: false,
+                boxLabel: _("When enabled, this will toggle the Turtle Mode.")
+            }, {
+                xtype: "fieldset",
+                title: _("Time"),
+                defaults: {
+                    labelSeparator: ""
                 },
-                items : [{
-                    xtype      : "compositefield",
-                    name       : "begin-time",
-                    fieldLabel : _("Begin"),
-                    width      : 200,
-                    items      : [{
-                        xtype         : "combo",
-                        name          : "begin-hour",
-                        queryMode     : "local",
-                        store         : Ext.Array.range(0, 23),
-                        allowBlank    : false,
-                        editable      : false,
-                        triggerAction : "all",
-                        width         : 50,
-                        value         : 9,
-                        reset         : function() {}
-                    },{
-                        xtype : "displayfield",
-                        value : ":"
-                    },{
-                        xtype         : "combo",
-                        name          : "begin-minute",
-                        queryMode     : "local",
-                        store         : Ext.Array.range(0, 59),
-                        allowBlank    : false,
-                        editable      : false,
-                        triggerAction : "all",
-                        width         : 50,
-                        value         : 0,
-                        reset         : function() {}
+                items: [{
+                    xtype: "compositefield",
+                    name: "begin-time",
+                    fieldLabel: _("Begin"),
+                    width: 200,
+                    items: [{
+                        xtype: "combo",
+                        name: "begin-hour",
+                        queryMode: "local",
+                        store: Ext.Array.range(0, 23),
+                        allowBlank: false,
+                        editable: false,
+                        triggerAction: "all",
+                        width: 50,
+                        value: 9,
+                        reset: function() {}
+                    }, {
+                        xtype: "displayfield",
+                        value: ":"
+                    }, {
+                        xtype: "combo",
+                        name: "begin-minute",
+                        queryMode: "local",
+                        store: Ext.Array.range(0, 59),
+                        allowBlank: false,
+                        editable: false,
+                        triggerAction: "all",
+                        width: 50,
+                        value: 0,
+                        reset: function() {}
                     }]
-                },{
-                    xtype      : "compositefield",
-                    name       : "end-time",
-                    fieldLabel : _("End"),
-                    width      : 200,
-                    items      : [{
-                        xtype         : "combo",
-                        name          : "end-hour",
-                        queryMode     : "local",
-                        store         : Ext.Array.range(0, 23),
-                        allowBlank    : false,
-                        editable      : false,
-                        triggerAction : "all",
-                        width         : 50,
-                        value         : 17,
-                        reset         : function() {}
-                    },{
-                        xtype : "displayfield",
-                        value : ":"
-                    },{
-                        xtype         : "combo",
-                        name          : "end-minute",
-                        queryMode     : "local",
-                        store         : Ext.Array.range(0, 59),
-                        allowBlank    : false,
-                        editable      : false,
-                        triggerAction : "all",
-                        width         : 50,
-                        value         : 0,
-                        reset         : function() {}
+                }, {
+                    xtype: "compositefield",
+                    name: "end-time",
+                    fieldLabel: _("End"),
+                    width: 200,
+                    items: [{
+                        xtype: "combo",
+                        name: "end-hour",
+                        queryMode: "local",
+                        store: Ext.Array.range(0, 23),
+                        allowBlank: false,
+                        editable: false,
+                        triggerAction: "all",
+                        width: 50,
+                        value: 17,
+                        reset: function() {}
+                    }, {
+                        xtype: "displayfield",
+                        value: ":"
+                    }, {
+                        xtype: "combo",
+                        name: "end-minute",
+                        queryMode: "local",
+                        store: Ext.Array.range(0, 59),
+                        allowBlank: false,
+                        editable: false,
+                        triggerAction: "all",
+                        width: 50,
+                        value: 0,
+                        reset: function() {}
                     }]
                 }]
-            },{
-                xtype    : "fieldset",
-                title    : _("Days"),
-                defaults : {
-                    labelSeparator : ""
+            }, {
+                xtype: "fieldset",
+                title: _("Days"),
+                defaults: {
+                    labelSeparator: ""
                 },
-                items : [{
-                    xtype      : "checkbox",
-                    name       : "days-sunday",
-                    fieldLabel : _("Sunday"),
-                    checked    : true
-                },{
-                    xtype      : "checkbox",
-                    name       : "days-monday",
-                    fieldLabel : _("Monday"),
-                    checked    : true
-                },{
-                    xtype      : "checkbox",
-                    name       : "days-tuesday",
-                    fieldLabel : _("Tuesday"),
-                    checked    : true
-                },{
-                    xtype      : "checkbox",
-                    name       : "days-wednesday",
-                    fieldLabel : _("Wednesday"),
-                    checked    : true
-                },{
-                    xtype      : "checkbox",
-                    name       : "days-thursday",
-                    fieldLabel : _("Thursday"),
-                    checked    : true
-                },{
-                    xtype      : "checkbox",
-                    name       : "days-friday",
-                    fieldLabel : _("Friday"),
-                    checked    : true
-                },{
-                    xtype     :"checkbox",
-                    name      :"days-saturday",
-                    fieldLabel:_("Saturday"),
-                    checked   :true
+                items: [{
+                    xtype: "checkbox",
+                    name: "days-sunday",
+                    fieldLabel: _("Sunday"),
+                    checked: true
+                }, {
+                    xtype: "checkbox",
+                    name: "days-monday",
+                    fieldLabel: _("Monday"),
+                    checked: true
+                }, {
+                    xtype: "checkbox",
+                    name: "days-tuesday",
+                    fieldLabel: _("Tuesday"),
+                    checked: true
+                }, {
+                    xtype: "checkbox",
+                    name: "days-wednesday",
+                    fieldLabel: _("Wednesday"),
+                    checked: true
+                }, {
+                    xtype: "checkbox",
+                    name: "days-thursday",
+                    fieldLabel: _("Thursday"),
+                    checked: true
+                }, {
+                    xtype: "checkbox",
+                    name: "days-friday",
+                    fieldLabel: _("Friday"),
+                    checked: true
+                }, {
+                    xtype: "checkbox",
+                    name: "days-saturday",
+                    fieldLabel: _("Saturday"),
+                    checked: true
                 }]
             }]
-        },{
-            xtype    : "fieldset",
-            title    : _("Idle"),
-            defaults : {
-                labelSeparator : ""
+        }, {
+            xtype: "fieldset",
+            title: _("Idle"),
+            defaults: {
+                labelSeparator: ""
             },
-            items : [{
-                xtype      : "checkbox",
-                name       : "idle-seeding-limit-enabled",
-                fieldLabel : _("Seeding Limit"),
-                checked    : false,
-                boxLabel   : _("Stop seeding after being idle for N minutes.")
-            },{
-                xtype         : "numberfield",
-                name          : "idle-seeding-limit",
-                fieldLabel    : _("Idle Minutes"),
-                allowDecimals : false,
-                allowNegative : false,
-                allowBlank    : false,
-                value         : 30
+            items: [{
+                xtype: "checkbox",
+                name: "idle-seeding-limit-enabled",
+                fieldLabel: _("Seeding Limit"),
+                checked: false,
+                boxLabel: _("Stop seeding after being idle for N minutes.")
+            }, {
+                xtype: "numberfield",
+                name: "idle-seeding-limit",
+                fieldLabel: _("Idle Minutes"),
+                allowDecimals: false,
+                allowNegative: false,
+                allowBlank: false,
+                value: 30
             }]
-            },{
-            xtype    : "fieldset",
-            title    : _("Ratio"),
-            defaults : {
-                labelSeparator : ""
+        }, {
+            xtype: "fieldset",
+            title: _("Ratio"),
+            defaults: {
+                labelSeparator: ""
             },
-            items : [{
-                xtype      : "checkbox",
-                name       : "ratio-limit-enabled",
-                fieldLabel : _("Ratio"),
-                checked    : false,
-                boxLabel   : _("Transmission will only seed until ratio limit is reached.")
-            },{
-                xtype         : "numberfield",
-                name          : "ratio-limit",
-                fieldLabel    : _("Ratio Limit"),
-                allowDecimals : true,
-                allowNegative : false,
-                allowBlank    : false,
-                value         : 2.0
+            items: [{
+                xtype: "checkbox",
+                name: "ratio-limit-enabled",
+                fieldLabel: _("Ratio"),
+                checked: false,
+                boxLabel: _("Transmission will only seed until ratio limit is reached.")
+            }, {
+                xtype: "numberfield",
+                name: "ratio-limit",
+                fieldLabel: _("Ratio Limit"),
+                allowDecimals: true,
+                allowNegative: false,
+                allowBlank: false,
+                value: 2.0
             }]
         }];
     }
