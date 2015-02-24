@@ -24,8 +24,8 @@ set -e
 
 OMV_TRANSMISSIONBT_CONFIG=${OMV_TRANSMISSIONBT_CONFIG:-"/etc/transmission-daemon/settings.json"}
 OMV_TRANSMISSIONBT_DEFAULT=${OMV_TRANSMISSIONBT_DEFAULT:-"/etc/default/transmission-daemon"}
-OMV_TRANSMISSIONBT_RPCWHITELIST=${OMV_TRANSMISSIONBT_RPCWHITELIST:-"*.*.*.*"}
-OMV_TRANSMISSIONBT_RPCWHITELIST_ENABLED=${OMV_TRANSMISSIONBT_RPCWHITELIST_ENABLED:-"true"}
+OMV_TRANSMISSIONBT_RPC_WHITELIST=${OMV_TRANSMISSIONBT_RPC_WHITELIST:-"*.*.*.*"}
+OMV_TRANSMISSIONBT_RPC_WHITELIST_ENABLED=${OMV_TRANSMISSIONBT_RPC_WHITELIST_ENABLED:-"true"}
 
 OMV_TRANSMISSIONBT_XPATH="/config/services/transmissionbt"
 
@@ -106,8 +106,8 @@ generate_config()
         -v "concat('\"rpc-port\": ',rpcport,',')" -n \
         -v "concat('\"rpc-url\": \"',rpcurl,'\",')" -n \
         -v "concat('\"rpc-username\": \"',rpcusername,'\",')" -n \
-        -o "\"rpc-whitelist\": \"${OMV_TRANSMISSIONBT_RPCWHITELIST}\"," -n \
-        -o "\"rpc-whitelist-enabled\": ${OMV_TRANSMISSIONBT_RPCWHITELIST_ENABLED}," -n \
+        -o "\"rpc-whitelist\": \"${OMV_TRANSMISSIONBT_RPC_WHITELIST}\"," -n \
+        -o "\"rpc-whitelist-enabled\": ${OMV_TRANSMISSIONBT_RPC_WHITELIST_ENABLED}," -n \
         -o "\"incomplete-dir-enabled\": " \
         -i "modules/filesandlocations/incomplete-dir-enabled[. = '0']" -o "false" -b \
         -i "modules/filesandlocations/incomplete-dir-enabled[. = '1']" -o "true" -b \
