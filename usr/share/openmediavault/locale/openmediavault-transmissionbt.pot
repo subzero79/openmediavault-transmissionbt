@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-transmissionbt\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-18 06:27-0500\n"
+"POT-Creation-Date: 2015-02-24 22:26-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,10 +53,10 @@ msgstr ""
 msgid "Blocklists"
 msgstr ""
 
-msgid "Cache Size"
+msgid "Cache size"
 msgstr ""
 
-msgid "Cache size (in Mb) to reduce the number of disk reads and writes."
+msgid "Cache size (in MB) to reduce the number of disk reads and writes."
 msgstr ""
 
 msgid "Changing place in queue for selected item(s)"
@@ -116,7 +116,7 @@ msgstr ""
 msgid "Download"
 msgstr ""
 
-msgid "Download Queue"
+msgid "Download queue"
 msgstr ""
 
 msgid "Downloading"
@@ -140,9 +140,6 @@ msgstr ""
 msgid "Enable PEX."
 msgstr ""
 
-msgid "Enable Turtle Mode."
-msgstr ""
-
 msgid "Enable Watch directory."
 msgstr ""
 
@@ -156,6 +153,9 @@ msgid "Enable paused torrent scraping."
 msgstr ""
 
 msgid "Enable port forwarding via NAT-PMP or UPnP."
+msgstr ""
+
+msgid "Enable turtle mode."
 msgstr ""
 
 msgid "Enable upload limit."
@@ -224,7 +224,7 @@ msgstr ""
 msgid "Idle"
 msgstr ""
 
-msgid "Idle Minutes"
+msgid "Idle minutes"
 msgstr ""
 
 msgid "Incomplete"
@@ -236,28 +236,28 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-msgid "Invalid Uri."
+msgid "Invalid path."
 msgstr ""
 
 msgid "Lazy Bitfield"
 msgstr ""
 
-msgid "Limit Download"
+msgid "Limit download"
 msgstr ""
 
-msgid "Limit Upload"
+msgid "Limit download speed. Value is KB/s."
 msgstr ""
 
-msgid "Limit download speed. Value is kb/s."
+msgid "Limit upload"
 msgstr ""
 
-msgid "Limit upload speed. Value is kb/s."
+msgid "Limit upload speed. Value is KB/s."
 msgstr ""
 
 msgid "Limits"
 msgstr ""
 
-msgid "Local Peer Discovery (LPD)."
+msgid "Local peer discovery (LPD)."
 msgstr ""
 
 msgid "Locations"
@@ -269,10 +269,10 @@ msgstr ""
 msgid "May help get around some ISP filtering."
 msgstr ""
 
-msgid "Message Level"
+msgid "Message level"
 msgstr ""
 
-msgid "Micro Transport Protocol (&micro;TP)."
+msgid "Micro transport protocol (&micro;TP)."
 msgstr ""
 
 msgid "Missing Status: "
@@ -285,6 +285,9 @@ msgid "Monday"
 msgstr ""
 
 msgid "Monthly"
+msgstr ""
+
+msgid "Move"
 msgstr ""
 
 msgid "Move down"
@@ -323,13 +326,13 @@ msgstr ""
 msgid "Peer"
 msgstr ""
 
-msgid "Peer Ports"
-msgstr ""
-
 msgid "Peer exchange (PEX)"
 msgstr ""
 
 msgid "Peer port"
+msgstr ""
+
+msgid "Peer ports"
 msgstr ""
 
 msgid "Peers"
@@ -347,7 +350,7 @@ msgstr ""
 msgid "Port to listen for incoming peer connections."
 msgstr ""
 
-msgid "Port to open and listen for RPC/Web requests on."
+msgid "Port to open and listen for RPC/web requests on."
 msgstr ""
 
 msgid "Postfix"
@@ -365,7 +368,7 @@ msgstr ""
 msgid "Queue"
 msgstr ""
 
-msgid "Queue Stalled"
+msgid "Queue stalled"
 msgstr ""
 
 msgid "Queued to check files"
@@ -380,10 +383,7 @@ msgstr ""
 msgid "Queuing"
 msgstr ""
 
-msgid "RPC/WebUI Settings"
-msgstr ""
-
-msgid "Random Port"
+msgid "RPC/web interface settings"
 msgstr ""
 
 msgid "Random Port on start."
@@ -395,10 +395,13 @@ msgstr ""
 msgid "Random low"
 msgstr ""
 
+msgid "Random port"
+msgstr ""
+
 msgid "Ratio"
 msgstr ""
 
-msgid "Ratio Limit"
+msgid "Ratio limit"
 msgstr ""
 
 msgid "Require clients to authenticate themselves."
@@ -428,13 +431,13 @@ msgstr ""
 msgid "Seed"
 msgstr ""
 
-msgid "Seed Queue"
+msgid "Seed queue"
 msgstr ""
 
 msgid "Seeding"
 msgstr ""
 
-msgid "Seeding Limit"
+msgid "Seeding limit"
 msgstr ""
 
 msgid "Set verbosity of transmission messages."
@@ -458,13 +461,13 @@ msgstr ""
 msgid "Speed"
 msgstr ""
 
-msgid "Stalled Minutes"
-msgstr ""
-
-msgid "Start Torrents"
+msgid "Stalled minutes"
 msgstr ""
 
 msgid "Start download"
+msgstr ""
+
+msgid "Start torrents"
 msgstr ""
 
 msgid "Start torrents as soon as they are added."
@@ -518,19 +521,22 @@ msgstr ""
 msgid "Tuesday"
 msgstr ""
 
-msgid "Turtle Mode"
+msgid "Turtle mode"
 msgstr ""
 
-msgid "Turtle Mode download speed. Value is kb/s."
+msgid "Turtle mode download speed. Value is KB/s."
 msgstr ""
 
-msgid "Turtle Mode upload speed. Value is kb/s."
+msgid "Turtle mode upload speed. Value is KB/s."
 msgstr ""
 
 msgid "UL-rate"
 msgstr ""
 
 msgid "URL"
+msgstr ""
+
+msgid "URL to access RPC and web interface (http://localhost/&lt;URL&gt;/(rpc|web)."
 msgstr ""
 
 msgid "Umask"
@@ -549,12 +555,6 @@ msgid "Upload slots"
 msgstr ""
 
 msgid "Upload torrent"
-msgstr ""
-
-msgid "Uri"
-msgstr ""
-
-msgid "Url to access RPC (http://localhost/&lt;URI&gt;/(rpc|web)."
 msgstr ""
 
 msgid "Use blocklists."
