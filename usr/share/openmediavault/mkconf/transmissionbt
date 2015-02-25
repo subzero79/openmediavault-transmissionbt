@@ -257,7 +257,7 @@ create_dirs()
 }
 
 generate_default
-generate_settings
+generate_config
 generate_cron
 create_dirs
 
