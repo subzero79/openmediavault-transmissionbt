@@ -212,7 +212,7 @@ generate_cron()
         return 0
     fi
 
-    if [ "${blocklistsyncenabled}" = "0" ]; then
+    if [ "$(omv_config_get "${OMV_TRANSMISSIONBT_XPATH}/blocklistsyncenabled")" = "0" ]; then
         return 0
     fi
 
