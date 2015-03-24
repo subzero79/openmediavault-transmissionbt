@@ -17,31 +17,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
- // Register new logfile type.
- // Format:
- // Jan 1 00:00:00 <hostname> transmission-daemon[<pid>]: <message>
- OMVLogFile::registerType(
-     "transmissionbt",
-     array(
-         "filename" => "transmissionbt",
-         "filepath" => "/var/log/transmissionbt.log",
-         "regex" => "/^(\S+\s+\d+\s+\S+)\s+(\S+)\s+transmission-daemon\[\d+\]:\s+(.*)$/",
-         "columns" => array(
-             "ts" => array(
-                 "index" => 1,
-                 "func" => create_function(
-                     "\$v",
-                     "return strpdate(\$v, \"M j G:i:s\");"
-                 )
-             ),
-             "date" => array(
-                 "index" => 1,
-                 "func" => create_function(
-                     "\$v",
-                     "return strftime(\"%c\", strpdate(\$v, \"M j G:i:s\"));"
-                 )
-             ),
-             "event" => 3
-         )
-     )
- );
+// Register new logfile type.
+// Format:
+// Jan 1 00:00:00 <hostname> transmission-daemon[<pid>]: <message>
+OMVLogFile::registerType(
+    "transmissionbt",
+    array(
+        "filename" => "transmissionbt",
+        "filepath" => "/var/log/transmissionbt.log",
+        "regex" => "/^(\S+\s+\d+\s+\S+)\s+(\S+)\s+transmission-daemon\[\d+\]:\s+(.*)$/",
+        "columns" => array(
+            "ts" => array(
+                "index" => 1,
+                "func" => create_function(
+                    "\$v",
+                    "return strpdate(\$v, \"M j G:i:s\");"
+                )
+            ),
+            "date" => array(
+                "index" => 1,
+                "func" => create_function(
+                    "\$v",
+                    "return strftime(\"%c\", strpdate(\$v, \"M j G:i:s\"));"
+                )
+            ),
+            "event" => 3
+        )
+    )
+);
