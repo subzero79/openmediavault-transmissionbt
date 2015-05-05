@@ -229,7 +229,7 @@ generate_cron()
         -n \
         -o "transmission-remote http://localhost:" -v rpcport -v rpcurl -o "rpc" \
         -o " -n " -v rpcusername -o ":" -v rpcpassword \
-        -o " --blocklist-update" -n \
+        -o " --blocklist-update 1>/dev/null" -n \
         ${OMV_CONFIG_FILE} | xmlstarlet unesc > ${cronfile}
 
     chmod 700 ${cronfile}
