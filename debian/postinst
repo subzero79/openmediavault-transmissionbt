@@ -46,7 +46,7 @@ case "$1" in
             omv_config_add_element "${SERVICE_XPATH}" "blocklistenabled" "0"
             omv_config_add_element "${SERVICE_XPATH}" "blocklistsyncenabled" "0"
             omv_config_add_element "${SERVICE_XPATH}" "blocklistsyncfrequency" "daily"
-            omv_config_add_element "${SERVICE_XPATH}" "blocklisturl" "http://update.transmissionbt.com/level1.gz"
+            omv_config_add_element "${SERVICE_XPATH}" "blocklisturl" "http://www.example.com/blocklist"
             omv_config_add_element "${SERVICE_XPATH}" "script-torrent-done-enabled" "0"
             omv_config_add_element "${SERVICE_XPATH}" "script-torrent-done-filename"
         fi

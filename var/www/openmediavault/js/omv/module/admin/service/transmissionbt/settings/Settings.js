@@ -290,7 +290,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Settings", {
                 fieldLabel: _("URL"),
                 allowBlank: true,
                 width: 300,
-                value: "http://update.transmissionbt.com/level1.gz",
+                value: "http://www.example.com/blocklist",
                 plugins: [{
                     ptype: "fieldinfo",
                     text: _("The URL of the blocklist.")
