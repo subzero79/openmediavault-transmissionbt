@@ -327,13 +327,13 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Settings", {
             },
             items: [{
                 xtype: "checkbox",
-                name: "script-torrent-add-enabled",
+                name: "script-torrent-added-enabled",
                 fieldLabel: _("Enable"),
                 checked: false,
                 boxLabel: _("Run a script at torrent addition.")
             }, {
                 xtype: "textfield",
-                name: "script-torrent-add-filename",
+                name: "script-torrent-added-filename",
                 fieldLabel: _("Script"),
                 allowBlank: true,
                 value: "",

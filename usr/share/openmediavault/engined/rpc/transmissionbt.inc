@@ -146,7 +146,7 @@ class OMVRpcServiceTransmissionBt extends OMVRpcServiceAbstract
         $object["message-level"] = intval($object["message-level"]);
         $object["cache-size-mb"] = intval($object["cache-size-mb"]);
         $object["script-torrent-done-enabled"] = boolval($object["script-torrent-done-enabled"]);
-        $object["script-torrent-add-enabled"] = boolval($object["script-torrent-add-enabled"]);
+        $object["script-torrent-added-enabled"] = boolval($object["script-torrent-added-enabled"]);
         unset($object["modules"]);
 
         return $object;
@@ -242,7 +242,7 @@ class OMVRpcServiceTransmissionBt extends OMVRpcServiceAbstract
                     "script-torrent-done-filename": {
                         "type": "string"
                     },
-                    "script-torrent-add-filename": {
+                    "script-torrent-added-filename": {
                         "type": "string"
                     },
                     "pexenabled": {
@@ -263,7 +263,7 @@ class OMVRpcServiceTransmissionBt extends OMVRpcServiceAbstract
                     "blocklistsyncenabled": {
                         "type": "boolean"
                     },
-                    "script-torrent-add-enabled": {
+                    "script-torrent-added-enabled": {
                         "type": "boolean"
                     },
                     "script-torrent-done-enabled": {
@@ -317,8 +317,8 @@ class OMVRpcServiceTransmissionBt extends OMVRpcServiceAbstract
             "cache-size-mb" => $params["cache-size-mb"],
             "script-torrent-done-enabled" => boolval($params["script-torrent-done-enabled"]),
             "script-torrent-done-filename" => $params["script-torrent-done-filename"],
-            "script-torrent-add-enabled" => boolval($params["script-torrent-add-enabled"]),
-            "script-torrent-add-filename" => $params["script-torrent-add-filename"],
+            "script-torrent-added-enabled" => boolval($params["script-torrent-added-enabled"]),
+            "script-torrent-added-filename" => $params["script-torrent-added-filename"],
         );
 
         // Set configuration object
