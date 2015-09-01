@@ -290,7 +290,7 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Settings", {
                 fieldLabel: _("URL"),
                 allowBlank: true,
                 width: 300,
-                value: "http://www.example.com/blocklist",
+                value: "http://update.transmissionbt.com/level1.gz",
                 plugins: [{
                     ptype: "fieldinfo",
                     text: _("The URL of the blocklist.")
@@ -311,6 +311,29 @@ Ext.define("OMV.module.admin.service.transmissionbt.settings.Settings", {
             }, {
                 xtype: "textfield",
                 name: "script-torrent-done-filename",
+                fieldLabel: _("Script"),
+                allowBlank: true,
+                value: "",
+                plugins: [{
+                    ptype: "fieldinfo",
+                    text: _("Enter path to script.")
+                }]
+            }]
+        }, {
+            xtype: "fieldset",
+            title: _("Run a script to process after torrent is added"),
+            defaults: {
+                labelSeparator: ""
+            },
+            items: [{
+                xtype: "checkbox",
+                name: "script-torrent-add-enabled",
+                fieldLabel: _("Enable"),
+                checked: false,
+                boxLabel: _("Run a script at torrent addition.")
+            }, {
+                xtype: "textfield",
+                name: "script-torrent-add-filename",
                 fieldLabel: _("Script"),
                 allowBlank: true,
                 value: "",
