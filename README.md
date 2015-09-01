@@ -17,3 +17,5 @@ http://pastebin.com/raw.php?i=TLkhiGvC
 It was applied succesfully to this wheezy-backport repository of transmission
 
 https://github.com/pommi/transmission-debian
+
+![Alt text](https://cloud.githubusercontent.com/assets/7058119/9600230/367fd302-50dd-11e5-9150-a48404d26eac.png?raw=true "OMV SS")
